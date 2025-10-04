@@ -12,39 +12,50 @@ body { background-color:#f2f0ef; color:#000; line-height:1.5; overflow-x:hidden;
 a { text-decoration:none; color:inherit; }
 
 /* Hero */
-.hero { display:flex; justify-content:space-between; align-items:center; padding:60px; flex-wrap:wrap; }
-.hero-text { max-width:50%; text-align:left; }
+.hero { display:flex; justify-content:space-between; align-items:center; padding:60px; flex-wrap:wrap; overflow:hidden; }
+.hero-text { max-width:50%; text-align:left; opacity:0; transform:translateY(30px); transition:1s ease-out; }
+.hero-text.visible { opacity:1; transform:translateY(0); }
 .hero-text h1 { font-size:4rem; font-style:italic; margin-bottom:15px; }
 .hero-text p.subline { font-size:1.5rem; margin-bottom:20px; }
-.hero-text .core-flow { font-size:2rem; font-weight:bold; margin-top:15px; height:40px; overflow:hidden; position:relative; }
-.hero-text .core-flow span { position:absolute; animation:flow 9s infinite; }
+.hero-text .core-flow { font-size:2rem; font-weight:bold; margin-top:15px; display:flex; justify-content:center; gap:20px; }
+.hero-text .core-flow span { display:inline-block; animation:flow 9s infinite; }
 @keyframes flow {
-  0% { top:0; } 33% { top:-40px; } 66% { top:-80px; } 100% { top:0; }
+  0% { opacity:0; transform:translateY(20px); }
+  33% { opacity:1; transform:translateY(0); }
+  66% { opacity:0; transform:translateY(-20px); }
+  100% { opacity:0; transform:translateY(0); }
 }
-.hero-text .cta { display:inline-block; padding:12px 30px; border:2px solid #000; background:#f31317; color:#fff; font-weight:bold; transition:0.3s; }
+.hero-text .cta { display:inline-block; padding:12px 30px; border:2px solid #000; background:#f31317; color:#fff; font-weight:bold; transition:0.3s; margin-top:20px;}
 .hero-text .cta:hover { background:#fff; color:#f31317; border-color:#000; transform:scale(1.05); }
-.hero-image { max-width:40%; transition:0.5s; }
-.hero-image img { width:100%; display:block; animation:float 3s ease-in-out infinite; }
-@keyframes float { 0%, 100% { transform:translateY(0); } 50% { transform:translateY(-10px); } }
+
+.hero-image { max-width:40%; transition:0.5s; opacity:0; transform:translateY(30px); }
+.hero-image.visible { opacity:1; transform:translateY(0); }
+.hero-image img { width:100%; display:block; transition:0.5s; }
+
+/* Parallax effect */
+.hero-image img.parallax { will-change: transform; }
 
 /* Core Truths */
-.core-truths { display:flex; justify-content:space-around; text-align:center; padding:60px 20px; flex-wrap:wrap; }
+.core-truths { display:flex; justify-content:space-around; text-align:center; padding:60px 20px; flex-wrap:wrap; opacity:0; transform:translateY(30px); transition:1s ease-out; }
+.core-truths.visible { opacity:1; transform:translateY(0); }
 .core-truth { margin:20px; max-width:250px; }
 .core-truth h2 { font-size:2rem; font-weight:bold; margin-bottom:10px; }
 .core-truth p { font-size:1.2rem; }
 
 /* Mini-manifesto */
-.manifesto { text-align:center; padding:40px 20px; font-size:1.2rem; }
+.manifesto { text-align:center; padding:40px 20px; font-size:1.2rem; opacity:0; transform:translateY(30px); transition:1s ease-out; }
+.manifesto.visible { opacity:1; transform:translateY(0); }
 .manifesto b { font-weight:normal; font-style:normal; }
 .manifesto b.italic { font-weight:bold; font-style:italic; }
 
 /* Projects Section */
-.projects { display:flex; justify-content:space-around; flex-wrap:wrap; padding:60px 20px; }
-.project-card { position:relative; width:300px; margin:20px; cursor:pointer; overflow:hidden; border-radius:10px; transition:0.3s; text-align:center; padding:20px; background:#fff; box-shadow:0 5px 15px rgba(0,0,0,0.1); }
-.project-card:hover { box-shadow:0 10px 25px rgba(243,19,23,0.6); transform:scale(1.05); }
+.projects { display:flex; justify-content:space-around; flex-wrap:wrap; padding:60px 20px; opacity:0; transform:translateY(30px); transition:1s ease-out; }
+.projects.visible { opacity:1; transform:translateY(0); }
+.project-card { position:relative; width:300px; margin:20px; cursor:pointer; overflow:hidden; border-radius:10px; border:2px solid #000; background:#f31317; color:#fff; text-align:center; padding:20px; transition:0.3s; }
+.project-card:hover { box-shadow:0 10px 25px rgba(0,0,0,0.6); transform:scale(1.05); }
 .project-card img { width:100%; margin-bottom:15px; }
 .project-card p { font-size:1rem; }
-.project-card:hover::after { content:""; position:absolute; top:0; left:0; width:100%; height:100%; box-shadow:0 0 40px rgba(243,19,23,0.3) inset; pointer-events:none; }
+.project-card:hover::after { content:""; position:absolute; top:0; left:0; width:100%; height:100%; box-shadow:0 0 40px rgba(0,0,0,0.2) inset; pointer-events:none; }
 
 /* Footer Styling */
 .footer {
@@ -55,19 +66,14 @@ a { text-decoration:none; color:inherit; }
   flex-direction: column;
   align-items: center;
 }
-
 .footer-top { display:flex; flex-direction:column; align-items:center; gap:20px; }
-
 .brand-tagline { font-size:1.2rem; text-align:center; }
-
 .footer-nav { display:flex; gap:25px; flex-wrap:wrap; justify-content:center; }
 .footer-nav a { color:#f2f0ef; text-decoration:none; font-weight:normal; transition:0.3s; }
 .footer-nav a:hover { color:#f31317; transform:scale(1.05); }
-
 .social-links { display:flex; gap:20px; }
 .social-links a { color:#f2f0ef; font-weight:bold; transition:0.3s; }
 .social-links a:hover { color:#f31317; transform:scale(1.1); }
-
 .footer-bottom { margin-top:25px; border-top:1px solid #f31317; padding-top:15px; font-size:0.9rem; text-align:center; width:100%; }
 
 /* Responsive */
@@ -96,7 +102,7 @@ a { text-decoration:none; color:inherit; }
     <a href="#projects" class="cta">LET’S BEGIN</a>
   </div>
   <div class="hero-image">
-    <img src="images/el%20pato%20negro.png" alt="Black Duck">
+    <img src="images/el%20pato%20negro.png" alt="Black Duck" class="parallax">
   </div>
 </section>
 
@@ -140,7 +146,7 @@ a { text-decoration:none; color:inherit; }
 <!-- Footer -->
 <footer class="footer">
   <div class="footer-top">
-    <p class="brand-tagline">elpatonegro - turning drive into tangible outcomes</p>
+    <p class="brand-tagline">elpatonegro — turning drive into tangible outcomes</p>
     <nav class="footer-nav">
       <a href="#projects">Projects</a>
       <a href="#ideas">Ideas</a>
@@ -156,6 +162,27 @@ a { text-decoration:none; color:inherit; }
     <p>© 2025 elpatonegro</p>
   </div>
 </footer>
+
+<script>
+// Fade-in on scroll
+const faders = document.querySelectorAll('.hero-text, .hero-image, .core-truths, .manifesto, .projects');
+const options = { threshold: 0.2 };
+const appearOnScroll = new IntersectionObserver(function(entries, observer){
+  entries.forEach(entry => {
+    if(!entry.isIntersecting) return;
+    entry.classList.add('visible');
+    observer.unobserve(entry);
+  });
+}, options);
+faders.forEach(fader => { appearOnScroll.observe(fader); });
+
+// Hero duck parallax
+const heroImg = document.querySelector('.hero-image img.parallax');
+window.addEventListener('scroll', () => {
+  let offset = window.pageYOffset;
+  heroImg.style.transform = `translateY(${offset * 0.05}px)`;
+});
+</script>
 
 </body>
 </html>
