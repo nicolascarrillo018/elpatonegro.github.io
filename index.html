@@ -4,11 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>elpatonegro</title>
-<link rel="icon" href="images/el%20pato%20negro.png" type="image/png">
+<link rel="icon" href="images/el-pato-negro.png" type="image/png">
 <style>
-/* Reset & Base */
+/* Base */
 * { margin:0; padding:0; box-sizing:border-box; font-family:'Times New Roman', serif; }
-body { background-color:#f2f0ef; color:#000; line-height:1.5; overflow-x:hidden; }
+body { background:#f2f0ef; color:#000; line-height:1.5; overflow-x:hidden; }
 a { text-decoration:none; color:inherit; }
 
 /* Hero */
@@ -27,25 +27,12 @@ a { text-decoration:none; color:inherit; }
 }
 .hero-text .cta { display:inline-block; padding:12px 30px; border:2px solid #000; background:#f31317; color:#fff; font-weight:bold; transition:0.3s; margin-top:20px;}
 .hero-text .cta:hover { background:#fff; color:#f31317; border-color:#000; transform:scale(1.05); }
-
 .hero-image { max-width:40%; transition:0.5s; opacity:0; transform:translateY(30px); }
 .hero-image.visible { opacity:1; transform:translateY(0); }
 .hero-image img { width:100%; display:block; transition:0.5s; }
 
-/* Parallax effect */
-.hero-image img.parallax { will-change: transform; }
-
 /* Section Titles */
-.section-title {
-  font-size: 2.5rem;
-  font-weight: bold;
-  text-align: center;
-  margin-bottom: 25px;
-  color: #000;
-  opacity:0;
-  transform:translateY(30px);
-  transition:1s ease-out;
-}
+.section-title { font-size:2.5rem; font-weight:bold; text-align:center; margin-bottom:25px; color:#000; opacity:0; transform:translateY(30px); transition:1s ease-out; }
 .section-title.visible { opacity:1; transform:translateY(0); }
 
 /* Core Truths */
@@ -68,17 +55,9 @@ a { text-decoration:none; color:inherit; }
 .project-card:hover { box-shadow:0 10px 25px rgba(0,0,0,0.6); transform:scale(1.05); }
 .project-card img { width:100%; margin-bottom:15px; }
 .project-card p { font-size:1rem; }
-.project-card:hover::after { content:""; position:absolute; top:0; left:0; width:100%; height:100%; box-shadow:0 0 40px rgba(0,0,0,0.2) inset; pointer-events:none; }
 
 /* Footer Styling */
-.footer {
-  background: #000;
-  color: #f2f0ef;
-  padding: 40px 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+.footer { background: #000; color: #f2f0ef; padding: 40px 20px; display: flex; flex-direction: column; align-items: center; }
 .footer-top { display:flex; flex-direction:column; align-items:center; gap:20px; }
 .brand-tagline { font-size:1.2rem; text-align:center; }
 .footer-nav { display:flex; gap:25px; flex-wrap:wrap; justify-content:center; }
@@ -115,7 +94,7 @@ a { text-decoration:none; color:inherit; }
     <a href="#projects" class="cta">LET’S BEGIN</a>
   </div>
   <div class="hero-image">
-    <img src="images/el%20pato%20negro.png" alt="Black Duck" class="parallax">
+    <img src="images/el-pato-negro.png" alt="Black Duck" class="parallax">
   </div>
 </section>
 
@@ -144,7 +123,7 @@ a { text-decoration:none; color:inherit; }
 <section id="projects" class="projects">
   <h2 class="section-title">Projects</h2>
   <a href="#" class="project-card">
-    <img src="images/epn.projects.png" alt="Projects">
+    <img src="images/epn-projects.png" alt="Projects">
     <p>Experiments & builds that push ideas into reality.</p>
   </a>
 </section>
@@ -153,7 +132,7 @@ a { text-decoration:none; color:inherit; }
 <section id="ideas" class="projects">
   <h2 class="section-title">Ideas</h2>
   <a href="#" class="project-card">
-    <img src="images/epn.ideas.png" alt="Ideas">
+    <img src="images/epn-ideas.png" alt="Ideas">
     <p>Essays, frameworks, and insights for thinking differently.</p>
   </a>
 </section>
@@ -162,7 +141,7 @@ a { text-decoration:none; color:inherit; }
 <section id="wwm" class="projects">
   <h2 class="section-title">Work With Me</h2>
   <a href="#" class="project-card">
-    <img src="images/epn.wwm.png" alt="Work With Me">
+    <img src="images/epn-wwm.png" alt="Work With Me">
     <p>Consulting & strategy to execute with impact.</p>
   </a>
 </section>
