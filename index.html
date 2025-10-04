@@ -8,21 +8,35 @@
 </head>
 <body>
 
+  <!-- Sticky Navigation -->
+  <nav class="sticky-nav">
+    <ul>
+      <li><a href="#core-offerings">Projects</a></li>
+      <li><a href="#core-offerings">Ideas</a></li>
+      <li><a href="#core-offerings">Work With Me</a></li>
+      <li><a href="#lead-magnet">Subscribe</a></li>
+    </ul>
+  </nav>
+
   <!-- Hero Section -->
-  <section class="hero">
+  <section class="hero fade-in">
     <div class="hero-text">
       <h1>elpatonegro</h1>
-      <p class="core-truths">Discipline. Creativity. Persistence.</p>
-      <p class="subline">Where vision, grit, and strategy meet.</p>
+      <p class="tagline">Where vision, grit, and strategy meet.</p>
+      <p class="core-truth" id="typing-text"></p>
       <a href="#core-offerings" class="cta-button">LET’S BEGIN</a>
     </div>
-    <div class="hero-image">
-      <img src="duck.png" alt="Black Duck">
+    <div class="hero-image parallax-layer">
+      <img src="images/el%20pato%20negro.png" alt="Black Duck" class="parallax">
     </div>
   </section>
 
-  <!-- Core Truths -->
-  <section class="core-truths-section" id="core-truths">
+  <!-- Floating Ducks (Subtle) -->
+  <img src="images/el%20pato%20negro%20(4).png" class="floating-duck parallax-layer" style="top:20%; left:10%;" alt="">
+  <img src="images/el%20pato%20negro%20(4).png" class="floating-duck parallax-layer" style="top:70%; left:80%;" alt="">
+
+  <!-- Core Truths + Manifesto -->
+  <section class="core-truths-manifesto fade-in">
     <div class="truth">
       <h2>Discipline</h2>
       <p>Built, not gifted.</p>
@@ -35,13 +49,19 @@
       <h2>Persistence</h2>
       <p>The unfair advantage.</p>
     </div>
-    <a href="#core-offerings" class="small-link">Explore the Mindset →</a>
+    <div class="manifesto-text">
+      <p>Most ideas die because they’re untested. <strong>elpatonegro</strong> exists to turn raw drive into tangible outcomes. We explore, build, and execute relentlessly.</p>
+    </div>
+    <div class="dynamic-image">
+      <img src="images/el%20pato%20negro%20(4).png" alt="Black Duck with elpatonegro">
+    </div>
   </section>
 
   <!-- Core Offerings -->
-  <section class="core-offerings" id="core-offerings">
+  <section class="core-offerings fade-in" id="core-offerings">
     <div class="card">
       <h3>Projects</h3>
+      <img src="images/el%20pato%20negro%20(3).png" alt="elpatonegro text only">
       <p>Experiments & builds.</p>
       <a href="#">Explore Projects →</a>
     </div>
@@ -58,38 +78,82 @@
   </section>
 
   <!-- Lead Magnet -->
-  <section class="lead-magnet">
+  <section class="lead-magnet fade-in" id="lead-magnet">
     <h2>Stay ahead.</h2>
     <p>Get exclusive access to ideas, strategies, and experiments from elpatonegro.</p>
-    <form action="#" method="post">
-      <input type="text" name="name" placeholder="Your Name">
-      <input type="email" name="email" placeholder="Your Email">
+    <form id="subscribe-form">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
       <button type="submit">Subscribe</button>
+      <span class="checkmark">✔</span>
     </form>
-  </section>
-
-  <!-- Mini-Manifesto -->
-  <section class="manifesto">
-    <h2>Why this matters</h2>
-    <p>Most ideas die because they’re untested. elpatonegro exists to turn raw drive into tangible outcomes. We explore, build, and execute relentlessly.</p>
   </section>
 
   <!-- Footer -->
   <footer>
-    <div class="footer-brand">elpatonegro</div>
-    <div class="footer-links">
-      <a href="#">About</a>
-      <a href="#">Projects</a>
-      <a href="#">Work</a>
-      <a href="#">Contact</a>
+    <p>&copy; 2025 elpatonegro</p>
+    <div class="socials">
+      <a href="#">Instagram</a>
+      <a href="#">LinkedIn</a>
+      <a href="#">Twitter</a>
     </div>
-    <div class="footer-socials">
-      <a href="#" class="social">IG</a>
-      <a href="#" class="social">X</a>
-      <a href="#" class="social">LinkedIn</a>
-    </div>
-    <div class="footer-tagline">© 2025 Elpatonegro</div>
   </footer>
+
+  <!-- Scripts -->
+  <script>
+    // Hero typing animation
+    const texts = ["Discipline.", "Creativity.", "Persistence."];
+    let i = 0, j = 0;
+    const typingText = document.getElementById("typing-text");
+    function type() {
+      if(i >= texts.length) i = 0;
+      const current = texts[i];
+      typingText.textContent = current.slice(0, j+1);
+      j++;
+      if(j === current.length) { 
+        setTimeout(() => { j=0; i++; type(); }, 1200);
+      } else { 
+        setTimeout(type, 150);
+      }
+    }
+    type();
+
+    // Hero parallax subtle
+    const heroImg = document.querySelector('.hero-image img.parallax');
+    window.addEventListener('scroll', () => {
+      const offset = window.scrollY;
+      heroImg.style.transform = `translateY(${offset * 0.1}px)`;
+    });
+
+    // Parallax layers
+    window.addEventListener('scroll', () => {
+      const scroll = window.scrollY;
+      document.querySelectorAll('.parallax-layer').forEach((el, i) => {
+        el.style.transform = `translate(${scroll * (0.02 + i*0.01)}px, ${scroll * (0.03 + i*0.01)}px)`;
+      });
+    });
+
+    // Scroll-triggered fade-in
+    const faders = document.querySelectorAll('.fade-in');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+    faders.forEach(fader => observer.observe(fader));
+
+    // Form submit checkmark
+    const form = document.getElementById('subscribe-form');
+    const check = form.querySelector('.checkmark');
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      check.classList.add('visible');
+      setTimeout(()=> check.classList.remove('visible'), 2000);
+      form.reset();
+    });
+  </script>
 
 </body>
 </html>
