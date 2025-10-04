@@ -13,9 +13,8 @@ body { background:#f2f0ef; color:#000; line-height:1.5; overflow-x:hidden; }
 a { text-decoration:none; color:inherit; }
 
 /* Hero */
-.hero { display:flex; justify-content:space-between; align-items:center; padding:60px; flex-wrap:wrap; overflow:hidden; }
-.hero-text { max-width:50%; text-align:left; opacity:0; transform:translateY(30px); transition:1s ease-out; }
-.hero-text.visible { opacity:1; transform:translateY(0); }
+.hero { display:flex; justify-content:space-between; align-items:center; padding:60px; flex-wrap:wrap; }
+.hero-text { max-width:50%; text-align:left; }
 .hero-text h1 { font-size:4rem; font-style:italic; margin-bottom:15px; }
 .hero-text p.subline { font-size:1.5rem; margin-bottom:20px; }
 .hero-text .core-flow { font-size:2.5rem; font-weight:bold; display:flex; flex-direction:column; align-items:center; gap:10px; }
@@ -27,35 +26,30 @@ a { text-decoration:none; color:inherit; }
   100% { opacity:0; transform:translateY(0); }
 }
 .hero-text .cta { display:inline-block; padding:12px 30px; border:2px solid #000; background:#f31317; color:#fff; font-weight:bold; transition:0.3s; margin-top:20px;}
-.hero-text .cta:hover { background:#fff; color:#f31317; border-color:#000; transform:scale(1.05); }
-.hero-image { max-width:40%; transition:0.5s; opacity:0; transform:translateY(30px); }
-.hero-image.visible { opacity:1; transform:translateY(0); }
+.hero-text .cta:hover { background:#fff; color:#f31317; transform:scale(1.05); }
+.hero-image { max-width:40%; transition:0.5s; }
 .hero-image img { width:100%; display:block; transition:0.5s; }
 
 /* Core Truths */
-.core-truths { display:flex; justify-content:space-around; text-align:center; padding:60px 20px; flex-wrap:wrap; opacity:0; transform:translateY(30px); transition:1s ease-out; }
-.core-truths.visible { opacity:1; transform:translateY(0); }
+.core-truths { display:flex; justify-content:space-around; text-align:center; padding:60px 20px; flex-wrap:wrap; }
 .core-truth { margin:20px; max-width:250px; }
 .core-truth h2 { font-size:2.5rem; font-weight:bold; margin-bottom:10px; }
 .core-truth p { font-size:1.3rem; }
 
 /* Mini-manifesto */
-.manifesto { text-align:center; padding:40px 20px; font-size:1.2rem; opacity:0; transform:translateY(30px); transition:1s ease-out; }
-.manifesto.visible { opacity:1; transform:translateY(0); }
+.manifesto { text-align:center; padding:40px 20px; font-size:1.2rem; }
 .manifesto b { font-weight:normal; font-style:normal; }
 .manifesto b.italic { font-weight:bold; font-style:italic; }
 
 /* Projects / Ideas / Work With Me */
-.projects { display:flex; justify-content:space-around; flex-wrap:wrap; padding:60px 20px; opacity:0; transform:translateY(30px); transition:1s ease-out; }
-.projects.visible { opacity:1; transform:translateY(0); }
+.projects { display:flex; justify-content:space-around; flex-wrap:wrap; padding:60px 20px; }
 .project-card { position:relative; width:300px; margin:20px; cursor:pointer; overflow:hidden; border-radius:10px; border:2px solid #000; background:#f31317; color:#fff; text-align:center; padding:20px; transition:0.3s; }
 .project-card:hover { box-shadow:0 10px 25px rgba(0,0,0,0.6); transform:scale(1.05); filter: drop-shadow(0 0 8px #f31317); }
 .project-card img { width:100%; margin-bottom:15px; }
 .project-card p { font-size:1rem; }
 
 /* Section Titles */
-.section-title { font-size:2.5rem; font-weight:bold; text-align:center; margin-bottom:25px; color:#000; opacity:0; transform:translateY(30px); transition:1s ease-out; }
-.section-title.visible { opacity:1; transform:translateY(0); }
+.section-title { font-size:2.5rem; font-weight:bold; text-align:center; margin-bottom:25px; color:#000; }
 
 /* Footer Styling */
 .footer { background: #000; color: #f2f0ef; padding: 40px 20px; display: flex; flex-direction: column; align-items: center; }
@@ -95,7 +89,7 @@ a { text-decoration:none; color:inherit; }
     <a href="#projects" class="cta">LET’S BEGIN</a>
   </div>
   <div class="hero-image">
-    <img src="images/el%20pato%20negro.png" alt="Black Duck" class="parallax">
+    <img src="images/el%20pato%20negro.png" alt="Black Duck">
   </div>
 </section>
 
@@ -166,27 +160,6 @@ a { text-decoration:none; color:inherit; }
     <p>© 2025 elpatonegro</p>
   </div>
 </footer>
-
-<script>
-// Fade-in on scroll
-const faders = document.querySelectorAll('.hero-text, .hero-image, .core-truths, .manifesto, .projects, .section-title');
-const options = { threshold: 0.2 };
-const appearOnScroll = new IntersectionObserver(function(entries, observer){
-  entries.forEach(entry => {
-    if(!entry.isIntersecting) return;
-    entry.classList.add('visible');
-    observer.unobserve(entry);
-  });
-}, options);
-faders.forEach(fader => { appearOnScroll.observe(fader); });
-
-// Hero duck parallax
-const heroImg = document.querySelector('.parallax');
-window.addEventListener('scroll', ()=> {
-  let offset = window.scrollY;
-  heroImg.style.transform = `translateY(${offset * 0.1}px)`;
-});
-</script>
 
 </body>
 </html>
