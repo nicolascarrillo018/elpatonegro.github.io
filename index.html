@@ -6,21 +6,26 @@
 <title>elpatonegro</title>
 <link rel="icon" href="images/el%20pato%20negro.png" type="image/png">
 <style>
-/* Reset & base */
+/* Reset & Base */
 * { margin:0; padding:0; box-sizing:border-box; font-family:'Times New Roman', serif; }
-body { background-color:#f2f0ef; color:#000; line-height:1.5; }
+body { background-color:#f2f0ef; color:#000; line-height:1.5; overflow-x:hidden; }
 a { text-decoration:none; color:inherit; }
 
 /* Hero */
 .hero { display:flex; justify-content:space-between; align-items:center; padding:60px; flex-wrap:wrap; }
-.hero-text { max-width:50%; }
-.hero-text h1 { font-size:4rem; font-style:italic; }
-.hero-text p.subline { font-size:1.5rem; margin:10px 0; }
-.hero-text .cta { display:inline-block; margin-top:20px; padding:12px 30px; border:2px solid #000; background:#f2f0ef; color:#000; font-weight:bold; transition:0.3s; }
-.hero-text .cta:hover { background:#000; color:#f31317; border-color:#000; transform:scale(1.05); }
+.hero-text { max-width:50%; text-align:left; }
+.hero-text h1 { font-size:4rem; font-style:italic; margin-bottom:15px; }
+.hero-text p.subline { font-size:1.5rem; margin-bottom:20px; }
+.hero-text .core-flow { font-size:2rem; font-weight:bold; margin-top:15px; height:40px; overflow:hidden; position:relative; }
+.hero-text .core-flow span { position:absolute; animation:flow 9s infinite; }
+@keyframes flow {
+  0% { top:0; } 33% { top:-40px; } 66% { top:-80px; } 100% { top:0; }
+}
+.hero-text .cta { display:inline-block; padding:12px 30px; border:2px solid #000; background:#f31317; color:#fff; font-weight:bold; transition:0.3s; }
+.hero-text .cta:hover { background:#fff; color:#f31317; border-color:#000; transform:scale(1.05); }
 .hero-image { max-width:40%; transition:0.5s; }
-.hero-image img { width:100%; display:block; transition:0.5s; }
-.hero-image:hover img { transform:translateY(-10px); }
+.hero-image img { width:100%; display:block; animation:float 3s ease-in-out infinite; }
+@keyframes float { 0%, 100% { transform:translateY(0); } 50% { transform:translateY(-10px); } }
 
 /* Core Truths */
 .core-truths { display:flex; justify-content:space-around; text-align:center; padding:60px 20px; flex-wrap:wrap; }
@@ -38,12 +43,32 @@ a { text-decoration:none; color:inherit; }
 .project-card { position:relative; width:300px; margin:20px; cursor:pointer; overflow:hidden; border-radius:10px; transition:0.3s; text-align:center; padding:20px; background:#fff; box-shadow:0 5px 15px rgba(0,0,0,0.1); }
 .project-card:hover { box-shadow:0 10px 25px rgba(243,19,23,0.6); transform:scale(1.05); }
 .project-card img { width:100%; margin-bottom:15px; }
-.project-card h3 { font-size:1.8rem; margin-bottom:10px; }
+.project-card p { font-size:1rem; }
+.project-card:hover::after { content:""; position:absolute; top:0; left:0; width:100%; height:100%; box-shadow:0 0 40px rgba(243,19,23,0.3) inset; pointer-events:none; }
 
-/* Social Links Footer */
-.footer { background:#000; color:#f2f0ef; padding:40px 20px; text-align:center; }
-.footer a { margin:0 10px; color:#f2f0ef; transition:0.3s; }
-.footer a:hover { color:#f31317; }
+/* Footer Styling */
+.footer {
+  background: #000;
+  color: #f2f0ef;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-top { display:flex; flex-direction:column; align-items:center; gap:20px; }
+
+.brand-tagline { font-size:1.2rem; text-align:center; }
+
+.footer-nav { display:flex; gap:25px; flex-wrap:wrap; justify-content:center; }
+.footer-nav a { color:#f2f0ef; text-decoration:none; font-weight:normal; transition:0.3s; }
+.footer-nav a:hover { color:#f31317; transform:scale(1.05); }
+
+.social-links { display:flex; gap:20px; }
+.social-links a { color:#f2f0ef; font-weight:bold; transition:0.3s; }
+.social-links a:hover { color:#f31317; transform:scale(1.1); }
+
+.footer-bottom { margin-top:25px; border-top:1px solid #f31317; padding-top:15px; font-size:0.9rem; text-align:center; width:100%; }
 
 /* Responsive */
 @media(max-width:900px) {
@@ -51,6 +76,8 @@ a { text-decoration:none; color:inherit; }
   .hero-text, .hero-image { max-width:100%; }
   .core-truths { flex-direction:column; }
   .projects { flex-direction:column; align-items:center; }
+  .footer-nav { flex-direction:column; gap:15px; }
+  .social-links { flex-direction:column; gap:10px; }
 }
 </style>
 </head>
@@ -61,10 +88,15 @@ a { text-decoration:none; color:inherit; }
   <div class="hero-text">
     <h1>elpatonegro</h1>
     <p class="subline">Where vision, grit, and strategy meet.</p>
+    <div class="core-flow">
+      <span>Discipline</span>
+      <span>Creativity</span>
+      <span>Persistence</span>
+    </div>
     <a href="#projects" class="cta">LET’S BEGIN</a>
   </div>
   <div class="hero-image">
-    <img src="images/el%20pato%20negro%20(4).png" alt="Black Duck with elpatonegro">
+    <img src="images/el%20pato%20negro.png" alt="Black Duck">
   </div>
 </section>
 
@@ -89,27 +121,40 @@ a { text-decoration:none; color:inherit; }
   <p>Most ideas die because they’re untested. <b class="italic">elpatonegro</b> exists to turn raw drive into tangible outcomes. We explore, build, and execute relentlessly.</p>
 </section>
 
-<!-- Projects -->
+<!-- Projects / Ideas / Work With Me -->
 <section id="projects" class="projects">
   <a href="#" class="project-card">
     <img src="images/epn.projects.png" alt="Projects">
-    <h3>Projects</h3>
+    <p>Experiments & builds that push ideas into reality.</p>
   </a>
   <a href="#" class="project-card">
     <img src="images/epn.ideas.png" alt="Ideas">
-    <h3>Ideas</h3>
+    <p>Essays, frameworks, and insights for thinking differently.</p>
   </a>
   <a href="#" class="project-card">
     <img src="images/epn.wwm.png" alt="Work With Me">
-    <h3>Work With Me</h3>
+    <p>Consulting & strategy to execute with impact.</p>
   </a>
 </section>
 
 <!-- Footer -->
 <footer class="footer">
-  <p>Follow:</p>
-  <a href="https://www.instagram.com/elpatonegro_/" target="_blank">Instagram</a>
-  <a href="https://x.com/_elpatonegro" target="_blank">X</a>
+  <div class="footer-top">
+    <p class="brand-tagline">elpatonegro — turning drive into tangible outcomes</p>
+    <nav class="footer-nav">
+      <a href="#projects">Projects</a>
+      <a href="#ideas">Ideas</a>
+      <a href="#wwm">Work With Me</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="social-links">
+      <a href="https://www.instagram.com/elpatonegro_/" target="_blank">Instagram</a>
+      <a href="https://x.com/_elpatonegro" target="_blank">X</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 elpatonegro</p>
+  </div>
 </footer>
 
 </body>
