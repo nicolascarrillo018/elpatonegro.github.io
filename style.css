@@ -1,0 +1,168 @@
+/* Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Times New Roman', serif;
+}
+
+body {
+  background-color: #000;
+  color: #f2f0ef;
+  line-height: 1.6;
+}
+
+/* Hero */
+.hero {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 80px;
+}
+
+.hero-text h1 {
+  font-size: 64px;
+  margin-bottom: 20px;
+}
+
+.hero-text .core-truths {
+  color: #f31317;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.hero-text .subline {
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+
+.cta-button {
+  padding: 12px 24px;
+  background-color: #f31317;
+  color: #000;
+  text-decoration: none;
+  font-weight: bold;
+  border: 2px solid transparent;
+  transition: all 0.3s;
+}
+
+.cta-button:hover {
+  background-color: #000;
+  color: #f31317;
+  border: 2px solid #f31317;
+}
+
+.hero-image img {
+  max-width: 300px;
+  height: auto;
+}
+
+/* Core Truths */
+.core-truths-section {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.core-truths-section .truth h2 {
+  color: #f31317;
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+.small-link {
+  display: block;
+  margin-top: 20px;
+  text-decoration: none;
+  color: #f31317;
+}
+
+/* Core Offerings */
+.core-offerings {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 60px 20px;
+}
+
+.card {
+  background-color: #111;
+  padding: 30px;
+  margin: 10px;
+  flex: 1 1 250px;
+  border: 2px solid transparent;
+  transition: all 0.3s;
+}
+
+.card:hover {
+  border: 2px solid #f31317;
+}
+
+.card a {
+  display: inline-block;
+  margin-top: 12px;
+  color: #f31317;
+  text-decoration: none;
+}
+
+/* Lead Magnet */
+.lead-magnet {
+  background-color: #f31317;
+  color: #fff;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.lead-magnet input {
+  padding: 12px;
+  margin: 8px;
+  width: 200px;
+}
+
+.lead-magnet button {
+  padding: 12px 24px;
+  background-color: #000;
+  color: #f31317;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Manifesto */
+.manifesto {
+  text-align: center;
+  padding: 60px 20px;
+  font-weight: bold;
+}
+
+/* Footer */
+footer {
+  background-color: #000;
+  text-align: center;
+  padding: 40px 20px;
+  border-top: 1px solid #f31317;
+}
+
+footer a {
+  color: #f31317;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+.footer-brand {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+.footer-tagline {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #f2f0ef;
+}
