@@ -17,7 +17,7 @@ a { text-decoration:none; color:inherit; }
 .hero-text.visible { opacity:1; transform:translateY(0); }
 .hero-text h1 { font-size:4rem; font-style:italic; margin-bottom:15px; }
 .hero-text p.subline { font-size:1.5rem; margin-bottom:20px; }
-.hero-text .core-flow { font-size:2rem; font-weight:bold; margin-top:15px; display:flex; justify-content:center; gap:20px; }
+.hero-text .core-flow { font-size:2rem; font-weight:bold; margin-top:15px; display:flex; flex-direction:column; align-items:center; gap:10px; }
 .hero-text .core-flow span { display:inline-block; animation:flow 9s infinite; }
 @keyframes flow {
   0% { opacity:0; transform:translateY(20px); }
@@ -35,6 +35,19 @@ a { text-decoration:none; color:inherit; }
 /* Parallax effect */
 .hero-image img.parallax { will-change: transform; }
 
+/* Section Titles */
+.section-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 25px;
+  color: #000;
+  opacity:0;
+  transform:translateY(30px);
+  transition:1s ease-out;
+}
+.section-title.visible { opacity:1; transform:translateY(0); }
+
 /* Core Truths */
 .core-truths { display:flex; justify-content:space-around; text-align:center; padding:60px 20px; flex-wrap:wrap; opacity:0; transform:translateY(30px); transition:1s ease-out; }
 .core-truths.visible { opacity:1; transform:translateY(0); }
@@ -48,7 +61,7 @@ a { text-decoration:none; color:inherit; }
 .manifesto b { font-weight:normal; font-style:normal; }
 .manifesto b.italic { font-weight:bold; font-style:italic; }
 
-/* Projects Section */
+/* Projects / Ideas / Work With Me */
 .projects { display:flex; justify-content:space-around; flex-wrap:wrap; padding:60px 20px; opacity:0; transform:translateY(30px); transition:1s ease-out; }
 .projects.visible { opacity:1; transform:translateY(0); }
 .project-card { position:relative; width:300px; margin:20px; cursor:pointer; overflow:hidden; border-radius:10px; border:2px solid #000; background:#f31317; color:#fff; text-align:center; padding:20px; transition:0.3s; }
@@ -127,16 +140,27 @@ a { text-decoration:none; color:inherit; }
   <p>Most ideas die because they’re untested. <b class="italic">elpatonegro</b> exists to turn raw drive into tangible outcomes. We explore, build, and execute relentlessly.</p>
 </section>
 
-<!-- Projects / Ideas / Work With Me -->
+<!-- Projects Section -->
 <section id="projects" class="projects">
+  <h2 class="section-title">Projects</h2>
   <a href="#" class="project-card">
     <img src="images/epn.projects.png" alt="Projects">
     <p>Experiments & builds that push ideas into reality.</p>
   </a>
+</section>
+
+<!-- Ideas Section -->
+<section id="ideas" class="projects">
+  <h2 class="section-title">Ideas</h2>
   <a href="#" class="project-card">
     <img src="images/epn.ideas.png" alt="Ideas">
     <p>Essays, frameworks, and insights for thinking differently.</p>
   </a>
+</section>
+
+<!-- Work With Me Section -->
+<section id="wwm" class="projects">
+  <h2 class="section-title">Work With Me</h2>
   <a href="#" class="project-card">
     <img src="images/epn.wwm.png" alt="Work With Me">
     <p>Consulting & strategy to execute with impact.</p>
@@ -165,7 +189,7 @@ a { text-decoration:none; color:inherit; }
 
 <script>
 // Fade-in on scroll
-const faders = document.querySelectorAll('.hero-text, .hero-image, .core-truths, .manifesto, .projects');
+const faders = document.querySelectorAll('.hero-text, .hero-image, .core-truths, .manifesto, .projects, .section-title');
 const options = { threshold: 0.2 };
 const appearOnScroll = new IntersectionObserver(function(entries, observer){
   entries.forEach(entry => {
