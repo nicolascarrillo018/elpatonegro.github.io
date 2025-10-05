@@ -28,28 +28,27 @@ a { text-decoration:none; color:inherit; }
   50% { opacity:1; }
 }
 
+/* Hero CTA */
 .hero-text .cta { display:inline-block; padding:12px 30px; border:2px solid #000; background:#f31317; color:#fff; font-weight:bold; transition:0.3s; margin-top:20px;}
 .hero-text .cta:hover { background:#fff; color:#f31317; transform:scale(1.05); }
+
+/* Hero Image Float */
 .hero-image { max-width:40%; transition:0.5s; }
-.hero-image img { width:100%; display:block; transition:0.5s; }
+.hero-image img { width:100%; display:block; animation:float 6s ease-in-out infinite; }
+
+@keyframes float {
+  0%,100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
 
 /* Core Truths Section */
-.core-truths { display:flex; justify-content:space-around; flex-wrap:wrap; padding:80px 20px; gap:40px; perspective:1000px; background:#f2f0ef; }
-.truth-card { flex:1 1 200px; padding:30px; text-align:center; color:#000; transition:0.5s; transform-origin:center; font-size:1rem; }
-.truth-card h3 { font-size:1.8rem; font-weight:bold; margin-bottom:10px; }
+.core-truths { display:flex; justify-content:space-around; flex-wrap:wrap; padding:80px 20px; gap:40px; background:#f2f0ef; }
+.truth-card { flex:1 1 200px; padding:30px; text-align:center; color:#000; font-size:1rem; }
+.truth-card h3 { font-size:1.8rem; font-weight:bold; margin-bottom:10px; text-decoration:underline; }
 .truth-card p { font-size:1.2rem; }
 
-/* Revolve effect for core truths */
-@keyframes revolve {
-  0%,100% { transform:scale(1); }
-  50% { transform:scale(1.2); }
-}
-.truth-card:nth-child(1) { animation:revolve 4s infinite ease-in-out; }
-.truth-card:nth-child(2) { animation:revolve 4s infinite ease-in-out 1s; }
-.truth-card:nth-child(3) { animation:revolve 4s infinite ease-in-out 2s; }
-
 /* Mini-manifesto */
-.manifesto { text-align:center; padding:40px 20px; font-size:1.2rem; display:flex; flex-direction:column; gap:10px; }
+.manifesto { text-align:center; padding:40px 20px 60px 20px; font-size:18px; display:flex; flex-direction:column; gap:15px; }
 .manifesto b { font-weight:normal; font-style:normal; }
 .manifesto b.italic { font-weight:bold; font-style:italic; }
 
@@ -58,7 +57,7 @@ a { text-decoration:none; color:inherit; }
 .projects-container { display:flex; justify-content:center; gap:20px; flex-wrap:wrap; padding:20px; }
 .project-box { flex:1 1 220px; background:#f31317; border:2px solid #000; padding:20px; text-align:center; border-radius:10px; transition:0.3s; color:#fff; cursor:pointer; font-size:0.9rem; }
 .project-box:hover { transform:scale(1.05); box-shadow:0 10px 25px rgba(0,0,0,0.6); filter:drop-shadow(0 0 10px #f31317); }
-.project-box h3 { font-size:1.3rem; margin-bottom:10px; }
+.project-box h3 { font-size:20pt; margin-bottom:10px; }
 .project-box img { width:100%; margin-bottom:10px; }
 
 /* Footer Styling */
