@@ -29,16 +29,20 @@ a { text-decoration:none; color:inherit; }
 .hero-image { max-width:40%; transition:0.5s; }
 .hero-image img { width:100%; display:block; transition:0.5s; }
 
-/* Flashing Red Bar */
-.flashing-bar { width:100%; height:4px; background:#f31317; margin:40px 0; animation:flash 1s infinite; }
-@keyframes flash { 0%,50%,100%{opacity:1;}25%,75%{opacity:0;} }
-
 /* Core Truths Section */
-.core-truths { display:flex; justify-content:space-around; flex-wrap:wrap; padding:60px 20px; gap:20px; }
-.truth-card { flex:1 1 200px; background:#f31317; border:2px solid #000; padding:30px; text-align:center; transition:0.3s; border-radius:10px; color:#fff; }
-.truth-card:hover { transform:scale(1.05); box-shadow:0 10px 20px rgba(0,0,0,0.5); filter:drop-shadow(0 0 10px #f31317); }
+.core-truths { display:flex; justify-content:space-around; flex-wrap:wrap; padding:60px 20px; gap:40px; perspective:1000px; }
+.truth-card { flex:1 1 200px; padding:30px; text-align:center; color:#000; transition:0.5s; transform-origin:center; font-size:1rem; }
 .truth-card h3 { font-size:1.8rem; font-weight:bold; margin-bottom:10px; }
 .truth-card p { font-size:1.2rem; }
+
+/* Revolve effect for core truths */
+@keyframes revolve {
+  0%,100% { transform:scale(1); }
+  50% { transform:scale(1.2); }
+}
+.truth-card:nth-child(1) { animation:revolve 4s infinite ease-in-out; }
+.truth-card:nth-child(2) { animation:revolve 4s infinite ease-in-out 1s; }
+.truth-card:nth-child(3) { animation:revolve 4s infinite ease-in-out 2s; }
 
 /* Mini-manifesto */
 .manifesto { text-align:center; padding:40px 20px; font-size:1.2rem; display:flex; flex-direction:column; gap:10px; }
@@ -46,12 +50,12 @@ a { text-decoration:none; color:inherit; }
 .manifesto b.italic { font-weight:bold; font-style:italic; }
 
 /* Projects / Ideas / Work With Me */
-.projects-container { display:flex; justify-content:center; gap:20px; flex-wrap:wrap; padding:60px 20px; }
-.project-box { flex:1 1 250px; background:#f31317; border:2px solid #000; padding:20px; text-align:center; border-radius:10px; transition:0.3s; color:#fff; cursor:pointer; }
+.projects-section-title { text-align:center; font-size:2rem; margin-bottom:40px; font-weight:bold; }
+.projects-container { display:flex; justify-content:center; gap:20px; flex-wrap:wrap; padding:20px; }
+.project-box { flex:1 1 220px; background:#f31317; border:2px solid #000; padding:20px; text-align:center; border-radius:10px; transition:0.3s; color:#fff; cursor:pointer; font-size:0.9rem; }
 .project-box:hover { transform:scale(1.05); box-shadow:0 10px 25px rgba(0,0,0,0.6); filter:drop-shadow(0 0 10px #f31317); }
-.project-box h3 { font-size:1.5rem; margin-bottom:15px; }
+.project-box h3 { font-size:1.3rem; margin-bottom:10px; }
 .project-box img { width:100%; margin-bottom:10px; }
-.project-box p { font-size:1rem; }
 
 /* Footer Styling */
 .footer { background: #000; color: #f2f0ef; padding: 40px 20px; display: flex; flex-direction: column; align-items: center; }
@@ -69,7 +73,7 @@ a { text-decoration:none; color:inherit; }
 @media(max-width:900px) {
   .hero { flex-direction:column; text-align:center; }
   .hero-text, .hero-image { max-width:100%; }
-  .core-truths { flex-direction:column; align-items:center; }
+  .core-truths { flex-direction:column; align-items:center; gap:20px; }
   .projects-container { flex-direction:column; align-items:center; }
   .footer-nav { flex-direction:column; gap:15px; }
   .social-links { flex-direction:column; gap:10px; }
@@ -95,8 +99,6 @@ a { text-decoration:none; color:inherit; }
   </div>
 </section>
 
-<div class="flashing-bar"></div>
-
 <!-- Core Truths -->
 <section id="core-truths" class="core-truths">
   <div class="truth-card">
@@ -120,22 +122,25 @@ a { text-decoration:none; color:inherit; }
   <p>We explore, build, and execute relentlessly.</p>
 </section>
 
-<!-- Projects / Ideas / Work With Me Horizontal -->
-<section class="projects-container">
-  <div class="project-box">
-    <h3>Experiments & Builds</h3>
-    <img src="images/epn.projects.png" alt="Projects">
-    <p>Hands-on experiments & builds that push ideas into reality.</p>
-  </div>
-  <div class="project-box">
-    <h3>Insights & Frameworks</h3>
-    <img src="images/epn.ideas.png" alt="Ideas">
-    <p>Essays, frameworks, and insights for thinking differently.</p>
-  </div>
-  <div class="project-box">
-    <h3>Consulting & Strategy</h3>
-    <img src="images/epn.wwm.png" alt="Work With Me">
-    <p>Guidance and strategy to execute with impact.</p>
+<!-- Projects / Ideas / Work With Me -->
+<section>
+  <h2 class="projects-section-title">What You’ll Find</h2>
+  <div class="projects-container">
+    <div class="project-box">
+      <h3>Experiments & Builds</h3>
+      <img src="images/epn.projects.png" alt="Projects">
+      <p>Hands-on experiments & builds that push ideas into reality.</p>
+    </div>
+    <div class="project-box">
+      <h3>Insights & Frameworks</h3>
+      <img src="images/epn.ideas.png" alt="Ideas">
+      <p>Essays, frameworks, and insights for thinking differently.</p>
+    </div>
+    <div class="project-box">
+      <h3>Consulting & Strategy</h3>
+      <img src="images/epn.wwm.png" alt="Work With Me">
+      <p>Guidance and strategy to execute with impact.</p>
+    </div>
   </div>
 </section>
 
