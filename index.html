@@ -15,29 +15,27 @@ a { text-decoration:none; color:inherit; }
 /* Hero */
 .hero { display:flex; justify-content:space-between; align-items:center; padding:60px; flex-wrap:wrap; }
 .hero-text { max-width:50%; text-align:left; }
-.hero-text h1 { font-size:4rem; font-style:italic; margin-bottom:15px; }
-.hero-text p.subline { font-size:1.5rem; margin-bottom:20px; }
-.hero-text .core-flow { font-size:2.5rem; font-weight:bold; display:flex; flex-direction:column; align-items:center; gap:10px; }
-.hero-text .core-flow span { display:inline-block; animation:flow 9s infinite; }
-@keyframes flow {
-  0% { opacity:0; transform:translateY(20px); }
-  33% { opacity:1; transform:translateY(0); }
-  66% { opacity:0; transform:translateY(-20px); }
-  100% { opacity:0; transform:translateY(0); }
+.hero-text h1 { font-size:4rem; font-style:italic; margin-bottom:20px; }
+.hero-line { font-size:2.5rem; font-weight:bold; display:flex; justify-content:center; gap:20px; animation:wave 3s infinite; }
+@keyframes wave {
+  0%,100% { opacity:0.2; transform:translateY(10px); }
+  25% { opacity:1; transform:translateY(0); }
+  50% { opacity:0.2; transform:translateY(-10px); }
+  75% { opacity:1; transform:translateY(0); }
 }
+.flashing-bar { width:100%; height:4px; background:#f31317; margin:20px 0; animation:flash 1s infinite; }
+@keyframes flash { 0%,50%,100%{opacity:1;}25%,75%{opacity:0;} }
 .hero-text .cta { display:inline-block; padding:12px 30px; border:2px solid #000; background:#f31317; color:#fff; font-weight:bold; transition:0.3s; margin-top:20px;}
 .hero-text .cta:hover { background:#fff; color:#f31317; transform:scale(1.05); }
 .hero-image { max-width:40%; transition:0.5s; }
 .hero-image img { width:100%; display:block; transition:0.5s; }
 
-/* Core Truths */
-.core-truths { display:flex; justify-content:space-around; text-align:center; padding:60px 20px; flex-wrap:wrap; }
-.core-truth { margin:20px; max-width:250px; }
-.core-truth h2 { font-size:2.5rem; font-weight:bold; margin-bottom:10px; }
-.core-truth p { font-size:1.3rem; }
+/* Core Truths Description */
+.core-desc { text-align:center; padding:40px 20px; max-width:600px; margin:0 auto; }
+.core-desc p { font-size:1.3rem; }
 
 /* Mini-manifesto */
-.manifesto { text-align:center; padding:40px 20px; font-size:1.2rem; }
+.manifesto { text-align:center; padding:40px 20px; font-size:1.2rem; display:flex; flex-direction:column; gap:10px; }
 .manifesto b { font-weight:normal; font-style:normal; }
 .manifesto b.italic { font-weight:bold; font-style:italic; }
 
@@ -67,7 +65,6 @@ a { text-decoration:none; color:inherit; }
 @media(max-width:900px) {
   .hero { flex-direction:column; text-align:center; }
   .hero-text, .hero-image { max-width:100%; }
-  .core-truths { flex-direction:column; }
   .projects { flex-direction:column; align-items:center; }
   .footer-nav { flex-direction:column; gap:15px; }
   .social-links { flex-direction:column; gap:10px; }
@@ -80,12 +77,12 @@ a { text-decoration:none; color:inherit; }
 <section class="hero">
   <div class="hero-text">
     <h1>elpatonegro</h1>
-    <p class="subline">Where vision, grit, and strategy meet.</p>
-    <div class="core-flow">
+    <div class="hero-line">
       <span>Discipline</span>
       <span>Creativity</span>
       <span>Persistence</span>
     </div>
+    <div class="flashing-bar"></div>
     <a href="#projects" class="cta">LET’S BEGIN</a>
   </div>
   <div class="hero-image">
@@ -93,39 +90,30 @@ a { text-decoration:none; color:inherit; }
   </div>
 </section>
 
-<!-- Core Truths -->
-<section class="core-truths">
-  <div class="core-truth">
-    <h2>Discipline</h2>
-    <p>Built, not gifted</p>
-  </div>
-  <div class="core-truth">
-    <h2>Creativity</h2>
-    <p>Everyone has it, few cultivate it</p>
-  </div>
-  <div class="core-truth">
-    <h2>Persistence</h2>
-    <p>The unfair advantage</p>
-  </div>
+<!-- Core Truths Description -->
+<section class="core-desc">
+  <p>Built, not gifted. Everyone has creativity, few cultivate it. Persistence is the unfair advantage.</p>
 </section>
 
 <!-- Mini Manifesto -->
 <section class="manifesto">
-  <p>Most ideas die because they’re untested. <b class="italic">elpatonegro</b> exists to turn raw drive into tangible outcomes. We explore, build, and execute relentlessly.</p>
+  <p>Most ideas die because they’re untested.</p>
+  <p><b class="italic">elpatonegro</b> exists to turn raw drive into tangible outcomes.</p>
+  <p>We explore, build, and execute relentlessly.</p>
 </section>
 
 <!-- Projects Section -->
 <section id="projects" class="projects">
-  <h2 class="section-title">Projects</h2>
+  <h2 class="section-title">Experiments & Builds</h2>
   <a href="#" class="project-card">
     <img src="images/epn.projects.png" alt="Projects">
-    <p>Experiments & builds that push ideas into reality.</p>
+    <p>Hands-on experiments & builds that push ideas into reality.</p>
   </a>
 </section>
 
 <!-- Ideas Section -->
 <section id="ideas" class="projects">
-  <h2 class="section-title">Ideas</h2>
+  <h2 class="section-title">Insights & Frameworks</h2>
   <a href="#" class="project-card">
     <img src="images/epn.ideas.png" alt="Ideas">
     <p>Essays, frameworks, and insights for thinking differently.</p>
@@ -134,10 +122,10 @@ a { text-decoration:none; color:inherit; }
 
 <!-- Work With Me Section -->
 <section id="wwm" class="projects">
-  <h2 class="section-title">Work With Me</h2>
+  <h2 class="section-title">Consulting & Strategy</h2>
   <a href="#" class="project-card">
     <img src="images/epn.wwm.png" alt="Work With Me">
-    <p>Consulting & strategy to execute with impact.</p>
+    <p>Guidance and strategy to execute with impact.</p>
   </a>
 </section>
 
