@@ -15,24 +15,30 @@ a { text-decoration:none; color:inherit; }
 /* Hero */
 .hero { display:flex; justify-content:space-between; align-items:center; padding:60px; flex-wrap:wrap; }
 .hero-text { max-width:50%; text-align:left; }
-.hero-text h1 { font-size:4rem; font-style:italic; margin-bottom:20px; }
-.hero-line { font-size:2.5rem; font-weight:bold; display:flex; justify-content:center; gap:20px; animation:wave 3s infinite; }
+.hero-text h1 { font-size:4rem; font-style:italic; margin-bottom:10px; }
+.hero-text p.subline { font-size:1.5rem; margin-bottom:20px; }
+.hero-line { font-size:2.5rem; font-weight:bold; display:flex; justify-content:flex-start; gap:20px; animation:wave 3s infinite; }
 @keyframes wave {
   0%,100% { opacity:0.2; transform:translateY(10px); }
   25% { opacity:1; transform:translateY(0); }
   50% { opacity:0.2; transform:translateY(-10px); }
   75% { opacity:1; transform:translateY(0); }
 }
-.flashing-bar { width:100%; height:4px; background:#f31317; margin:20px 0; animation:flash 1s infinite; }
-@keyframes flash { 0%,50%,100%{opacity:1;}25%,75%{opacity:0;} }
 .hero-text .cta { display:inline-block; padding:12px 30px; border:2px solid #000; background:#f31317; color:#fff; font-weight:bold; transition:0.3s; margin-top:20px;}
 .hero-text .cta:hover { background:#fff; color:#f31317; transform:scale(1.05); }
 .hero-image { max-width:40%; transition:0.5s; }
 .hero-image img { width:100%; display:block; transition:0.5s; }
 
-/* Core Truths Description */
-.core-desc { text-align:center; padding:40px 20px; max-width:600px; margin:0 auto; }
-.core-desc p { font-size:1.3rem; }
+/* Flashing Red Bar */
+.flashing-bar { width:100%; height:4px; background:#f31317; margin:40px 0; animation:flash 1s infinite; }
+@keyframes flash { 0%,50%,100%{opacity:1;}25%,75%{opacity:0;} }
+
+/* Core Truths Section */
+.core-truths { display:flex; justify-content:space-around; flex-wrap:wrap; padding:60px 20px; gap:20px; }
+.truth-card { flex:1 1 200px; background:#f31317; border:2px solid #000; padding:30px; text-align:center; transition:0.3s; border-radius:10px; color:#fff; }
+.truth-card:hover { transform:scale(1.05); box-shadow:0 10px 20px rgba(0,0,0,0.5); filter:drop-shadow(0 0 10px #f31317); }
+.truth-card h3 { font-size:1.8rem; font-weight:bold; margin-bottom:10px; }
+.truth-card p { font-size:1.2rem; }
 
 /* Mini-manifesto */
 .manifesto { text-align:center; padding:40px 20px; font-size:1.2rem; display:flex; flex-direction:column; gap:10px; }
@@ -40,14 +46,12 @@ a { text-decoration:none; color:inherit; }
 .manifesto b.italic { font-weight:bold; font-style:italic; }
 
 /* Projects / Ideas / Work With Me */
-.projects { display:flex; justify-content:space-around; flex-wrap:wrap; padding:60px 20px; }
-.project-card { position:relative; width:300px; margin:20px; cursor:pointer; overflow:hidden; border-radius:10px; border:2px solid #000; background:#f31317; color:#fff; text-align:center; padding:20px; transition:0.3s; }
-.project-card:hover { box-shadow:0 10px 25px rgba(0,0,0,0.6); transform:scale(1.05); filter: drop-shadow(0 0 8px #f31317); }
-.project-card img { width:100%; margin-bottom:15px; }
-.project-card p { font-size:1rem; }
-
-/* Section Titles */
-.section-title { font-size:2.5rem; font-weight:bold; text-align:center; margin-bottom:25px; color:#000; }
+.projects-container { display:flex; justify-content:center; gap:20px; flex-wrap:wrap; padding:60px 20px; }
+.project-box { flex:1 1 250px; background:#f31317; border:2px solid #000; padding:20px; text-align:center; border-radius:10px; transition:0.3s; color:#fff; cursor:pointer; }
+.project-box:hover { transform:scale(1.05); box-shadow:0 10px 25px rgba(0,0,0,0.6); filter:drop-shadow(0 0 10px #f31317); }
+.project-box h3 { font-size:1.5rem; margin-bottom:15px; }
+.project-box img { width:100%; margin-bottom:10px; }
+.project-box p { font-size:1rem; }
 
 /* Footer Styling */
 .footer { background: #000; color: #f2f0ef; padding: 40px 20px; display: flex; flex-direction: column; align-items: center; }
@@ -65,7 +69,8 @@ a { text-decoration:none; color:inherit; }
 @media(max-width:900px) {
   .hero { flex-direction:column; text-align:center; }
   .hero-text, .hero-image { max-width:100%; }
-  .projects { flex-direction:column; align-items:center; }
+  .core-truths { flex-direction:column; align-items:center; }
+  .projects-container { flex-direction:column; align-items:center; }
   .footer-nav { flex-direction:column; gap:15px; }
   .social-links { flex-direction:column; gap:10px; }
 }
@@ -77,22 +82,35 @@ a { text-decoration:none; color:inherit; }
 <section class="hero">
   <div class="hero-text">
     <h1>elpatonegro</h1>
+    <p class="subline">Where vision, grit, and strategy meet.</p>
     <div class="hero-line">
       <span>Discipline</span>
       <span>Creativity</span>
       <span>Persistence</span>
     </div>
-    <div class="flashing-bar"></div>
-    <a href="#projects" class="cta">LET’S BEGIN</a>
+    <a href="#core-truths" class="cta">LET'S BEGIN</a>
   </div>
   <div class="hero-image">
     <img src="images/el%20pato%20negro.png" alt="Black Duck">
   </div>
 </section>
 
-<!-- Core Truths Description -->
-<section class="core-desc">
-  <p>Built, not gifted. Everyone has creativity, few cultivate it. Persistence is the unfair advantage.</p>
+<div class="flashing-bar"></div>
+
+<!-- Core Truths -->
+<section id="core-truths" class="core-truths">
+  <div class="truth-card">
+    <h3>Discipline</h3>
+    <p>Built, not gifted.</p>
+  </div>
+  <div class="truth-card">
+    <h3>Creativity</h3>
+    <p>Everyone has creativity, few cultivate it.</p>
+  </div>
+  <div class="truth-card">
+    <h3>Persistence</h3>
+    <p>This is the unfair advantage.</p>
+  </div>
 </section>
 
 <!-- Mini Manifesto -->
@@ -102,31 +120,23 @@ a { text-decoration:none; color:inherit; }
   <p>We explore, build, and execute relentlessly.</p>
 </section>
 
-<!-- Projects Section -->
-<section id="projects" class="projects">
-  <h2 class="section-title">Experiments & Builds</h2>
-  <a href="#" class="project-card">
+<!-- Projects / Ideas / Work With Me Horizontal -->
+<section class="projects-container">
+  <div class="project-box">
+    <h3>Experiments & Builds</h3>
     <img src="images/epn.projects.png" alt="Projects">
     <p>Hands-on experiments & builds that push ideas into reality.</p>
-  </a>
-</section>
-
-<!-- Ideas Section -->
-<section id="ideas" class="projects">
-  <h2 class="section-title">Insights & Frameworks</h2>
-  <a href="#" class="project-card">
+  </div>
+  <div class="project-box">
+    <h3>Insights & Frameworks</h3>
     <img src="images/epn.ideas.png" alt="Ideas">
     <p>Essays, frameworks, and insights for thinking differently.</p>
-  </a>
-</section>
-
-<!-- Work With Me Section -->
-<section id="wwm" class="projects">
-  <h2 class="section-title">Consulting & Strategy</h2>
-  <a href="#" class="project-card">
+  </div>
+  <div class="project-box">
+    <h3>Consulting & Strategy</h3>
     <img src="images/epn.wwm.png" alt="Work With Me">
     <p>Guidance and strategy to execute with impact.</p>
-  </a>
+  </div>
 </section>
 
 <!-- Footer -->
@@ -134,6 +144,7 @@ a { text-decoration:none; color:inherit; }
   <div class="footer-top">
     <p class="brand-tagline">elpatonegro — turning drive into tangible outcomes</p>
     <nav class="footer-nav">
+      <a href="#core-truths">Core Truths</a>
       <a href="#projects">Projects</a>
       <a href="#ideas">Ideas</a>
       <a href="#wwm">Work With Me</a>
