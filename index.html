@@ -48,17 +48,14 @@ a { text-decoration:none; color:inherit; }
 .truth-card p { font-size:1.5rem; }
 
 /* Mini-manifesto */
-.manifesto { text-align:center; padding:40px 20px 60px 20px; font-size:18px; display:flex; flex-direction:column; gap:15px; }
+.manifesto { text-align:center; padding:20px 20px 120px 20px; font-size:18px; display:flex; flex-direction:column; gap:15px; } /* top padding reduced from 40px → 20px, bottom padding increased from 60px → 120px */
 .manifesto b { font-weight:normal; font-style:normal; }
 .manifesto b.italic { font-weight:bold; font-style:italic; }
 
-/* Spacing before What You’ll Find */
-.after-core-truths { height:80px; } /* doubled spacing from previous 40px */
-
 /* Projects / Ideas / Work With Me */
 .projects-section-title { text-align:center; font-size:2rem; margin:60px 0 40px 0; font-weight:bold; }
-.projects-container { display:flex; justify-content:center; gap:20px; flex-wrap:wrap; padding:20px; }
-.project-box { flex:1 1 220px; background:#f31317; border:2px solid #000; padding:20px; text-align:center; border-radius:10px; transition:0.3s; color:#fff; cursor:pointer; font-size:1.1rem; } /* increased description font */
+.projects-container { display:flex; justify-content:center; gap:20px; flex-wrap:wrap; padding:40px 20px 120px 20px; } /* bottom padding doubled for spacing to footer */
+.project-box { flex:1 1 220px; background:#f31317; border:2px solid #000; padding:20px; text-align:center; border-radius:10px; transition:0.3s; color:#fff; cursor:pointer; font-size:1.1rem; }
 .project-box:hover { transform:scale(1.05); box-shadow:0 10px 25px rgba(0,0,0,0.6); filter:drop-shadow(0 0 10px #f31317); }
 .project-box h3 { font-size:20pt; margin-bottom:10px; }
 .project-box img { width:100%; margin-bottom:10px; }
@@ -120,8 +117,6 @@ a { text-decoration:none; color:inherit; }
     <p>This is the unfair advantage.</p>
   </div>
 </section>
-
-<div class="after-core-truths"></div> <!-- spacing before next section -->
 
 <!-- Mini Manifesto -->
 <section class="manifesto">
