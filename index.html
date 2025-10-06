@@ -6,90 +6,111 @@
 <title>elpatonegro</title>
 <link rel="icon" href="images/el%20pato%20negro.png" type="image/png">
 <style>
-/* Reset & Base */
+/* Base / Dark Mode */
 * { margin:0; padding:0; box-sizing:border-box; font-family:"Times New Roman", serif; }
 html { scroll-behavior:smooth; }
-body { background:#121212; color:#f2f0ef; line-height:1.6; overflow-x:hidden; }
-
-/* Links & Accent */
+body { background:#121212; color:#f2f0ef; line-height:1.6; overflow-x:hidden; padding-top:70px; }
 a { text-decoration:none; color:#f2f0ef; transition:color 0.3s; }
 a:hover { color:#f31317; }
 
 /* Sticky Nav */
-.sticky-nav { position:fixed; top:0; width:100%; background:#1c1c1c; z-index:999; box-shadow:0 2px 10px rgba(0,0,0,0.7);}
-.sticky-nav ul { display:flex; justify-content:flex-end; list-style:none; padding:10px 5%; }
-.sticky-nav a { margin-left:30px; font-weight:bold; }
+.sticky-nav { 
+  position:fixed; 
+  top:0; 
+  width:100%; 
+  background:#121212; 
+  z-index:999; 
+  box-shadow:0 2px 10px rgba(0,0,0,0.5);
+}
+.sticky-nav ul { 
+  display:flex; 
+  justify-content:flex-end; 
+  list-style:none; 
+  padding:15px 5%; 
+  margin:0;
+}
+.sticky-nav a { 
+  text-decoration:none; 
+  margin-left:30px; 
+  color:#f2f0ef; 
+  font-weight:bold; 
+  transition:color 0.3s, transform 0.3s; 
+}
+.sticky-nav a:hover { 
+  color:#f31317; 
+  transform:scale(1.05);
+}
 
 /* Hero */
-.hero { display:flex; align-items:center; justify-content:space-between; padding:100px 5%; position:relative; flex-wrap:wrap; }
-.hero-text { flex:1; min-width:300px; }
-.hero-text h1 { font-size:clamp(2.5rem, 6vw, 4rem); font-style:italic; margin-bottom:20px; }
-.hero-text .tagline { font-size:clamp(1.2rem, 2.5vw, 1.5rem); margin-bottom:15px; }
-.hero-text .core-truth { font-weight:bold; font-size:clamp(1rem,2vw,1.2rem); margin-bottom:30px; min-height:1.5em; }
-.cta-button { display:inline-block; padding:15px 30px; background:#f31317; color:#fff; font-weight:bold; transition: transform 0.3s, box-shadow 0.3s; border:none; border-radius:5px; }
-.cta-button:hover { transform:scale(1.05); box-shadow:0 5px 15px rgba(0,0,0,0.7); }
+.hero { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; padding:100px 5%; text-align:center; }
+.hero-text h1 { font-size:clamp(2.5rem,6vw,4rem); font-style:italic; margin-bottom:20px; }
+.hero-text p.subline { font-size:clamp(1.2rem,2.5vw,1.5rem); margin-bottom:30px; }
+.hero-line { font-size:2rem; font-weight:bold; display:flex; justify-content:center; gap:20px; }
+.hero-line span { opacity:0; animation:fadeWave 6s infinite; }
+.hero-line span:nth-child(1) { animation-delay:0s; }
+.hero-line span:nth-child(2) { animation-delay:2s; }
+.hero-line span:nth-child(3) { animation-delay:4s; }
+@keyframes fadeWave { 0%,100% { opacity:0; } 50% { opacity:1; } }
 
-/* Hero Image & Duck */
-.hero-image img { max-width:400px; width:100%; height:auto; transition: transform 0.3s; }
+.cta-button { display:inline-block; padding:15px 30px; background:#f31317; color:#fff; font-weight:bold; transition:transform 0.3s, box-shadow 0.3s; margin-top:20px; }
+.cta-button:hover { transform:scale(1.05); box-shadow:0 5px 15px rgba(0,0,0,0.3); }
+
+.hero-image img { max-width:400px; width:100%; height:auto; transition:transform 0.3s; }
 .hero-image img:hover { transform:scale(1.05); }
-
-.floating-duck { width:50px; opacity:0.3; position:absolute; animation: float 6s ease-in-out infinite; transition: transform 0.3s; z-index:1;}
-.floating-duck:hover { transform:scale(1.2); opacity:0.7; }
-@keyframes float { 0%{transform:translateY(0);} 50%{transform:translateY(-10px);} 100%{transform:translateY(0);} }
-
-/* Fade-in */
-.fade-in { opacity:0; transform:translateY(20px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
-.fade-in.visible { opacity:1; transform:translateY(0); }
+@keyframes float { 0%,100%{transform:translateY(0);} 50%{transform:translateY(-10px);} }
 
 /* Core Truths + Manifesto */
 .core-truths-manifesto { display:flex; flex-wrap:wrap; justify-content:space-around; padding:60px 5%; text-align:center; }
 .core-truths-manifesto .truth { flex:1 1 200px; margin:20px; }
+.core-truths-manifesto .truth h3 { font-size:1.8rem; margin-bottom:10px; }
+.core-truths-manifesto .truth p { font-size:1.2rem; }
 .manifesto-text { flex-basis:100%; margin:40px 0; font-weight:bold; font-size:1.2rem; }
 
-/* Core Offerings */
+/* Projects / Offerings */
 .core-offerings { display:flex; flex-wrap:wrap; justify-content:space-around; padding:60px 5%; }
-.card { background:#1c1c1c; border:2px solid #f31317; border-radius:10px; padding:30px; margin:20px; flex:1 1 250px; text-align:center; transition: transform 0.3s, box-shadow 0.3s; }
+.card { background:#1a1a1a; border:2px solid #f31317; border-radius:10px; padding:30px; margin:20px; flex:1 1 250px; text-align:center; transition: transform 0.3s, box-shadow 0.3s; }
 .card img { max-width:150px; margin-bottom:20px; }
-.card:hover { transform:scale(1.05) rotate(-1deg); box-shadow:0 10px 20px rgba(243,19,23,0.7); }
-.card a { color:#f31317; font-weight:bold; }
+.card:hover { transform:scale(1.05) rotate(-1deg); box-shadow:0 10px 20px rgba(0,0,0,0.5); }
+.card a { color:#f31317; text-decoration:none; font-weight:bold; }
 .card a:hover { text-decoration:underline; }
-
-/* Lead Magnet */
-.lead-magnet { background:#f31317; color:#fff; padding:60px 5%; text-align:center; border-radius:10px; }
-.lead-magnet h2 { font-size:2rem; margin-bottom:20px; }
-.lead-magnet p { margin-bottom:30px; }
-.lead-magnet input[type="text"], .lead-magnet input[type="email"] { padding:15px; margin:5px; border:none; border-radius:5px; width:200px; }
-.lead-magnet button { padding:15px 30px; border:none; border-radius:5px; background:#fff; color:#f31317; font-weight:bold; cursor:pointer; transition: transform 0.3s, box-shadow 0.3s; }
-.lead-magnet button:hover { transform:scale(1.05); box-shadow:0 5px 15px rgba(0,0,0,0.7); }
 
 /* Footer */
 footer { background:#000; color:#f2f0ef; padding:40px 5%; text-align:center; }
-footer .socials a { color:#f2f0ef; margin:0 10px; transition:color 0.3s; }
+footer .socials a { color:#f2f0ef; margin:0 10px; text-decoration:none; transition:color 0.3s; }
 footer .socials a:hover { color:#f31317; }
 
 /* Responsive */
-@media (max-width:1024px) {
-  .hero { flex-direction:column; text-align:center; }
-  .hero-image { margin-bottom:30px; }
+@media(max-width:900px) {
+  .hero { flex-direction:column; }
+  .hero-image img { margin-bottom:30px; }
   .core-offerings { flex-direction:column; align-items:center; }
-}
-
-@media (max-width:600px) {
-  .hero-line { flex-direction:column; gap:5px; }
-  .card { width:100%; max-width:340px; }
-  .cta-button { width:100%; font-size:1rem; }
-  footer .socials { flex-direction:column; gap:10px; }
+  .core-truths-manifesto { flex-direction:column; }
 }
 </style>
 </head>
 <body>
 
+<!-- Sticky Nav -->
+<header class="sticky-nav">
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
 <!-- Hero -->
 <section class="hero">
   <div class="hero-text">
     <h1>elpatonegro</h1>
-    <p class="tagline">Where vision, grit, and strategy meet.</p>
-    <p class="core-truth fade-in">Discipline. Creativity. Persistence.</p>
+    <p class="subline">Where vision, grit, and strategy meet.</p>
+    <div class="hero-line">
+      <span>Discipline.</span>
+      <span>Creativity.</span>
+      <span>Persistence.</span>
+    </div>
     <a href="#core-truths" class="cta-button">LET'S BEGIN</a>
   </div>
   <div class="hero-image">
@@ -97,53 +118,46 @@ footer .socials a:hover { color:#f31317; }
   </div>
 </section>
 
-<!-- Core Truths + Manifesto -->
-<section class="core-truths-manifesto" id="core-truths">
-  <div class="truth fade-in">
+<!-- Core Truths -->
+<section id="core-truths" class="core-truths-manifesto">
+  <div class="truth">
     <h3>Discipline</h3>
     <p>Built, not gifted.</p>
   </div>
-  <div class="truth fade-in">
+  <div class="truth">
     <h3>Creativity</h3>
     <p>Everyone has creativity, few cultivate it.</p>
   </div>
-  <div class="truth fade-in">
+  <div class="truth">
     <h3>Persistence</h3>
     <p>This is the unfair advantage.</p>
   </div>
-  <p class="manifesto-text fade-in">Most ideas die because they’re untested.<br>
-  <b>elpatonegro</b> exists to turn raw drive into tangible outcomes.<br>
-  We explore, build, and execute relentlessly.</p>
 </section>
 
-<!-- Core Offerings -->
+<!-- Manifesto -->
+<section class="manifesto-text">
+  <p>Most ideas die because they’re untested.</p>
+  <p><b>elpatonegro</b> exists to turn raw drive into tangible outcomes.</p>
+  <p>We explore, build, and execute relentlessly.</p>
+</section>
+
+<!-- Projects / Offerings -->
 <section class="core-offerings">
-  <div class="card fade-in">
+  <div class="card">
     <h3>Experiments & Builds</h3>
     <img src="images/epn.projects.png" alt="Projects">
     <p>Hands-on experiments & builds that push ideas into reality.</p>
   </div>
-  <div class="card fade-in">
+  <div class="card">
     <h3>Insights & Frameworks</h3>
     <img src="images/epn.ideas.png" alt="Ideas">
     <p>Essays, frameworks, and insights for thinking differently.</p>
   </div>
-  <div class="card fade-in">
+  <div class="card">
     <h3>Consulting & Strategy</h3>
     <img src="images/epn.wwm.png" alt="Work With Me">
     <p>Guidance and strategy to execute with impact.</p>
   </div>
-</section>
-
-<!-- Lead Magnet / Newsletter -->
-<section class="lead-magnet">
-  <h2>Join the Flight</h2>
-  <p>Get updates, insights, and projects straight to your inbox.</p>
-  <form>
-    <input type="text" placeholder="Your Name">
-    <input type="email" placeholder="Your Email">
-    <button type="submit">SUBSCRIBE</button>
-  </form>
 </section>
 
 <!-- Footer -->
@@ -154,16 +168,6 @@ footer .socials a:hover { color:#f31317; }
     <a href="https://x.com/_elpatonegro" target="_blank">X</a>
   </div>
 </footer>
-
-<script>
-// Simple fade-in scroll animation
-const faders = document.querySelectorAll('.fade-in');
-const appearOptions = { threshold: 0.2, rootMargin: "0px 0px -50px 0px" };
-const appearOnScroll = new IntersectionObserver(function(entries, observer) {
-  entries.forEach(entry => { if(entry.isIntersecting){ entry.target.classList.add('visible'); observer.unobserve(entry.target); } });
-}, appearOptions);
-faders.forEach(fader => appearOnScroll.observe(fader));
-</script>
 
 </body>
 </html>
