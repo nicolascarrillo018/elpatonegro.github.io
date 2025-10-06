@@ -5,15 +5,20 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>elpatonegro</title>
 <link rel="icon" href="images/el%20pato%20negro.png" type="image/png">
-
 <style>
 /* Base */
 * { margin:0; padding:0; box-sizing:border-box; font-family:'Times New Roman', serif; }
-body { background:#f2f0ef; color:#000; line-height:1.5; overflow-x:hidden; }
-a { text-decoration:none; color:inherit; }
+body { background:#f2f0ef; color:#000; line-height:1.5; overflow-x:hidden; padding-top:70px; }
+
+/* Sticky Navbar */
+.sticky-nav { position:fixed; top:0; width:100%; background:#f2f0ef; z-index:999; box-shadow:0 2px 10px rgba(0,0,0,0.1); }
+.sticky-nav ul { display:flex; justify-content:flex-end; list-style:none; padding:15px 5%; margin:0; }
+.sticky-nav li { margin-left:30px; }
+.sticky-nav a { text-decoration:none; color:#000; font-weight:bold; transition:0.3s; }
+.sticky-nav a:hover { color:#f31317; }
 
 /* Hero */
-.hero { display:flex; justify-content:space-between; align-items:center; padding:100px 60px; flex-wrap:wrap; min-height:80vh; }
+.hero { display:flex; justify-content:space-between; align-items:center; padding:100px 5%; flex-wrap:wrap; min-height:80vh; }
 .hero-text { max-width:50%; text-align:left; }
 .hero-text h1 { font-size:4rem; font-style:italic; margin-bottom:10px; }
 .hero-text p.subline { font-size:1.5rem; margin-bottom:30px; }
@@ -22,72 +27,52 @@ a { text-decoration:none; color:inherit; }
 .hero-line span:nth-child(1) { animation-delay:0s; }
 .hero-line span:nth-child(2) { animation-delay:2s; }
 .hero-line span:nth-child(3) { animation-delay:4s; }
-
-@keyframes fadeWave {
-  0%,100% { opacity:0; }
-  50% { opacity:1; }
-}
-
-/* Hero CTA */
+@keyframes fadeWave { 0%,100% { opacity:0; } 50% { opacity:1; } }
 .hero-text .cta { display:inline-block; padding:12px 30px; border:2px solid #000; background:#f31317; color:#fff; font-weight:bold; transition:0.3s; margin-top:20px;}
 .hero-text .cta:hover { background:#fff; color:#f31317; transform:scale(1.05); }
-
-/* Hero Image Float */
 .hero-image { max-width:40%; transition:0.5s; }
 .hero-image img { width:100%; display:block; animation:float 6s ease-in-out infinite; }
+@keyframes float { 0%,100% { transform: translateY(0px); } 50% { transform: translateY(-10px); } }
 
-@keyframes float {
-  0%,100% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
-}
-
-/* Core Truths Section */
-.core-truths { display:flex; justify-content:space-around; flex-wrap:wrap; padding:120px 20px; gap:40px; background:#f2f0ef; font-size:1.5rem; }
-.truth-card { flex:1 1 200px; padding:30px; text-align:center; color:#000; }
+/* Core Truths + Manifesto */
+.core-truths { display:flex; justify-content:space-around; flex-wrap:wrap; padding:120px 5%; gap:40px; text-align:center; }
+.truth-card { flex:1 1 200px; padding:30px; }
 .truth-card h3 { font-size:2.1rem; font-weight:bold; margin-bottom:10px; text-decoration:underline; }
 .truth-card p { font-size:1.5rem; }
+.manifesto { flex-basis:100%; margin:40px 0; font-weight:bold; font-size:1.2rem; }
 
-/* Mini-manifesto */
-.manifesto { text-align:center; padding:20px 20px 120px 20px; font-size:24px; display:flex; flex-direction:column; gap:15px; }
-.manifesto b { font-weight:normal; font-style:normal; }
-.manifesto b.italic { font-weight:bold; font-style:italic; }
-
-/* Projects / Ideas / Work With Me */
-.projects-section-title { text-align:center; font-size:2rem; margin:60px 0 40px 0; font-weight:bold; }
-.projects-container { display:flex; justify-content:center; gap:20px; flex-wrap:wrap; padding:40px 20px 120px 20px; }
-.project-box { flex:1 1 220px; background:#f31317; border:2px solid #000; padding:20px; text-align:center; border-radius:10px; transition:0.3s; color:#fff; cursor:pointer; font-size:1.1rem; }
+/* Projects / Offerings */
+.projects-container { display:flex; justify-content:center; gap:20px; flex-wrap:wrap; padding:40px 5% 120px 5%; text-align:center; }
+.project-box { flex:1 1 220px; background:#f31317; border:2px solid #000; padding:20px; border-radius:10px; transition:0.3s; color:#fff; cursor:pointer; font-size:1.1rem; }
 .project-box:hover { transform:scale(1.05); box-shadow:0 10px 25px rgba(0,0,0,0.6); filter:drop-shadow(0 0 10px #f31317); }
 .project-box h3 { font-size:20pt; margin-bottom:10px; }
 .project-box img { width:100%; margin-bottom:10px; }
 
-/* Footer Styling */
-.footer { background: #000; color: #f2f0ef; padding: 40px 20px; display: flex; flex-direction: column; align-items: center; }
-.footer-top { display:flex; flex-direction:column; align-items:center; gap:20px; }
-.brand-tagline { font-size:1.2rem; text-align:center; }
-.footer-nav { display:flex; gap:25px; flex-wrap:wrap; justify-content:center; }
-.footer-nav a { color:#f2f0ef; text-decoration:none; font-weight:normal; transition:0.3s; }
-.footer-nav a:hover { color:#f31317; transform:scale(1.05); }
-.social-links { display:flex; gap:20px; }
-.social-links a { color:#f2f0ef; font-weight:bold; transition:0.3s; }
-.social-links a:hover { color:#f31317; transform:scale(1.1); }
-.footer-bottom { margin-top:25px; border-top:1px solid #f31317; padding-top:15px; font-size:0.9rem; text-align:center; width:100%; }
+/* Footer */
+footer { background:#000; color:#f2f0ef; padding:40px 5%; text-align:center; }
+footer .socials a { color:#f2f0ef; margin:0 10px; text-decoration:none; transition:0.3s; }
+footer .socials a:hover { color:#f31317; transform:scale(1.05); }
 
-/* Responsive Fixes */
+/* Responsive */
 @media(max-width:900px) {
-  .hero { flex-direction:column; text-align:center; padding:60px 20px; }
+  .hero { flex-direction:column; text-align:center; }
   .hero-text, .hero-image { max-width:100%; }
-  .core-truths, .manifesto, .projects-container { 
-    flex-direction: column; 
-    align-items: center; 
-    text-align: center; 
-  }
-  .truth-card, .project-box { max-width:300px; width:100%; }
-  .footer-nav { flex-direction:column; gap:15px; }
-  .social-links { flex-direction:column; gap:10px; }
+  .core-truths { flex-direction:column; align-items:center; }
+  .projects-container { flex-direction:column; align-items:center; }
+  .sticky-nav ul { justify-content:center; }
 }
 </style>
 </head>
 <body>
+
+<!-- Navbar -->
+<nav class="sticky-nav">
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
 
 <!-- Hero -->
 <section class="hero">
@@ -106,7 +91,7 @@ a { text-decoration:none; color:inherit; }
   </div>
 </section>
 
-<!-- Core Truths -->
+<!-- Core Truths + Manifesto -->
 <section id="core-truths" class="core-truths">
   <div class="truth-card">
     <h3>Discipline</h3>
@@ -120,13 +105,11 @@ a { text-decoration:none; color:inherit; }
     <h3>Persistence</h3>
     <p>This is the unfair advantage.</p>
   </div>
-</section>
-
-<!-- Mini Manifesto -->
-<section class="manifesto">
-  <p>Most ideas die because they’re untested.</p>
-  <p><b class="italic">elpatonegro</b> exists to turn raw drive into tangible outcomes.</p>
-  <p>We explore, build, and execute relentlessly.</p>
+  <div class="manifesto">
+    <p>Most ideas die because they’re untested.</p>
+    <p><b class="italic">elpatonegro</b> exists to turn raw drive into tangible outcomes.</p>
+    <p>We explore, build, and execute relentlessly.</p>
+  </div>
 </section>
 
 <!-- Projects -->
@@ -152,24 +135,12 @@ a { text-decoration:none; color:inherit; }
 </section>
 
 <!-- Footer -->
-<footer class="footer">
-  <div class="footer-top">
-    <p class="brand-tagline">elpatonegro - turning drive into tangible outcomes</p>
-    <nav class="footer-nav">
-      <a href="#core-truths">Core Truths</a>
-      <a href="#projects">Projects</a>
-      <a href="#ideas">Ideas</a>
-      <a href="#wwm">Work With Me</a>
-      <a href="#contact">Contact</a>
-    </nav>
-    <div class="social-links">
-      <a href="https://www.instagram.com/elpatonegro_/" target="_blank">Instagram</a>
-      <a href="https://x.com/_elpatonegro" target="_blank">X</a>
-    </div>
+<footer>
+  <div class="socials">
+    <a href="https://www.instagram.com/elpatonegro_/" target="_blank">Instagram</a>
+    <a href="https://x.com/_elpatonegro" target="_blank">X</a>
   </div>
-  <div class="footer-bottom">
-    <p>© 2025 elpatonegro</p>
-  </div>
+  <p>© 2025 elpatonegro</p>
 </footer>
 
 </body>
