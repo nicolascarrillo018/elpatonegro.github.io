@@ -4,17 +4,35 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>About - elpatonegro</title>
-<link rel="stylesheet" href="style.css">
+<link rel="icon" href="images/el%20pato%20negro.png" type="image/png">
+<style>
+body { font-family:'Times New Roman', serif; background:#f2f0ef; color:#000; line-height:1.5; margin:0; padding-top:70px; text-align:center; }
+.sticky-nav { position:fixed; top:0; width:100%; background:#f2f0ef; z-index:999; box-shadow:0 2px 10px rgba(0,0,0,0.1); }
+.sticky-nav ul { display:flex; justify-content:flex-end; list-style:none; padding:15px 5%; margin:0; }
+.sticky-nav li { margin-left:30px; }
+.sticky-nav a { text-decoration:none; color:#000; font-weight:bold; transition:0.3s; }
+.sticky-nav a:hover { color:#f31317; }
+section { padding:80px 20px; }
+h1, h2 { margin-bottom:20px; }
+p { margin-bottom:15px; }
+@media(max-width:600px){ body { text-align:center; } }
+</style>
 </head>
 <body>
 
-<section class="about-hero">
-  <h1>About elpatonegro</h1>
-</section>
+<!-- Navbar -->
+<nav class="sticky-nav">
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
 
-<section class="about-manifesto">
-  <p>Turning vision, grit, and strategy into tangible outcomes.</p>
-  <p>We explore, build, and execute relentlessly.</p>
+<section>
+  <h1>About</h1>
+  <p>Turning vision, grit, and strategy into tangible outcomes.<br>We explore, build, and execute relentlessly.</p>
+  <p>elpatonegro exists to turn raw drive into real results.</p>
 </section>
 
 <footer>
