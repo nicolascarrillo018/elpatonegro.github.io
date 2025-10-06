@@ -21,6 +21,8 @@ button:hover { transform:scale(1.05); box-shadow:0 5px 15px rgba(0,0,0,0.3); }
 footer { background:#000; color:#f2f0ef; padding:40px 5%; text-align:center; }
 footer a { color:#f2f0ef; margin:0 10px; text-decoration:none; transition:0.3s; }
 footer a:hover { color:#f31317; transform:scale(1.05); }
+h1, h2 { margin-bottom:20px; }
+p { margin-bottom:15px; }
 @media(max-width:600px){ form { width:100%; } input, textarea, button { width:100%; } }
 </style>
 </head>
@@ -37,7 +39,7 @@ footer a:hover { color:#f31317; transform:scale(1.05); }
 
 <section>
   <h1>Contact</h1>
-  <p>Have questions, ideas, or want to connect? Fill out the form below.</p>
+  <p>Have a project, question, or idea?<br>Let’s build something together.</p>
 </section>
 
 <section>
@@ -46,6 +48,7 @@ footer a:hover { color:#f31317; transform:scale(1.05); }
     <input type="text" name="name" placeholder="Your Name" required>
     <input type="email" name="email" placeholder="Your Email" required>
     <textarea name="message" placeholder="Your Message" required></textarea>
+    <input type="hidden" name="_next" value="thankyou.html">
     <button type="submit">Send Message</button>
   </form>
 </section>
@@ -57,28 +60,6 @@ footer a:hover { color:#f31317; transform:scale(1.05); }
   </div>
   <p>© 2025 elpatonegro</p>
 </footer>
-
-<script>
-// Form submission with PDF redirect
-const form = document.getElementById('contactForm');
-form.addEventListener('submit', function(e){
-  e.preventDefault();
-  fetch(form.action, {
-    method: 'POST',
-    body: new FormData(form),
-    headers: { 'Accept': 'application/json' }
-  })
-  .then(response => {
-    if(response.ok){
-      // Redirect to PDF after successful submission
-      window.location.href = 'elpatonegro-lead.pdf';
-    } else {
-      alert('Oops! There was a problem submitting your form.');
-    }
-  })
-  .catch(() => alert('Oops! There was a problem submitting your form.'));
-});
-</script>
 
 </body>
 </html>
