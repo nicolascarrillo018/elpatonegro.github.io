@@ -3,26 +3,34 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contact | elpatonegro</title>
+<title>Contact - elpatonegro</title>
 <link rel="icon" href="images/el%20pato%20negro.png" type="image/png">
 <style>
 body { margin:0; padding:0; font-family:'Times New Roman', serif; background:#f2f0ef; color:#000; line-height:1.6; }
 a { text-decoration:none; color:inherit; }
-header, footer { width:100%; background:#fff; display:flex; justify-content:space-between; align-items:center; padding:15px 5%; position:sticky; top:0; box-shadow:0 2px 10px rgba(0,0,0,0.1);}
+header, footer { width:100%; display:flex; justify-content:space-between; align-items:center; padding:15px 5%; background:#fff; box-shadow:0 2px 10px rgba(0,0,0,0.1);}
 header .logo { font-style:italic; font-weight:bold; font-size:1.5rem; }
 header nav a { margin-left:25px; font-weight:bold; transition:0.3s; }
 header nav a:hover { color:#f31317; }
-main { max-width:600px; margin:80px auto; padding:0 5%; text-align:center; }
-p { font-size:1.2rem; margin-bottom:15px; }
-img.duck { display:block; margin:20px auto; max-width:150px; }
-form { display:flex; flex-direction:column; gap:15px; margin-top:10px; }
-input, textarea { padding:12px; border:1px solid #ccc; border-radius:5px; font-size:1rem; width:100%; }
-button { padding:12px; background:#f31317; color:#fff; font-weight:bold; border:none; cursor:pointer; transition:0.3s; }
+
+main { max-width:800px; margin:0 auto; padding:80px 5%; text-align:center; }
+h2 { font-size:1.8rem; margin-bottom:10px; }
+p.contact-blurb { font-size:1.2rem; margin-bottom:20px; }
+img.duck { display:block; margin:20px auto; max-width:200px; height:auto; }
+
+form { display:flex; flex-direction:column; gap:15px; margin-top:20px; }
+input, textarea { padding:12px; font-size:1rem; border:1px solid #ccc; border-radius:5px; width:100%; max-width:500px; margin:0 auto; }
+button { padding:12px; font-size:1rem; border:none; border-radius:5px; background:#f31317; color:#fff; font-weight:bold; cursor:pointer; transition:0.3s; max-width:200px; margin:0 auto; }
 button:hover { background:#fff; color:#f31317; border:2px solid #f31317; }
+
 footer { background:#000; color:#f2f0ef; text-align:center; padding:40px 5%; }
 footer a { color:#f2f0ef; margin:0 10px; transition:0.3s; }
 footer a:hover { color:#f31317; }
-@media(max-width:900px){ p { font-size:1.1rem; } }
+
+@media(max-width:700px){
+  h2{ font-size:1.5rem; }
+  p.contact-blurb{ font-size:1rem; }
+}
 </style>
 </head>
 <body>
@@ -33,28 +41,23 @@ footer a:hover { color:#f31317; }
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
     <a href="contact.html">Contact</a>
-    <a href="blog.html">Blog</a>
   </nav>
 </header>
 
 <main>
-  <p>Have a project, question, or idea?<br>Let’s build something together.</p>
-  <img class="duck" src="images/el%20pato%20negro%20(4).png" alt="Black Duck">
-  
+  <p class="contact-blurb">Have a project, question, or idea?</p>
+  <p class="contact-blurb">Let’s build something together.</p>
+  <img src="images/el%20pato%20negro%20(4).png" alt="Duck" class="duck">
+
   <form action="https://formspree.io/f/mrbylyne" method="POST">
-    <!-- Redirect to thank-you page after submission -->
-    <input type="hidden" name="_next" value="thank-you.html">
-    
     <input type="text" name="name" placeholder="Your Name" required>
     <input type="email" name="_replyto" placeholder="Your Email" required>
     <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+    <input type="hidden" name="_next" value="thankyou.html">
     <button type="submit">Send Message</button>
   </form>
   
-  <p style="margin-top:20px; font-weight:bold;">
-    💡 After submitting the form, you'll receive a free copy of 
-    <a href="The%20EPN%20Discipline%20Framework.pdf" target="_blank" style="color:#f31317;">The EPN Discipline Framework</a> — a short guide on the system behind elpatonegro.
-  </p>
+  <p style="margin-top:20px; font-size:1rem;">As a thank you, you’ll receive a free copy of the <b>The EPN Discipline Framework</b>.</p>
 </main>
 
 <footer>
