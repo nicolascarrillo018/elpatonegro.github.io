@@ -3,67 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>elpatonegro</title>
+<title>Home - elpatonegro</title>
 <link rel="icon" href="images/el%20pato%20negro.png" type="image/png">
 <style>
-body { margin:0; padding:0; font-family:'Times New Roman', serif; background:#f2f0ef; color:#000; line-height:1.6; }
-a { text-decoration:none; color:inherit; }
-header, footer { width:100%; display:flex; justify-content:space-between; align-items:center; padding:15px 5%; background:#fff; box-shadow:0 2px 10px rgba(0,0,0,0.1);}
+html, body { height: 100%; margin:0; padding:0; font-family:'Times New Roman', serif; background:#f2f0ef; color:#000; }
+body { display:flex; flex-direction:column; min-height:100vh; }
+header, footer { width:100%; display:flex; justify-content:space-between; align-items:center; padding:15px 5%; box-shadow:0 2px 10px rgba(0,0,0,0.1);}
+header { background:#fff; }
 header .logo { font-style:italic; font-weight:bold; font-size:1.5rem; }
 header nav a { margin-left:25px; font-weight:bold; transition:0.3s; }
 header nav a:hover { color:#f31317; }
-
-main { max-width:1000px; margin:0 auto; padding:80px 5%; text-align:center; }
-
-.hero { display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:30px; text-align:center; }
-.hero-text { flex:1 1 300px; }
-.hero-text h1 { font-size:3rem; font-style:italic; margin-bottom:15px; }
-.hero-text .subline { font-size:1.3rem; margin-bottom:20px; }
-.hero-line { font-weight:bold; font-size:1.8rem; display:flex; justify-content:center; gap:15px; flex-wrap:wrap; }
-.hero-line span { display:inline-block; opacity:0; animation:fadeWord 3s forwards; }
-.hero-line span:nth-child(1){ animation-delay:0s; }
-.hero-line span:nth-child(2){ animation-delay:1s; }
-.hero-line span:nth-child(3){ animation-delay:2s; }
-
-@keyframes fadeWord {
-  0%{opacity:0;}
-  50%{opacity:1;}
-  100%{opacity:1;}
-}
-
-.cta-button { display:inline-block; padding:12px 25px; margin-top:20px; background:#f31317; color:#fff; font-weight:bold; border:none; cursor:pointer; transition:0.3s; }
-.cta-button:hover { transform:scale(1.05); background:#fff; color:#f31317; border:2px solid #f31317; }
-
-.hero-image img { max-width:300px; width:100%; height:auto; margin:auto; display:block; animation:float 6s ease-in-out infinite; }
-@keyframes float { 0%,100%{transform:translateY(0);} 50%{transform:translateY(-10px);} }
-
-.core-truths { display:flex; flex-wrap:wrap; justify-content:center; gap:30px; margin:60px 0; text-align:center; }
-.core-truths .truth-card { flex:1 1 200px; padding:20px; border-radius:5px; background:#fff; border:2px solid #f31317; }
-.core-truths .truth-card h3 { font-size:1.5rem; margin-bottom:10px; }
-.core-truths .truth-card p { font-size:1rem; }
-
-.projects-section { text-align:center; margin:60px 0; }
-.projects-section h2 { font-size:2rem; margin-bottom:30px; }
-.projects-container { display:flex; flex-wrap:wrap; justify-content:center; gap:20px; }
-.project-box { flex:1 1 220px; background:#f31317; color:#fff; border:2px solid #000; padding:20px; text-align:center; border-radius:10px; transition:0.3s; }
-.project-box img { width:100%; margin-bottom:10px; }
-.project-box h3 { font-size:1.2rem; margin-bottom:10px; }
-.project-box p { font-size:1rem; }
-.project-box:hover { transform:scale(1.05); box-shadow:0 10px 25px rgba(0,0,0,0.6); filter:drop-shadow(0 0 10px #f31317); }
-
+main { flex:1; display:flex; flex-direction:column; justify-content:center; align-items:center; padding:20px 5%; text-align:center; max-width:800px; margin:0 auto; }
 footer { background:#000; color:#f2f0ef; text-align:center; padding:40px 5%; }
 footer a { color:#f2f0ef; margin:0 10px; transition:0.3s; }
 footer a:hover { color:#f31317; }
-
-@media(max-width:700px){
-  .hero h1{ font-size:2.2rem; }
-  .hero-line{ font-size:1.5rem; }
-  .core-truths .truth-card h3{ font-size:1.3rem; }
-  .core-truths .truth-card p{ font-size:0.95rem; }
-  .projects-section h2{ font-size:1.5rem; }
-  .project-box h3{ font-size:1rem; }
-  .project-box p{ font-size:0.9rem; }
-}
+a.button, button { display:inline-block; padding:12px 25px; background:#f31317; color:#fff; font-weight:bold; border:none; border-radius:5px; cursor:pointer; transition:0.3s; }
+a.button:hover, button:hover { background:#fff; color:#f31317; border:2px solid #f31317; }
+@media(max-width:700px){ header .logo{ font-size:1.3rem;} header nav a{ margin-left:15px; } }
 </style>
 </head>
 <body>
@@ -78,60 +34,9 @@ footer a:hover { color:#f31317; }
 </header>
 
 <main>
-  <!-- Hero -->
-  <section class="hero">
-    <div class="hero-text">
-      <h1>elpatonegro</h1>
-      <p class="subline">Where vision, grit, and strategy meet.</p>
-      <div class="hero-line">
-        <span>Discipline.</span>
-        <span>Creativity.</span>
-        <span>Persistence.</span>
-      </div>
-      <button class="cta-button">LET'S BEGIN</button>
-    </div>
-    <div class="hero-image">
-      <img src="images/el%20pato%20negro.png" alt="Black Duck">
-    </div>
-  </section>
-
-  <!-- Core Truths -->
-  <section class="core-truths">
-    <div class="truth-card">
-      <h3>Discipline</h3>
-      <p>Built, not gifted.</p>
-    </div>
-    <div class="truth-card">
-      <h3>Creativity</h3>
-      <p>Everyone has creativity, few cultivate it.</p>
-    </div>
-    <div class="truth-card">
-      <h3>Persistence</h3>
-      <p>This is the unfair advantage.</p>
-    </div>
-  </section>
-
-  <!-- Projects / Ideas / Work With Me -->
-  <section class="projects-section">
-    <h2>What You’ll Find</h2>
-    <div class="projects-container">
-      <div class="project-box">
-        <h3>Experiments & Builds</h3>
-        <img src="images/epn.projects.png" alt="Projects">
-        <p>Hands-on experiments & builds that push ideas into reality.</p>
-      </div>
-      <div class="project-box">
-        <h3>Insights & Frameworks</h3>
-        <img src="images/epn.ideas.png" alt="Ideas">
-        <p>Essays, frameworks, and insights for thinking differently.</p>
-      </div>
-      <div class="project-box">
-        <h3>Consulting & Strategy</h3>
-        <img src="images/epn.wwm.png" alt="Work With Me">
-        <p>Guidance and strategy to execute with impact.</p>
-      </div>
-    </div>
-  </section>
+  <h1>Welcome to elpatonegro</h1>
+  <p>Discover the EPN Discipline Framework and more.</p>
+  <img src="images/el%20pato%20negro.png" alt="Duck" style="max-width:150px; margin-top:20px;">
 </main>
 
 <footer>
