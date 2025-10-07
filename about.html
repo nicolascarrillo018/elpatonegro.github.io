@@ -3,71 +3,52 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Origin Story of elpatonegro</title>
+<title>About | elpatonegro</title>
 <link rel="icon" href="images/el%20pato%20negro.png" type="image/png">
 <style>
-* { margin:0; padding:0; box-sizing:border-box; font-family:'Times New Roman', serif; }
-body { background:#f2f0ef; color:#000; line-height:1.6; overflow-x:hidden; }
+body { margin:0; padding:0; font-family:'Times New Roman', serif; background:#f2f0ef; color:#000; line-height:1.6; }
 a { text-decoration:none; color:inherit; }
-
-/* Header / Nav */
-header { background:#fff; padding:20px 5%; display:flex; justify-content:space-between; align-items:center; position:sticky; top:0; z-index:999; box-shadow:0 2px 10px rgba(0,0,0,0.1);}
-header nav a { margin-left:30px; font-weight:bold; color:#000; transition:0.3s; }
+header, footer { width:100%; background:#fff; display:flex; justify-content:space-between; align-items:center; padding:15px 5%; position:sticky; top:0; box-shadow:0 2px 10px rgba(0,0,0,0.1);}
+header .logo { font-style:italic; font-weight:bold; font-size:1.5rem; }
+header nav a { margin-left:25px; font-weight:bold; transition:0.3s; }
 header nav a:hover { color:#f31317; }
-
-/* Body Content */
-h1 { font-size:3rem; text-align:center; margin:40px 20px 30px 20px; }
-p { font-size:1.4rem; text-align:center; margin-bottom:20px; }
-.bold-italic { font-weight:bold; font-style:italic; }
-img { display:block; margin:30px auto; max-width:300px; }
-
-/* Footer */
-footer { background:#000; color:#f2f0ef; padding:40px 5%; text-align:center; }
-footer nav a { margin:0 15px; color:#f2f0ef; transition:0.3s; }
-footer nav a:hover { color:#f31317; transform:scale(1.05); }
-footer .socials a { margin:0 10px; color:#f2f0ef; transition:0.3s; }
-footer .socials a:hover { color:#f31317; }
-
-/* Responsive */
-@media(max-width:900px){
-  h1 { font-size:3.6rem; }
-  p { font-size:1.6rem; }
-}
+main { max-width:800px; margin:80px auto; padding:0 5%; text-align:left; }
+h1 { font-size:2.5rem; margin-bottom:20px; text-transform:capitalize; }
+p { font-size:1.2rem; margin-bottom:15px; }
+p b.italic { font-weight:bold; font-style:italic; }
+img.duck { display:block; margin:20px auto; max-width:200px; }
+footer { background:#000; color:#f2f0ef; text-align:center; padding:40px 5%; }
+footer a { color:#f2f0ef; margin:0 10px; transition:0.3s; }
+footer a:hover { color:#f31317; }
+@media(max-width:900px){ h1 { font-size:2rem; } p { font-size:1.1rem; } }
 </style>
 </head>
 <body>
 
 <header>
-  <div><img src="images/el%20pato%20negro.png" alt="Black Duck" style="height:40px;"></div>
+  <div class="logo">elpatonegro</div>
   <nav>
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
     <a href="contact.html">Contact</a>
+    <a href="blog.html">Blog</a>
   </nav>
 </header>
 
-<h1>the origin story of <span class="bold-italic">elpatonegro</span></h1>
-<img src="images/el%20pato%20negro.png" alt="Black Duck">
-
-<p><span class="bold-italic">elpatonegro</span> began as a philosophy forged from the intersection of discipline, creativity, and persistence. Most people have drive and ideas, but few translate them into tangible outcomes.</p>
-
-<p>We exist to turn raw energy into executed projects, insights, and strategies. We explore uncharted concepts, challenge assumptions, and execute relentlessly. Success is not about luck; it's about deliberate action, iteration, and learning.</p>
-
-<p>In a world distracted by performance and instant gratification, <span class="bold-italic">elpatonegro</span> thrives in the spaces most ignore — solitude and focus, thoughtfulness and speed, discipline and freedom. Our work is not for everyone; it’s for those willing to confront their limits and push beyond.</p>
-
-<p>This philosophy guides everything: every project, every insight, every collaboration. It’s a manifesto, a way of thinking, and a call to action for those who want to build, explore, and impact the world.</p>
+<main>
+  <h1>the origin story of elpatonegro</h1>
+  <p><b class="italic">elpatonegro</b> was born from a simple philosophy: that ideas are cheap, execution is everything. Many people have vision, few cultivate the discipline, creativity, and persistence needed to make them real.</p>
+  <p>We believe in turning raw drive into tangible outcomes, exploring deeply, building relentlessly, and executing without compromise. Every project, every experiment, every insight is a step toward mastering the craft of creation.</p>
+  <p>Our approach is minimalistic but bold: we focus on the essence of strategy and the relentless pursuit of improvement. By merging creativity with discipline, <b class="italic">elpatonegro</b> empowers individuals to achieve what others only dream of.</p>
+  <img class="duck" src="images/el%20pato%20negro.png" alt="Black Duck">
+</main>
 
 <footer>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-  <div class="socials">
+  <p>© 2025 elpatonegro</p>
+  <div>
     <a href="https://www.instagram.com/elpatonegro_/" target="_blank">Instagram</a>
     <a href="https://x.com/_elpatonegro" target="_blank">X</a>
   </div>
-  <p>© 2025 elpatonegro</p>
 </footer>
 
 </body>
