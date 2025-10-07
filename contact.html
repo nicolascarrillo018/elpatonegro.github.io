@@ -42,6 +42,9 @@ footer a:hover { color:#f31317; }
   <img class="duck" src="images/el%20pato%20negro%20(4).png" alt="Black Duck">
   
   <form action="https://formspree.io/f/mrbylyne" method="POST">
+    <!-- Redirect to thank-you page after submission -->
+    <input type="hidden" name="_next" value="thank-you.html">
+    
     <input type="text" name="name" placeholder="Your Name" required>
     <input type="email" name="_replyto" placeholder="Your Email" required>
     <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
