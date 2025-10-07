@@ -53,11 +53,17 @@ footer a:hover { color:#f31317; }
     <input type="text" name="name" placeholder="Your Name" required>
     <input type="email" name="_replyto" placeholder="Your Email" required>
     <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-    <input type="hidden" name="_next" value="thankyou.html">
+
+    <!-- Force redirect to your thank-you page -->
+    <input type="hidden" name="_next" value="thank-you.html">
+    <!-- Optional enhancements -->
+    <input type="hidden" name="_subject" value="New Contact Form Submission">
+    <input type="hidden" name="_captcha" value="false">
+
     <button type="submit">Send Message</button>
   </form>
   
-  <p style="margin-top:20px; font-size:1rem;">As a thank you, you’ll receive a free copy of the <b>The EPN Discipline Framework</b>.</p>
+  <p style="margin-top:20px; font-size:1rem;">As a thank you, you’ll receive a free copy of <b>The EPN Discipline Framework</b>.</p>
 </main>
 
 <footer>
