@@ -8,54 +8,54 @@
 <style>
 :root{--bg:#f2f0ef;--accent:#f31317;--text:#000;--offwhite:#fff;--max-width:900px;--pad:5%;}
 *{box-sizing:border-box;margin:0;padding:0;}
-html,body{height:100%; width:100%; font-family:'Times New Roman', serif; background:var(--bg); color:var(--text);}
-body{display:flex; flex-direction:column; min-height:100vh;}
-header,footer{width:100%; padding:1rem var(--pad); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap;}
-header{background:var(--offwhite); box-shadow:0 2px 10px rgba(0,0,0,0.08);}
-header .logo{font-style:italic; font-weight:bold; font-size:1.5rem;}
-nav a{margin-left:25px; text-decoration:none; font-weight:bold; color:var(--text); transition:0.3s;}
+html,body{height:100%;width:100%;font-family:'Times New Roman', serif;background:var(--bg);color:var(--text);}
+body{display:flex;flex-direction:column;min-height:100vh;}
+header,footer{width:100%;padding:1rem var(--pad);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;}
+header{background:var(--offwhite);box-shadow:0 2px 10px rgba(0,0,0,0.08);}
+header .logo{font-style:italic;font-weight:bold;font-size:1.5rem;}
+nav a{margin-left:25px;text-decoration:none;font-weight:bold;color:var(--text);transition:0.3s;}
 nav a:hover{color:var(--accent);}
-main{flex:1; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; padding:4rem var(--pad); max-width:var(--max-width); margin:0 auto; width:100%;}
-h1{font-size:2rem; margin-bottom:1rem;}
-h2{margin-top:2rem; font-size:1.5rem; color:var(--accent);}
-ul{list-style-type:none; padding:0; margin:1rem 0 2rem 0;}
-ul li{margin:10px 0; font-weight:bold;}
-a.button{display:inline-block; padding:12px 25px; background:var(--accent); color:var(--offwhite); font-weight:bold; border:none; border-radius:5px; text-decoration:none; transition:0.3s; margin-top:20px;}
-a.button:hover{background:var(--offwhite); color:var(--accent); border:2px solid var(--accent);}
-footer{background:#000; color:var(--offwhite); text-align:center; padding:2rem var(--pad);}
-footer a{color:var(--offwhite); margin:0 10px; transition:0.3s;}
+main{flex:1;display:flex;flex-direction:column;justify-content:flex-start;align-items:center;text-align:center;padding:4rem var(--pad);max-width:var(--max-width);margin:0 auto;width:100%;}
+h1,h2,p{margin-bottom:1rem;}
+.cards{display:flex;flex-wrap:wrap;justify-content:center;gap:1.5rem;margin-top:2rem;}
+.card{background:#fff;padding:2rem;border-radius:8px;box-shadow:0 4px 10px rgba(0,0,0,0.05);flex:1 1 250px;max-width:300px;}
+a.button{display:inline-block;padding:12px 25px;background:var(--accent);color:var(--offwhite);font-weight:bold;border:none;border-radius:5px;text-decoration:none;transition:0.3s;margin-top:20px;}
+a.button:hover{background:var(--offwhite);color:var(--accent);border:2px solid var(--accent);}
+footer{background:#000;color:var(--offwhite);text-align:center;padding:2rem var(--pad);}
+footer a{color:var(--offwhite);margin:0 10px;transition:0.3s;}
 footer a:hover{color:var(--accent);}
-@media(max-width:700px){ header .logo{font-size:1.3rem;} nav a{margin-left:15px;} h1{font-size:1.5rem;} main{padding:3rem var(--pad);} }
+@media(max-width:700px){header .logo{font-size:1.3rem;} nav a{margin-left:15px;} main{padding:3rem var(--pad);} .cards{flex-direction:column;}}
 </style>
 </head>
 <body>
 <header>
   <div class="logo">elpatonegro</div>
   <nav>
-    <a href="../home.html">Home</a>
-    <a href="../about.html">About</a>
-    <a href="../contact.html">Contact</a>
+    <a href="/">Home</a>
+    <a href="/about">About</a>
+    <a href="/fly-with-us">Fly With Us</a>
+    <a href="/contact">Contact</a>
   </nav>
 </header>
 <main>
   <h1>Fly With Us</h1>
-  <p>Join <b><i>elpatonegro</i></b> as we bring vision, grit, and strategy to life.</p>
-  
-  <h2>Our 3 Core Truths</h2>
-  <ul>
-    <li>Discipline – the foundation of consistent growth</li>
-    <li>Integrity – aligning actions with values</li>
-    <li>Persistence – turning ideas into reality</li>
-  </ul>
-  
-  <h2>What We Offer</h2>
-  <ul>
-    <li>Coaching & mentorship sessions</li>
-    <li>Strategic frameworks & resources</li>
-    <li>Workshops & project guidance</li>
-  </ul>
-  
-  <a href="../contact.html" class="button">Get Started</a>
+  <p>Our core truths guide every step we take:</p>
+  <div class="cards">
+    <div class="card">
+      <h2>Discipline</h2>
+      <p>Structured focus and execution to consistently achieve results.</p>
+    </div>
+    <div class="card">
+      <h2>Integrity</h2>
+      <p>Operate with honesty, transparency, and unwavering ethics.</p>
+    </div>
+    <div class="card">
+      <h2>Persistence</h2>
+      <p>Relentless commitment to overcome challenges and achieve goals.</p>
+    </div>
+  </div>
+  <p style="margin-top:2rem;">We offer personalized guidance, frameworks, and mentorship to elevate your work.</p>
+  <a href="/contact" class="button">Fly With Us</a>
 </main>
 <footer>
   <p>© 2025 elpatonegro</p>
