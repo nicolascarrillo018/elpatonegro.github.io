@@ -1,78 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fly With Us | El Pato Negro</title>
-  <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Take Flight - elpatonegro</title>
+<link rel="icon" href="../images/el%20pato%20negro.png" type="image/png">
+<style>
+:root{--bg:#f2f0ef;--accent:#f31317;--text:#000;--offwhite:#fff;--max-width:900px;--pad:5%;}
+*{box-sizing:border-box;margin:0;padding:0;}
+html,body{height:100%;width:100%;font-family:'Times New Roman', serif;background:var(--bg);color:var(--text);}
+body{display:flex;flex-direction:column;min-height:100vh;}
+header,footer{width:100%;padding:1rem var(--pad);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;}
+header{background:var(--offwhite);box-shadow:0 2px 10px rgba(0,0,0,0.08);}
+header .logo{font-style:italic;font-weight:bold;font-size:1.5rem;}
+nav a{margin-left:25px;text-decoration:none;font-weight:bold;color:var(--text);transition:0.3s;}
+nav a:hover{color:var(--accent);}
+main{flex:1;display:flex;flex-direction:column;justify-content:flex-start;align-items:center;text-align:center;padding:4rem var(--pad);max-width:var(--max-width);margin:0 auto;width:100%;}
+h1,h2,h3,p{margin-bottom:1rem;}
+.cards{display:flex;flex-wrap:wrap;justify-content:center;gap:1.5rem;margin-top:2rem;width:100%;}
+.card{background:#fff;padding:2rem;border-radius:8px;box-shadow:0 4px 10px rgba(0,0,0,0.05);flex:1 1 250px;max-width:300px;text-align:left;}
+section{margin:2rem 0;width:100%;max-width:var(--max-width);}
+a.button{display:inline-block;padding:12px 25px;background:var(--accent);color:var(--offwhite);font-weight:bold;border:none;border-radius:5px;text-decoration:none;transition:0.3s;margin-top:10px;}
+a.button:hover{background:var(--offwhite);color:var(--accent);border:2px solid var(--accent);}
+footer{background:#000;color:var(--offwhite);text-align:center;padding:2rem var(--pad);}
+footer a{color:var(--offwhite);margin:0 10px;transition:0.3s;}
+footer a:hover{color:var(--accent);}
+@media(max-width:700px){header .logo{font-size:1.3rem;} nav a{margin-left:15px;} main{padding:3rem var(--pad);} .cards{flex-direction:column;}}
+</style>
 </head>
 <body>
-  <header>
-    <nav>
-      <div class="logo">🦆 <span>elpatonegro</span></div>
-      <ul>
-        <li><a href="/home">Home</a></li>
-        <li><a href="/about">About</a></li>
-        <li><a href="/fly-with-us" class="active">Take Flight</a></li>
-        <li><a href="/contact">Contact Us</a></li>
-      </ul>
-    </nav>
-  </header>
+<header>
+  <div class="logo">elpatonegro</div>
+  <nav>
+    <a href="/">Home</a>
+    <a href="/about">About</a>
+    <a href="/fly-with-us">Take Flight</a>
+    <a href="/contact">Contact Us</a>
+  </nav>
+</header>
+<main>
+  <h1>Your Flight Awaits</h1>
+  <p>The world moves fast. Most people walk, some swim, and only a few fly. <b>El Pato Negro</b> exists for those ready to rise.</p>
 
-  <main class="fly-with-us">
-    <section class="intro">
-      <h1>Your Flight Awaits</h1>
-      <p class="subtitle">The world moves fast. Most people walk, some swim, and only a few fly.<br>El Pato Negro exists for those ready to rise.</p>
-    </section>
-
-    <section class="tier walk">
+  <div class="cards">
+    <div class="card">
       <h2>Walk — Ground Yourself</h2>
       <h3>Discipline Diagnostic</h3>
-      <p>20–30 minute 1:1 session to uncover the bottlenecks slowing you down.<br>
-      Actionable insights you can implement immediately.</p>
-      <p class="price">Price: $50–$100 (or free lead-in)</p>
-      <p class="cta-desc">Step onto the path. Discover your edge. Prepare to move.</p>
-      <a href="/contact" class="cta">Fly With Us</a>
-    </section>
-
-    <section class="tier swim">
+      <p>20–30 minute 1:1 session to uncover the bottlenecks slowing you down. Actionable insights you can implement immediately.</p>
+      <p>Price: $50–$100 (or free lead-in)</p>
+      <a href="/contact" class="button">Book Your Diagnostic</a>
+    </div>
+    <div class="card">
       <h2>Swim — Flow with Purpose</h2>
       <h3>EPN Catalyst Program</h3>
-      <p>4-week intensive program (cohort or 1:1) designed to sharpen discipline, focus, and execution.<br>
-      Weekly live sessions + daily micro-actions + accountability check-ins.</p>
-      <p class="price">Price: $750–$1,500</p>
-      <p class="cta-desc">Navigate complexity. Build momentum. Transform your output.</p>
-      <a href="/contact" class="cta">Fly With Us</a>
-    </section>
-
-    <section class="tier fly">
+      <p>4-week intensive program (cohort or 1:1) designed to sharpen discipline, focus, and execution. Weekly live sessions + daily micro-actions + accountability check-ins.</p>
+      <p>Price: $750–$1,500</p>
+      <a href="/contact" class="button">Reserve Your Seat</a>
+    </div>
+    <div class="card">
       <h2>Fly — Elevate & Signal</h2>
       <h3>Limited-Drop Black Duck Gear</h3>
-      <p>Exclusive EPN-branded apparel and accessories.<br>
-      Minimal runs, high-status, signaling dedication and belonging.</p>
-      <p class="price">Price: $25–$70</p>
-      <p class="cta-desc">Reach new heights. Wear the signal. Join the few who fly.</p>
-      <a href="/contact" class="cta">Fly With Us</a>
-    </section>
+      <p>Exclusive EPN-branded apparel and accessories. Minimal runs, high-status, signaling dedication and belonging.</p>
+      <p>Price: $25–$70</p>
+      <a href="/contact" class="button">Claim Your Drop</a>
+    </div>
+  </div>
 
-    <section class="why-epn">
-      <h2>Why EPN Works</h2>
-      <p>Proven frameworks grounded in <strong>discipline</strong>, <strong>adaptability</strong>, and <strong>transformation</strong>.<br>
-      Designed for those who refuse to settle.<br>
-      Minimal fluff, maximum results — because flying requires focus, not followers.</p>
-    </section>
+  <section>
+    <h2>Why EPN Works</h2>
+    <p>Proven frameworks grounded in discipline, adaptability, and transformation. Designed for those who refuse to settle. Minimal fluff, maximum results — because flying requires focus, not followers.</p>
+  </section>
 
-    <section class="next-steps">
-      <h2>Next Steps</h2>
-      <p><strong>Start walking</strong> — book your Discipline Diagnostic.<br>
-      <strong>Swim with intention</strong> — join the Catalyst Program.<br>
-      <strong>Fly above the rest</strong> — claim your limited Black Duck gear.</p>
-      <a href="/contact" class="cta">Fly With Us</a>
-    </section>
-  </main>
-
-  <footer>
-    <p>© 2025 El Pato Negro. All rights reserved.</p>
-  </footer>
+  <section>
+    <h2>Next Steps</h2>
+    <ul style="text-align:left;">
+      <li>Start walking — book your Discipline Diagnostic.</li>
+      <li>Swim with intention — join the Catalyst Program.</li>
+      <li>Fly above the rest — claim your limited Black Duck gear.</li>
+    </ul>
+    <p>Your flight awaits. Are you ready to take off?</p>
+    <a href="/contact" class="button">Fly With Us</a>
+  </section>
+</main>
+<footer>
+  <p>© 2025 elpatonegro</p>
+  <div>
+    <a href="https://www.instagram.com/elpatonegro_/" target="_blank">Instagram</a>
+    <a href="https://x.com/_elpatonegro" target="_blank">X</a>
+  </div>
+</footer>
 </body>
 </html>
