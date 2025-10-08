@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Your Flight Awaits - elpatonegro</title>
+<title>Take Flight - elpatonegro</title>
 <link rel="icon" href="../images/el%20pato%20negro.png" type="image/png">
 <style>
 :root{--bg:#f2f0ef;--accent:#f31317;--text:#000;--offwhite:#fff;--max-width:900px;--pad:5%;}
@@ -16,10 +16,11 @@ header .logo{font-style:italic;font-weight:bold;font-size:1.5rem;}
 nav a{margin-left:25px;text-decoration:none;font-weight:bold;color:var(--text);transition:0.3s;}
 nav a:hover{color:var(--accent);}
 main{flex:1;display:flex;flex-direction:column;justify-content:flex-start;align-items:center;text-align:center;padding:4rem var(--pad);max-width:var(--max-width);margin:0 auto;width:100%;}
-h1,h2,p{margin-bottom:1rem;}
-.cards{display:flex;flex-wrap:wrap;justify-content:center;gap:1.5rem;margin-top:2rem;}
-.card{background:#fff;padding:2rem;border-radius:8px;box-shadow:0 4px 10px rgba(0,0,0,0.05);flex:1 1 250px;max-width:300px;}
-a.button{display:inline-block;padding:12px 25px;background:var(--accent);color:var(--offwhite);font-weight:bold;border:none;border-radius:5px;text-decoration:none;transition:0.3s;margin-top:20px;}
+h1,h2,h3,p{margin-bottom:1rem;}
+.cards{display:flex;flex-wrap:wrap;justify-content:center;gap:1.5rem;margin-top:2rem;width:100%;}
+.card{background:#fff;padding:2rem;border-radius:8px;box-shadow:0 4px 10px rgba(0,0,0,0.05);flex:1 1 250px;max-width:300px;text-align:left;}
+section{margin:2rem 0;width:100%;max-width:var(--max-width);}
+a.button{display:inline-block;padding:12px 25px;background:var(--accent);color:var(--offwhite);font-weight:bold;border:none;border-radius:5px;text-decoration:none;transition:0.3s;margin-top:10px;}
 a.button:hover{background:var(--offwhite);color:var(--accent);border:2px solid var(--accent);}
 footer{background:#000;color:var(--offwhite);text-align:center;padding:2rem var(--pad);}
 footer a{color:var(--offwhite);margin:0 10px;transition:0.3s;}
@@ -33,29 +34,53 @@ footer a:hover{color:var(--accent);}
   <nav>
     <a href="/">Home</a>
     <a href="/about">About</a>
-    <a href="/fly-with-us">Fly With Us</a>
-    <a href="/contact">Contact Us</a>
+    <a href="/fly-with-us">Take Flight</a>
+    <a href="/contact">Contact</a>
   </nav>
 </header>
 <main>
   <h1>Your Flight Awaits</h1>
-  <p>Our core truths guide every step we take:</p>
+  <p>The world moves fast. Most people walk, some swim, and only a few fly. <b>El Pato Negro</b> exists for those ready to rise.</p>
+
   <div class="cards">
     <div class="card">
-      <h2>Discipline</h2>
-      <p>Structured focus and execution to consistently achieve results.</p>
+      <h2>Walk — Ground Yourself</h2>
+      <h3>Discipline Diagnostic</h3>
+      <p>20–30 minute 1:1 session to uncover the bottlenecks slowing you down. Actionable insights you can implement immediately.</p>
+      <p>Price: $50–$100 (or free lead-in)</p>
+      <a href="/contact" class="button">Book Your Diagnostic</a>
     </div>
     <div class="card">
-      <h2>Integrity</h2>
-      <p>Operate with honesty, transparency, and unwavering ethics.</p>
+      <h2>Swim — Flow with Purpose</h2>
+      <h3>EPN Catalyst Program</h3>
+      <p>4-week intensive program (cohort or 1:1) designed to sharpen discipline, focus, and execution. Weekly live sessions + daily micro-actions + accountability check-ins.</p>
+      <p>Price: $750–$1,500</p>
+      <a href="/contact" class="button">Reserve Your Seat</a>
     </div>
     <div class="card">
-      <h2>Persistence</h2>
-      <p>Relentless commitment to overcome challenges and achieve goals.</p>
+      <h2>Fly — Elevate & Signal</h2>
+      <h3>Limited-Drop Black Duck Gear</h3>
+      <p>Exclusive EPN-branded apparel and accessories. Minimal runs, high-status, signaling dedication and belonging.</p>
+      <p>Price: $25–$70</p>
+      <a href="/contact" class="button">Claim Your Drop</a>
     </div>
   </div>
-  <p style="margin-top:2rem;">We offer personalized guidance, frameworks, and mentorship to elevate your work.</p>
-  <a href="/contact" class="button">Fly With Us</a>
+
+  <section>
+    <h2>Why EPN Works</h2>
+    <p>Proven frameworks grounded in discipline, adaptability, and transformation. Designed for those who refuse to settle. Minimal fluff, maximum results — because flying requires focus, not followers.</p>
+  </section>
+
+  <section>
+    <h2>Next Steps</h2>
+    <ul style="text-align:left;">
+      <li>Start walking — book your Discipline Diagnostic.</li>
+      <li>Swim with intention — join the Catalyst Program.</li>
+      <li>Fly above the rest — claim your limited Black Duck gear.</li>
+    </ul>
+    <p>Your flight awaits. Are you ready to take off?</p>
+    <a href="/contact" class="button">Fly With Us</a>
+  </section>
 </main>
 <footer>
   <p>© 2025 elpatonegro</p>
