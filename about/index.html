@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>About - <i>elpatonegro</i></title>
+<title>About - elpatonegro</title>
 <link rel="icon" href="../images/el%20pato%20negro.png" type="image/png">
 <style>
 :root{--bg:#f2f0ef;--accent:#f31317;--text:#000;--offwhite:#fff;--max-width:900px;--pad:5%;}
@@ -15,35 +15,36 @@ header{background:var(--offwhite);box-shadow:0 2px 10px rgba(0,0,0,0.08);}
 header .logo{font-style:italic;font-weight:bold;font-size:1.5rem;}
 nav a{margin-left:25px;text-decoration:none;font-weight:bold;color:var(--text);transition:0.3s;}
 nav a:hover{color:var(--accent);}
-main{flex:1;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:4rem var(--pad);max-width:var(--max-width);margin:0 auto;width:100%;}
+main{flex:1;display:flex;flex-direction:column;justify-content:flex-start;align-items:center;text-align:center;padding:4rem var(--pad);max-width:var(--max-width);margin:0 auto;width:100%;}
 h1,h2,p{margin-bottom:1rem;}
 h1 i{font-style:italic;}
-p strong,i{font-weight:bold;font-style:italic;}
-img.about-duck{max-width:150px;width:30%;margin-top:2rem;opacity:0.1;}
+p b,i{font-weight:bold;font-style:italic;}
 a.button{display:inline-block;padding:12px 25px;background:var(--accent);color:var(--offwhite);font-weight:bold;border:none;border-radius:5px;text-decoration:none;transition:0.3s;margin-top:20px;}
 a.button:hover{background:var(--offwhite);color:var(--accent);border:2px solid var(--accent);}
+section{margin:2rem 0;padding:2rem; background:#fff; border-radius:8px; box-shadow:0 4px 10px rgba(0,0,0,0.05);}
 footer{background:#000;color:var(--offwhite);text-align:center;padding:2rem var(--pad);}
 footer a{color:var(--offwhite);margin:0 10px;transition:0.3s;}
 footer a:hover{color:var(--accent);}
-@media(max-width:700px){header .logo{font-size:1.3rem;} nav a{margin-left:15px;} h1{font-size:1.5rem;} main{padding:3rem var(--pad);} img.about-duck{width:50%;}}
+@media(max-width:700px){header .logo{font-size:1.3rem;} nav a{margin-left:15px;} h1{font-size:1.5rem;} main{padding:3rem var(--pad);}}
 </style>
 </head>
 <body>
 <header>
   <div class="logo">elpatonegro</div>
   <nav>
-    <a href="../home">Home</a>
-    <a href="../about">About</a>
-    <a href="../contact">Contact</a>
+    <a href="/">Home</a>
+    <a href="/about">About</a>
+    <a href="/fly-with-us">Fly With Us</a>
+    <a href="/contact">Contact</a>
   </nav>
 </header>
 <main>
   <h1><i>elpatonegro</i></h1>
-  <p>At <b><i>elpatonegro</i></b>, we combine vision, grit, and strategy to deliver meaningful results. 
-  Our philosophy: discipline breeds freedom, clarity drives impact, and relentless execution turns ideas into reality. 
-  We offer guidance, frameworks, strategy sessions, and project mentorship to help you elevate your work.</p>
-  <a href="../fly-with-us" class="button">Fly With Us</a>
-  <img src="../images/el%20pato%20negro.png" alt="Duck watermark" class="about-duck">
+  <section>
+    <p>At <b><i>elpatonegro</i></b>, we combine vision, grit, and strategy to deliver meaningful results. Our philosophy: discipline breeds freedom, clarity drives impact, and relentless execution turns ideas into reality.</p>
+    <p>We offer guidance, frameworks, strategy sessions, and project mentorship to help you elevate your work and achieve breakthrough results.</p>
+    <a href="/fly-with-us" class="button">Fly With Us</a>
+  </section>
 </main>
 <footer>
   <p>© 2025 elpatonegro</p>
