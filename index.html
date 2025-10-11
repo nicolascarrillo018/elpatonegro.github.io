@@ -7,8 +7,8 @@
 <link rel="icon" href="images/el%20pato%20negro.png" type="image/png">
 <style>
 :root{
-  --bg:#f2f0ef; 
-  --paper:#f2f0ef; /* UPDATED: Changed from #ffffff to match background */
+  --bg:#ffffff; /* CHANGED to pure white for seamless image blend */
+  --paper:#ffffff; /* Set to match page background */
   --text:#000; --accent:#f31317; --pad:5%; --maxw:1100px;
 }
 *{box-sizing:border-box}
@@ -20,8 +20,8 @@ a{color:inherit;text-decoration:none}
 .header{
     /* Full width background, shadow, and stickiness applied here */
     background:var(--paper);
-    /* Shadow is kept to provide subtle separation, even if colors match */
-    box-shadow:0 6px 30px rgba(0,0,0,0.06); 
+    /* Box-shadow is removed to ensure no visual interference with background */
+    box-shadow:none; 
     position:sticky;top:0;z-index:50;
 }
 .header-content { /* Wrapper for constrained content and layout */
@@ -72,6 +72,11 @@ a{color:inherit;text-decoration:none}
   .hero{padding:2rem var(--pad)}
   .nav{gap:.6rem}
   .brand img{width:34px;height:34px}
+  /* Ensure buttons stack nicely on mobile */
+  .cta-row a {
+    width: 100%; /* Make buttons full width on small screens */
+    margin-bottom: 0.5rem;
+  }
 }
 </style>
 </head>
