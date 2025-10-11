@@ -6,10 +6,11 @@
 <title>elpatonegro — Home</title>
 <link rel="icon" href="images/el%20pato%20negro.png" type="image/png">
 <style>
+/* MOBILE-FIRST BASE STYLES */
 :root{
-  --bg:#ffffff; /* CHANGED to pure white for seamless image blend */
-  --paper:#ffffff; /* Set to match page background */
-  --text:#000; --accent:#f31317; --pad:5%; --maxw:1100px;
+  --bg:#f2f0ef; /* Changed to requested color */
+  --paper:#f2f0ef; /* Changed to requested color (used for header) */
+  --text:#000; --accent:#f31317; --pad:5%; --maxw:1100px;
 }
 *{box-sizing:border-box}
 html,body{height:100%;margin:0;font-family:"Times New Roman",serif;color:var(--text);background:var(--bg);}
@@ -18,39 +19,46 @@ a{color:inherit;text-decoration:none}
 
 /* header */
 .header{
-    /* Full width background, shadow, and stickiness applied here */
-    background:var(--paper);
-    /* Box-shadow is removed to ensure no visual interference with background */
-    box-shadow:none; 
-    position:sticky;top:0;z-index:50;
+    background:var(--paper);
+    box-shadow:none; 
+    position:sticky;top:0;z-index:50;
 }
 .header-content { /* Wrapper for constrained content and layout */
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    max-width:var(--maxw);
-    margin:0 auto;
-    padding:.75rem var(--pad);
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    max-width:var(--maxw);
+    margin:0 auto;
+    padding:.75rem var(--pad);
 }
 .brand{display:flex;align-items:center;gap:.6rem;font-style:italic;font-weight:700}
-.brand img{width:40px;height:40px;object-fit:contain}
-.nav{display:flex;gap:1rem}
+/* Mobile-first: Smaller logo size */
+.brand img{width:34px;height:34px;object-fit:contain} 
+/* Mobile-first: Smaller gap for nav links */
+.nav{display:flex;gap:.6rem} 
 .nav a{font-weight:700;padding:.35rem .45rem;border-radius:6px;transition:all .18s ease}
 .nav a:hover{color:var(--accent);transform:translateY(-2px)}
 
 /* hero */
-.hero{min-height:calc(100vh - 140px);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:3rem var(--pad)}
+/* Mobile-first: Smaller padding */
+.hero{min-height:calc(100vh - 140px);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:2rem var(--pad)} 
 .h-eyebrow{font-size:.9rem;color:#666;margin-bottom:.6rem}
-.h-title{font-size:2.6rem;line-height:1.02;margin:0 0 .6rem}
+/* Mobile-first: Smaller title font size */
+.h-title{font-size:1.75rem;line-height:1.02;margin:0 0 .6rem} 
 .h-lead{max-width:760px;margin:0 0 1.5rem;font-size:1.1rem;color:#1a1a1a}
 .cta-row{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center}
+
+/* Mobile-first: Buttons are full width and stack */
+.cta-row a {
+    width: 100%; 
+    margin-bottom: 0.5rem;
+}
 
 /* Unified Button Styles for structure and hover only */
 .button, .button.secondary{
     border-radius:8px;font-weight:700;
     display:inline-block;transition:all .25s;
 }
-
 .button:hover, .button.secondary:hover {
     transform:translateY(-4px) scale(1.02);
     box-shadow:0 12px 35px rgba(243,19,23,0.25);
@@ -66,17 +74,21 @@ a{color:inherit;text-decoration:none}
 .footer a{color:var(--paper);font-weight:600;transition:color .18s}
 .footer a:hover{color:var(--accent)}
 
-/* responsive */
-@media (max-width:720px){
-  .h-title{font-size:1.75rem}
-  .hero{padding:2rem var(--pad)}
-  .nav{gap:.6rem}
-  .brand img{width:34px;height:34px}
-  /* Ensure buttons stack nicely on mobile */
-  .cta-row a {
-    width: 100%; /* Make buttons full width on small screens */
-    margin-bottom: 0.5rem;
-  }
+/* DESKTOP OVERRIDES (Mobile-First: applies when screen is 721px or wider) */
+@media (min-width:721px){
+    /* Hero */
+    .hero{padding:3rem var(--pad);} /* Revert to larger desktop padding */
+    .h-title{font-size:2.6rem;} /* Revert to larger desktop font size */
+
+    /* Header */
+    .brand img{width:40px;height:40px;} /* Revert to larger desktop logo size */
+    .nav{gap:1rem;} /* Revert to larger desktop nav link gap */
+
+    /* Buttons */
+    .cta-row a {
+        width: initial; /* Allow buttons to size based on content */
+        margin-bottom: 0; /* Remove stacking margin */
+    }
 }
 </style>
 </head>
@@ -104,7 +116,7 @@ a{color:inherit;text-decoration:none}
     <!-- New reduced padding applied (35% of original size) -->
     <a class="button" href="/fly-with-us" style="background:#f31317; color:#ffffff; border: 2px solid #000000; padding: 1.26rem 1.89rem;">Take Flight</a>
     <a class="button secondary" href="/about" style="background:#f31317; color:#ffffff; border: 2px solid #000000; padding: 1.26rem 1.89rem;">About <b><i>elpatonegro</i></b></a>
-    
+    
   </div>
 
   <img class="hero-duck" src="images/el%20pato%20negro.png" alt="el pato negro">
