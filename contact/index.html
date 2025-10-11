@@ -6,12 +6,30 @@
 <title>Contact — elpatonegro</title>
 <link rel="icon" href="../images/el%20pato%20negro.png" type="image/png">
 <style>
-:root{--bg:#f2f0ef;--text:#000;--accent:#f31317;--pad:5%;--maxw:1100px}
+/* LIGHT THEME VARIABLES */
+:root{--bg:#f2f0ef;--paper:#ffffff;--text:#000000;--accent:#f31317;--pad:5%;--maxw:1100px}
 *{box-sizing:border-box}
 html,body{height:100%;margin:0;font-family:"Times New Roman",serif;background:var(--bg);color:var(--text)}
+a{color:inherit;text-decoration:none}
 .container{max-width:var(--maxw);margin:0 auto;padding:1.25rem var(--pad)}
-.header{display:flex;align-items:center;justify-content:space-between;padding:.75rem 0}
-.brand{display:flex;align-items:center;gap:.6rem}
+
+/* header */
+.header{
+  /* Full width container, sticky position */
+  position:sticky;top:0;z-index:50;
+  background:var(--paper);
+  box-shadow:0 6px 30px rgba(0,0,0,0.06);
+}
+.header-inner { /* Inner wrapper for content layout and centering */
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  max-width:var(--maxw);
+  margin:0 auto;
+  padding: .75rem var(--pad);
+}
+/* Updated .brand style - keeping it simple for just the image */
+.brand{display:flex;align-items:center;gap:.6rem;} 
 .brand img{width:36px;height:36px}
 .nav{display:flex;gap:1rem}
 .nav a{color:var(--text);font-weight:700;padding:.35rem .45rem;border-radius:6px;text-decoration:none;transition:all .18s}
@@ -19,33 +37,85 @@ html,body{height:100%;margin:0;font-family:"Times New Roman",serif;background:va
 
 .main{padding:2rem 0;text-align:center}
 h1{font-size:1.9rem;margin-bottom:.6rem;font-style:italic}
-.lead{max-width:760px;margin:0 auto 1.25rem;color:rgba(242,240,239,.9)}
-.form-wrap{max-width:600px;margin:1rem auto;padding:1.25rem;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.04)}
-input,textarea{width:100%;padding:.9rem;border-radius:8px;border:1px solid rgba(255,255,255,0.06);background:transparent;color:var(--text);font-size:1rem;margin-bottom:.8rem}
-button{background:var(--accent);color:#fff;border:none;padding:.85rem 1rem;border-radius:8px;font-weight:700;cursor:pointer}
-.note{margin-top:1rem;color:rgba(242,240,239,.9)}
+.lead{
+    max-width:760px;margin:0 auto 1.25rem;
+    color:#1a1a1a; /* Darker text for better contrast */
+}
 
-.duck{width:110px;margin:1.5rem auto;filter:invert(1)}
+/* Form Styles for Light Background */
+.form-wrap{
+    max-width:600px;margin:1rem auto;
+    padding:1.75rem; /* Increased padding */
+    border-radius:12px;
+    background:var(--paper); /* White background for definition */
+    border:1px solid rgba(0,0,0,0.08);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05); /* Soft shadow for shape */
+}
+input,textarea{
+    width:100%;padding:.9rem;
+    border-radius:8px;
+    border:1px solid rgba(0,0,0,0.15); /* Darker border for visibility */
+    background:var(--paper);
+    color:var(--text);
+    font-size:1rem;
+    margin-bottom:.8rem;
+    transition:border-color .2s, box-shadow .2s;
+}
+input:focus, textarea:focus {
+    border-color: var(--accent);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(243, 19, 23, 0.1);
+}
+button{
+    background:var(--accent);color:#fff;
+    border:none;padding:.85rem 1rem;
+    border-radius:8px;font-weight:700;
+    cursor:pointer;
+    transition:all .25s;
+    border:2px solid var(--accent); /* Added for consistency */
+}
+button:hover {
+    transform:translateY(-2px) scale(1.01);
+    box-shadow:0 6px 15px rgba(243,19,23,0.25);
+}
+.note{margin-top:1rem;color:#666;} /* Darker, subtler note text */
 
-.footer{padding:2rem 0;text-align:center;color:rgba(242,240,239,.86)}
+/* duck with floating animation */
+.duck{
+    width:110px;display:block;margin:1.5rem auto;filter:none;
+    animation:float 6s ease-in-out infinite; /* ADDED ANIMATION HERE */
+}
+/* ADDED KEYFRAMES */
+@keyframes float{
+    0%{transform:translateY(0)}
+    50%{transform:translateY(-8px)}
+    100%{transform:translateY(0)}
+}
+
+/* footer - Dark footer for contrast */
+.footer{background:#0b0b0b;color:var(--paper);padding:2rem var(--pad);text-align:center}
+
 @media(max-width:720px){h1{font-size:1.5rem}.brand img{width:32px}}
 </style>
 </head>
 <body>
 
-<header class="container header">
-  <div class="brand"><img src="../images/el%20pato%20negro.png" alt=""><span style="font-style:italic;font-weight:700">elpatonegro</span></div>
-  <nav class="nav">
-    <a href="/">Home</a>
-    <a href="/about">About</a>
-    <a href="/fly-with-us">Fly With Us</a>
-    <a href="/contact" aria-current="page">Contact</a>
-  </nav>
+<header class="header" role="banner">
+  <div class="header-inner">
+    <!-- MODIFIED: Removed <span>elpatonegro</span>, only the duck image remains -->
+    <div class="brand"><img src="../images/el%20pato%20negro.png" alt="el pato negro logo"></div>
+    <nav class="nav">
+      <a href="/">Home</a>
+      <a href="/about">About</a>
+      <a href="/fly-with-us">Take Flight</a>
+      <a href="/contact" aria-current="page">Contact</a>
+    </nav>
+  </div>
 </header>
 
 <main class="container main">
   <h1>Have a project, question, or idea?<br>Let's build something together.</h1>
-  <p class="lead">Tell us what you're working on and where you need clarity. We'll reply with next steps and a free EPN Discipline Framework PDF.</p>
+  <p class="lead">Tell us what you're working on and where you need clarity. We'll reply with next steps shortly.</p>
 
   <div class="form-wrap" role="form">
     <form action="https://formspree.io/f/mrbylyne" method="POST">
@@ -55,12 +125,14 @@ button{background:var(--accent);color:#fff;border:none;padding:.85rem 1rem;borde
       <input type="hidden" name="_next" value="/thank-you">
       <button type="submit">Send</button>
     </form>
-    <p class="note">We'll reply with next steps and as a thank you, you'll receive a free copy of <strong>The <i>elpatonegro</i> Discipline Framework</strong>.</p>
+    <p class="note">As a thank you, you'll receive a free copy of <strong>The <i>elpatonegro</i> Discipline Framework</strong>.</p>
   </div>
 
   <img class="duck" src="../images/el%20pato%20negro.png" alt="duck">
 </main>
 
-<footer class="container footer">© 2025 elpatonegro</footer>
+<footer class="footer">
+  <div>© 2025 elpatonegro</div>
+</footer>
 </body>
 </html>
