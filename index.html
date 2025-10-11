@@ -3,46 +3,48 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>elpatonegro</title>
+<title>elpatonegro — Where Vision, Grit & Strategy Meet</title>
 <link rel="icon" href="images/el%20pato%20negro.png" type="image/png">
 <style>
-:root{--bg:#f2f0ef;--accent:#f31317;--text:#000;--offwhite:#fff;--max-width:900px;--pad:5%;}
-*{box-sizing:border-box;margin:0;padding:0;}
-html,body{height:100%;width:100%;font-family:'Times New Roman', serif;background:var(--bg);color:var(--text);}
-body{display:flex;flex-direction:column;min-height:100vh;}
-header,footer{width:100%;padding:1rem var(--pad);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;}
-header{background:var(--offwhite);box-shadow:0 2px 10px rgba(0,0,0,0.08);}
-header .logo{font-style:italic;font-weight:bold;font-size:1.5rem;}
-nav a{margin-left:25px;text-decoration:none;font-weight:bold;color:var(--text);transition:0.3s;}
+:root{--bg:#f2f0ef;--text:#000;--accent:#f31317;--pad:5%;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--bg);color:var(--text);font-family:"Times New Roman", serif;line-height:1.6;display:flex;flex-direction:column;min-height:100vh;}
+header, footer{width:100%;display:flex;justify-content:space-between;align-items:center;padding:1rem var(--pad);background:#fff;box-shadow:0 2px 10px rgba(0,0,0,0.1);}
+.logo{font-style:italic;font-weight:bold;font-size:1.5rem;}
+nav a{margin-left:1.5rem;font-weight:bold;transition:0.3s;}
 nav a:hover{color:var(--accent);}
-main{flex:1;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:4rem var(--pad);max-width:var(--max-width);margin:0 auto;width:100%;}
-h1{font-size:2.25rem;margin-bottom:1rem;}
-p{font-size:1.1rem;margin-bottom:2rem;}
-img.hero-duck{max-width:250px;width:45%;margin-top:2rem;}
-a.button{display:inline-block;padding:12px 25px;background:var(--accent);color:var(--offwhite);font-weight:bold;border:none;border-radius:5px;text-decoration:none;transition:0.3s;margin-top:20px;}
-a.button:hover{background:var(--offwhite);color:var(--accent);border:2px solid var(--accent);}
-footer{background:#000;color:var(--bg);text-align:center;padding:2rem var(--pad);}
-footer a{color:var(--bg);margin:0 10px;transition:0.3s;}
+main{flex:1;display:flex;flex-direction:column;align-items:center;text-align:center;justify-content:center;padding:3rem var(--pad);}
+h1{font-size:2.5rem;margin-bottom:1rem;line-height:1.3;}
+p{max-width:700px;margin-bottom:2rem;font-size:1.2rem;}
+.button{padding:1rem 2rem;background:var(--accent);color:#fff;font-weight:bold;border-radius:5px;transition:0.3s;text-decoration:none;font-size:1.1rem;}
+.button:hover{background:#fff;color:var(--accent);border:2px solid var(--accent);}
+img.floating-duck{width:150px;margin:2rem 0;animation:float 6s ease-in-out infinite;}
+@keyframes float{0%{transform:translateY(0)}50%{transform:translateY(-20px)}100%{transform:translateY(0)}}
+footer{background:#111;color:#f2f0ef;flex-direction:column;text-align:center;padding:2rem var(--pad);}
+footer a{margin:0 .5rem;color:#f2f0ef;transition:0.3s;}
 footer a:hover{color:var(--accent);}
-@media(max-width:700px){header .logo{font-size:1.3rem;}nav a{margin-left:15px;}h1{font-size:1.5rem;}main{padding:3rem var(--pad);} img.hero-duck{width:50%;}}
+@media(max-width:600px){h1{font-size:2rem;}p{font-size:1.1rem;}img.floating-duck{width:120px;}}
 </style>
 </head>
 <body>
+
 <header>
   <div class="logo">elpatonegro</div>
   <nav>
-    <a href="/">Home</a>
+    <a href="/" aria-current="page" style="color:var(--accent)">Home</a>
     <a href="/about">About</a>
-    <a href="/fly-with-us">Take Flight</a>
-    <a href="/contact">Contact Us</a>
+    <a href="/fly-with-us">Fly With Us</a>
+    <a href="/contact">Contact</a>
   </nav>
 </header>
+
 <main>
-  <h1>Where vision, grit, and strategy meet.</h1>
-  <p><i>Turning ideas into action, and discipline into results.</i></p>
-  <img src="images/el%20pato%20negro.png" alt="Duck" class="hero-duck">
-  <a href="/about" class="button">About <i><b>elpatonegro</b></i></a>
+  <h1>Where Vision, Grit, and Strategy Meet</h1>
+  <p>We exist for the few who refuse to settle. Discover your edge, sharpen your discipline, and elevate your impact.</p>
+  <a href="/fly-with-us" class="button">Fly With Us</a>
+  <img src="images/el%20pato%20negro.png" alt="Floating Duck" class="floating-duck">
 </main>
+
 <footer>
   <p>© 2025 elpatonegro</p>
   <div>
@@ -50,5 +52,6 @@ footer a:hover{color:var(--accent);}
     <a href="https://x.com/_elpatonegro" target="_blank">X</a>
   </div>
 </footer>
+
 </body>
 </html>
