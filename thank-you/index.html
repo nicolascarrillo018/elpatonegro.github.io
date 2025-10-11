@@ -8,17 +8,17 @@
 <style>
 :root{--bg:#000;--text:#f2f0ef;--accent:#f31317;--pad:5%;}
 *{margin:0;padding:0;box-sizing:border-box;}
-body{background:var(--bg);color:var(--text);font-family:"Times New Roman", serif;line-height:1.6;display:flex;flex-direction:column;min-height:100vh;text-align:center;}
+body{background:var(--bg);color:var(--text);font-family:"Times New Roman", serif;line-height:1.6;display:flex;flex-direction:column;min-height:100vh;}
 header, footer{width:100%;display:flex;justify-content:space-between;align-items:center;padding:1rem var(--pad);background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);}
 .logo{font-style:italic;font-weight:bold;font-size:1.5rem;}
 nav a{margin-left:1.5rem;font-weight:bold;transition:0.3s;}
 nav a:hover{color:var(--accent);}
-main{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:3rem var(--pad);}
+main{flex:1;display:flex;flex-direction:column;align-items:center;text-align:center;padding:3rem var(--pad);max-width:900px;margin:0 auto;}
 h1{font-size:2rem;margin-bottom:1rem;}
-p{max-width:700px;margin-bottom:1.5rem;font-size:1.1rem;}
-a.button{padding:.75rem 1.5rem;background:var(--accent);color:#fff;font-weight:bold;border-radius:5px;transition:0.3s;text-decoration:none;}
-a.button:hover{background:#fff;color:var(--accent);border:2px solid var(--accent);}
-img.duck{width:120px;margin:2rem 0;animation:float 6s ease-in-out infinite;filter:invert(1);}
+p{margin-bottom:1rem;font-size:1.1rem;max-width:750px;}
+.button{padding:.75rem 1.5rem;background:var(--accent);color:#fff;font-weight:bold;border-radius:5px;transition:0.3s;text-decoration:none;margin:1rem 0;}
+.button:hover{background:#fff;color:var(--accent);border:2px solid var(--accent);}
+img.duck{width:120px;margin:2rem 0;animation:float 6s ease-in-out infinite;}
 @keyframes float{0%{transform:translateY(0)}50%{transform:translateY(-15px)}100%{transform:translateY(0)}}
 footer{background:#111;color:var(--text);flex-direction:column;text-align:center;padding:2rem var(--pad);}
 footer a{margin:0 .5rem;color:var(--text);transition:0.3s;}
