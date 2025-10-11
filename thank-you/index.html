@@ -1,36 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Thank You — elpatonegro</title>
-<link rel="icon" href="images/el%20pato%20negro.png" type="image/png">
+<link rel="icon" href="../images/el%20pato%20negro.png" type="image/png">
 <style>
-:root{--bg:#000;--text:#f2f0ef;--accent:#f31317;--pad:5%;}
-*{margin:0;padding:0;box-sizing:border-box;}
-body{background:var(--bg);color:var(--text);font-family:"Times New Roman", serif;line-height:1.6;display:flex;flex-direction:column;min-height:100vh;}
-header, footer{width:100%;display:flex;justify-content:space-between;align-items:center;padding:1rem var(--pad);background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);}
-.logo{font-style:italic;font-weight:bold;font-size:1.5rem;}
-nav a{margin-left:1.5rem;font-weight:bold;transition:0.3s;}
-nav a:hover{color:var(--accent);}
-main{flex:1;display:flex;flex-direction:column;align-items:center;text-align:center;padding:3rem var(--pad);max-width:900px;margin:0 auto;}
-h1{font-size:2rem;margin-bottom:1rem;}
-p{margin-bottom:1rem;font-size:1.1rem;max-width:750px;}
-.button{padding:.75rem 1.5rem;background:var(--accent);color:#fff;font-weight:bold;border-radius:5px;transition:0.3s;text-decoration:none;margin:1rem 0;}
-.button:hover{background:#fff;color:var(--accent);border:2px solid var(--accent);}
-img.duck{width:120px;margin:2rem 0;animation:float 6s ease-in-out infinite;}
-@keyframes float{0%{transform:translateY(0)}50%{transform:translateY(-15px)}100%{transform:translateY(0)}}
-footer{background:#111;color:var(--text);flex-direction:column;text-align:center;padding:2rem var(--pad);}
-footer a{margin:0 .5rem;color:var(--text);transition:0.3s;}
-footer a:hover{color:var(--accent);}
-@media(max-width:600px){h1{font-size:1.5rem;}img.duck{width:100px;}}
+:root{--bg:#000;--text:#f2f0ef;--accent:#f31317;--pad:5%;--maxw:1100px}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:"Times New Roman",serif;background:var(--bg);color:var(--text)}
+.container{max-width:var(--maxw);margin:0 auto;padding:1.25rem var(--pad)}
+.header{display:flex;align-items:center;justify-content:space-between;padding:.75rem 0}
+.brand{display:flex;align-items:center;gap:.6rem}
+.brand img{width:36px;height:36px}
+.nav{display:flex;gap:1rem}
+.nav a{color:var(--text);font-weight:700;padding:.35rem .45rem;border-radius:6px;text-decoration:none;transition:all .18s}
+.nav a:hover,.nav a[aria-current="page"]{color:var(--accent)}
+.main{padding:2.5rem 0;text-align:center}
+h1{font-size:2rem;margin-bottom:.6rem;font-style:italic}
+p{max-width:760px;margin:0 auto 1rem;color:rgba(242,240,239,.92)}
+.button{display:inline-block;padding:.75rem 1.25rem;background:var(--accent);color:#fff;border-radius:8px;text-decoration:none;font-weight:700}
+.duck{width:120px;margin:1.25rem auto;filter:invert(1)}
+.footer{padding:2rem 0;text-align:center;color:rgba(242,240,239,.86)}
+@media(max-width:720px){h1{font-size:1.5rem}}
 </style>
 </head>
 <body>
 
-<header>
-  <div class="logo">elpatonegro</div>
-  <nav>
+<header class="container header">
+  <div class="brand"><img src="../images/el%20pato%20negro.png" alt=""><span style="font-style:italic;font-weight:700">elpatonegro</span></div>
+  <nav class="nav">
     <a href="/">Home</a>
     <a href="/about">About</a>
     <a href="/fly-with-us">Fly With Us</a>
@@ -38,20 +37,13 @@ footer a:hover{color:var(--accent);}
   </nav>
 </header>
 
-<main>
+<main class="container main">
   <h1>Thanks for reaching out!</h1>
-  <p>Your copy of <b>The EPN Discipline Framework</b> is ready below.</p>
-  <a href="images/The%20EPN%20Discipline%20Framework.pdf" class="button" target="_blank">Download PDF</a>
-  <img src="images/el%20pato%20negro.png" alt="Duck" class="duck">
+  <p>Your copy of <strong>The EPN Discipline Framework</strong> is ready. Click below to download — and welcome to the few who fly.</p>
+  <a class="button" href="/The%20EPN%20Discipline%20Framework.pdf" target="_blank" rel="noopener">Download PDF</a>
+  <img class="duck" src="../images/el%20pato%20negro.png" alt="duck">
 </main>
 
-<footer>
-  <p>© 2025 elpatonegro</p>
-  <div>
-    <a href="https://www.instagram.com/elpatonegro_/" target="_blank">Instagram</a>
-    <a href="https://x.com/_elpatonegro" target="_blank">X</a>
-  </div>
-</footer>
-
+<footer class="container footer">© 2025 elpatonegro</footer>
 </body>
 </html>
