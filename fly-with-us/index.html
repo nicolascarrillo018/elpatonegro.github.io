@@ -6,14 +6,42 @@
 <title>Fly With Us — elpatonegro</title>
 <link rel="icon" href="../images/el%20pato%20negro.png" type="image/png">
 <style>
-:root{--bg:#000;--text:#f2f0ef;--accent:#f31317;--pad:5%;--maxw:1100px}
+/* LIGHT THEME VARIABLES */
+:root{
+    --bg:#f2f0ef;
+    --paper:#ffffff;
+    --text:#000000;
+    --accent:#f31317;
+    --pad:5%;
+    --maxw:1100px;
+    /* New Tier Colors based on ChatGPT output */
+    --c-walk: #FFD700;
+    --c-swim: #1E90FF;
+    --c-fly: #32CD32;
+    --c-dive: #1ABC9C;
+    --c-soar: #FF69B4;
+    --c-shadow: #8A2BE2;
+}
 *{box-sizing:border-box}
 html,body{height:100%;margin:0;font-family:"Times New Roman",serif;background:var(--bg);color:var(--text)}
+a{color:inherit;text-decoration:none}
 .container{max-width:var(--maxw);margin:0 auto;padding:1.25rem var(--pad)}
 
 /* header */
-.header{display:flex;align-items:center;justify-content:space-between;padding:.75rem 0}
-.brand{display:flex;align-items:center;gap:.6rem}
+.header{
+  position:sticky;top:0;z-index:50;
+  background:var(--paper);
+  box-shadow:0 6px 30px rgba(0,0,0,0.06);
+}
+.header-inner {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  max-width:var(--maxw);
+  margin:0 auto;
+  padding: .75rem var(--pad);
+}
+.brand{display:flex;align-items:center;gap:.6rem;} 
 .brand img{width:36px;height:36px}
 .nav{display:flex;gap:1rem}
 .nav a{color:var(--text);font-weight:700;padding:.35rem .45rem;border-radius:6px;text-decoration:none;transition:all .18s}
@@ -21,41 +49,127 @@ html,body{height:100%;margin:0;font-family:"Times New Roman",serif;background:va
 
 /* hero */
 .hero{padding:2.25rem 0;text-align:center}
-.hero h1{font-size:2rem;margin:0 0 .6rem;font-style:italic}
-.hero p{max-width:820px;margin:0 auto 1.25rem;color:rgba(242,240,239,.92);font-size:1.05rem}
+.hero h1{font-size:2rem;margin:0 0 .6rem;font-style:italic;color:var(--text)}
+.hero p{max-width:820px;margin:0 auto 1.25rem;color:#1a1a1a;font-size:1.05rem}
 
 /* tiers grid */
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.25rem;margin-top:1.25rem}
-.card{background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.04);padding:1.5rem;border-radius:12px;box-shadow:0 12px 30px rgba(0,0,0,0.6);transition:transform .25s}
-.card:hover{transform:translateY(-8px)}
-.card h3{margin:0 0 .4rem;color:var(--accent)}
-.card p{margin:0 0 .6rem;color:rgba(242,240,239,.95)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem;margin-top:2rem}
+.card{
+  background:var(--paper);
+  border:1px solid rgba(0,0,0,0.08);
+  padding:1.5rem;border-radius:12px;
+  box-shadow:0 10px 20px rgba(0,0,0,0.05);
+  transition:transform .25s;
+  position: relative;
+  overflow: hidden;
+}
+.card:hover{transform:translateY(-4px);box-shadow:0 15px 30px rgba(0,0,0,0.08);}
+.card h3{margin:0 0 .8rem;font-size:1.4rem;padding-bottom:.5rem;border-bottom:1px solid rgba(0,0,0,0.05);}
+.card h3 i {font-style: normal; font-weight: 400; color: #555; font-size: 80%;}
+.card p{margin:0 0 1rem;color:#444;line-height:1.5;}
 
-/* floating duck placed down near Fly section */
-.floating{width:220px;margin:2rem auto 0;opacity:.9;filter:invert(1);animation:float 6s ease-in-out infinite}
-@keyframes float{0%{transform:translateY(0)}50%{transform:translateY(-12px)}100%{transform:translateY(0)}}
+.card ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 1rem 0;
+}
+.card ul li {
+    margin-bottom: 0.5rem;
+    position: relative;
+    padding-left: 1.5rem;
+    color: #333;
+    font-size: 0.95rem;
+}
+.card ul li::before {
+    content: "•";
+    color: var(--accent); /* Use accent color for list bullets */
+    position: absolute;
+    left: 0;
+    font-weight: 900;
+    font-size: 1.2em;
+    line-height: 1;
+}
+.who-its-for {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px dashed rgba(0,0,0,0.1);
+    font-size: 0.9rem;
+    color: #666;
+}
+.who-its-for strong {
+    color: var(--text);
+}
 
-/* footer */
-.footer{padding:2rem 0;text-align:center;color:rgba(242,240,239,.86)}
+/* Specific Accent Colors for Titles */
+.color-walk { color: var(--c-walk); }
+.color-swim { color: var(--c-swim); }
+.color-fly { color: var(--c-fly); }
+.color-dive { color: var(--c-dive); }
+.color-soar { color: var(--c-soar); }
+.color-shadow { color: var(--c-shadow); }
+
+.button{
+    background:var(--accent);color:#fff;
+    border:none;padding:.75rem 1.25rem;
+    border-radius:8px;font-weight:700;
+    display:inline-block;
+    text-decoration:none;
+    transition:all .25s;
+    border:2px solid var(--accent); 
+    margin-top: 1rem;
+}
+.button:hover {
+    transform:translateY(-2px);
+    box-shadow:0 6px 15px rgba(243,19,23,0.25);
+}
+
+/* Floating duck */
+.floating{
+    width:160px;display:block;margin:3rem auto 0;filter:none;
+    animation:float 6s ease-in-out infinite; 
+}
+@keyframes float{
+    0%{transform:translateY(0)}
+    50%{transform:translateY(-8px)}
+    100%{transform:translateY(0)}
+}
+
+/* Watermark SVG inside cards (FIXED TO FIT) */
+.card-watermark {
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    width: 80px; /* Made smaller */
+    height: 80px;
+    opacity: 0.04; /* Very subtle */
+    pointer-events: none;
+    color: var(--accent);
+    transform: rotate(5deg); /* Less rotation */
+}
+
+/* footer - Dark footer for contrast */
+.footer{background:#0b0b0b;color:var(--paper);padding:2rem var(--pad);text-align:center}
 
 /* responsive */
 @media(max-width:720px){
-  .hero h1{font-size:1.6rem}
-  .brand img{width:32px;height:32px}
-  .floating{width:160px}
+  .hero h1{font-size:1.6rem}
+  .brand img{width:32px;height:32px}
+  .floating{width:120px}
 }
 </style>
 </head>
 <body>
 
-<header class="container header">
-  <div class="brand"><img src="../images/el%20pato%20negro.png" alt=""><span style="font-style:italic;font-weight:700">elpatonegro</span></div>
-  <nav class="nav">
-    <a href="/">Home</a>
-    <a href="/about">About</a>
-    <a href="/fly-with-us" aria-current="page">Fly With Us</a>
-    <a href="/contact">Contact</a>
-  </nav>
+<header class="header" role="banner">
+  <div class="header-inner">
+    <div class="brand"><img src="../images/el%20pato%20negro.png" alt="el pato negro logo"></div>
+    <nav class="nav">
+      <a href="/">Home</a>
+      <a href="/about">About</a>
+      <a href="/fly-with-us" aria-current="page">Take Flight</a>
+      <a href="/contact">Contact</a>
+    </nav>
+  </div>
 </header>
 
 <main class="container">
@@ -65,25 +179,116 @@ html,body{height:100%;margin:0;font-family:"Times New Roman",serif;background:va
   </section>
 
   <section class="grid" aria-label="Programs">
+    <!-- Walk -->
     <article class="card">
-      <h3>Walk - Discipline Diagnostic</h3>
-      <p>20–30 minute 1:1 session to uncover bottlenecks. Actionable insights you can implement immediately.</p>
-      <p style="color:var(--accent);font-weight:700">Price: $50–$100 (or free lead-in)</p>
-      <a class="button" href="/contact" style="display:inline-block;margin-top:.6rem;background:var(--accent);color:#fff;padding:.5rem .9rem;border-radius:8px;text-decoration:none">Book Diagnostic</a>
+      <svg class="card-watermark color-walk" viewBox="0 0 100 100" fill="currentColor">
+        <path d="M50 0C35 0 20 15 20 30c0 10 5 20 10 25l-5 25h40l-5-25c5-5 10-15 10-25C80 15 65 0 50 0z M50 20A10 10 0 1050 40A10 10 0 1050 20z"/>
+      </svg>
+      <h3 class="color-walk">Walk <i>— $297</i></h3>
+      <p>Foundational movement. Build your base, gain confidence, and prepare to take off.</p>
+      <ul>
+        <li>4-week foundational program (1 session/week)</li>
+        <li>Step-by-step skill and habit guides</li>
+        <li>Personalized starter plan tailored to your goals</li>
+        <li>Access to private beginner community</li>
+        <li>Accountability check-ins</li>
+      </ul>
+      <div class="who-its-for"><strong>Who it’s for:</strong> Beginners ready to commit and establish a strong foundation.</div>
+      <a class="button" href="/contact">Take Flight →</a>
     </article>
 
+    <!-- Swim -->
     <article class="card">
-      <h3>Swim - EPN Catalyst Program</h3>
-      <p>4-week intensive (cohort or 1:1). Weekly live sessions + micro-actions + accountability.</p>
-      <p style="color:var(--accent);font-weight:700">Price: $750–$1,500</p>
-      <a class="button" href="/contact" style="display:inline-block;margin-top:.6rem;background:var(--accent);color:#fff;padding:.5rem .9rem;border-radius:8px;text-decoration:none">Reserve Seat</a>
+      <svg class="card-watermark color-swim" viewBox="0 0 100 100" fill="currentColor">
+        <path d="M50 0C35 0 20 15 20 30c0 10 5 20 10 25l-5 25h40l-5-25c5-5 10-15 10-25C80 15 65 0 50 0z M50 20A10 10 0 1050 40A10 10 0 1050 20z"/>
+      </svg>
+      <h3 class="color-swim">Swim <i>— $797</i></h3>
+      <p>Fluid adaptation. Navigate challenges smoothly and master strategy.</p>
+      <ul>
+        <li>6-week intermediate program (2 sessions/week)</li>
+        <li>Strategy deep dives and actionable frameworks</li>
+        <li>Personalized coaching and feedback</li>
+        <li>Skill mastery challenges</li>
+        <li>Access to intermediate community and resources</li>
+        <li>Bi-weekly live Q&A sessions</li>
+      </ul>
+      <div class="who-its-for"><strong>Who it’s for:</strong> Those with some experience wanting to level up and handle bigger challenges.</div>
+      <a class="button" href="/contact">Take Flight →</a>
     </article>
 
+    <!-- Fly -->
     <article class="card">
-      <h3>Fly - Black Duck Gear</h3>
-      <p>Limited-drop, EPN-branded apparel & accessories. Minimal runs, high signal.</p>
-      <p style="color:var(--accent);font-weight:700">Price: $25–$70</p>
-      <a class="button" href="/contact" style="display:inline-block;margin-top:.6rem;background:var(--accent);color:#fff;padding:.5rem .9rem;border-radius:8px;text-decoration:none">Claim Drop</a>
+      <svg class="card-watermark color-fly" viewBox="0 0 100 100" fill="currentColor">
+        <path d="M50 0C35 0 20 15 20 30c0 10 5 20 10 25l-5 25h40l-5-25c5-5 10-15 10-25C80 15 65 0 50 0z M50 20A10 10 0 1050 40A10 10 0 1050 20z"/>
+      </svg>
+      <h3 class="color-fly">Fly <i>— $1,997</i></h3>
+      <p>High performance. Take bold leaps, dominate goals, and reach your peak potential.</p>
+      <ul>
+        <li>8-week advanced program (3 sessions/week)</li>
+        <li>Personalized high-performance coaching</li>
+        <li>Elite-level strategy and planning templates</li>
+        <li>VIP community access</li>
+        <li>Weekly 1-on-1 mentoring sessions</li>
+        <li>Lifetime access to advanced resources</li>
+      </ul>
+      <div class="who-its-for"><strong>Who it’s for:</strong> High achievers ready to dominate and play at the top.</div>
+      <a class="button" href="/contact">Take Flight →</a>
+    </article>
+    
+    <!-- Dive -->
+    <article class="card">
+      <svg class="card-watermark color-dive" viewBox="0 0 100 100" fill="currentColor">
+        <path d="M50 0C35 0 20 15 20 30c0 10 5 20 10 25l-5 25h40l-5-25c5-5 10-15 10-25C80 15 65 0 50 0z M50 20A10 10 0 1050 40A10 10 0 1050 20z"/>
+      </svg>
+      <h3 class="color-dive">Dive <i>— $1,497</i></h3>
+      <p>Go deep. Discover hidden opportunities others miss and master niche strategies.</p>
+      <ul>
+        <li>6-week advanced program (2–3 sessions/week)</li>
+        <li>Deep-dive workshops and tactical guides</li>
+        <li>Personalized uncovering of hidden growth opportunities</li>
+        <li>Access to exclusive "Black Duck Secrets" resource library</li>
+        <li>Live strategy sessions and accountability check-ins</li>
+      </ul>
+      <div class="who-its-for"><strong>Who it’s for:</strong> Experienced players seeking a secret edge.</div>
+      <a class="button" href="/contact">Take Flight →</a>
+    </article>
+
+    <!-- Soar -->
+    <article class="card">
+      <svg class="card-watermark color-soar" viewBox="0 0 100 100" fill="currentColor">
+        <path d="M50 0C35 0 20 15 20 30c0 10 5 20 10 25l-5 25h40l-5-25c5-5 10-15 10-25C80 15 65 0 50 0z M50 20A10 10 0 1050 40A10 10 0 1050 20z"/>
+      </svg>
+      <h3 class="color-soar">Soar <i>— $2,497</i></h3>
+      <p>Reach new heights. Unlock ultimate potential and see the bigger picture.</p>
+      <ul>
+        <li>8-week elite program (3 sessions/week)</li>
+        <li>Personalized high-impact coaching</li>
+        <li>Growth and scaling blueprints for life, business, or skills</li>
+        <li>VIP community access with elite peer networking</li>
+        <li>Bi-weekly 1-on-1 strategy sessions</li>
+        <li>Lifetime access to elite-level resources</li>
+      </ul>
+      <div class="who-its-for"><strong>Who it’s for:</strong> Ambitious achievers ready to break limits.</div>
+      <a class="button" href="/contact">Take Flight →</a>
+    </article>
+    
+    <!-- Shadow Glide -->
+    <article class="card">
+      <svg class="card-watermark color-shadow" viewBox="0 0 100 100" fill="currentColor">
+        <path d="M50 0C35 0 20 15 20 30c0 10 5 20 10 25l-5 25h40l-5-25c5-5 10-15 10-25C80 15 65 0 50 0z M50 20A10 10 0 1050 40A10 10 0 1050 20z"/>
+      </svg>
+      <h3 class="color-shadow">Shadow Glide <i>— $4,997</i></h3>
+      <p>Move unseen. Execute with precision. Win without the crowd knowing.</p>
+      <ul>
+        <li>12-week VIP elite program</li>
+        <li>Personalized "stealth" strategies for business, growth, or personal advantage</li>
+        <li>Direct 1-on-1 mentorship with elite guidance</li>
+        <li>Exclusive access to high-level tactics and resources</li>
+        <li>Invitations to private mastermind events</li>
+        <li>Lifetime access to elite secret playbooks</li>
+      </ul>
+      <div class="who-its-for"><strong>Who it’s for:</strong> Elite performers seeking an edge others can’t see.</div>
+      <a class="button" href="/contact">Take Flight →</a>
     </article>
   </section>
 
@@ -91,10 +296,12 @@ html,body{height:100%;margin:0;font-family:"Times New Roman",serif;background:va
   <img class="floating" src="../images/el%20pato%20negro.png" alt="floating duck">
 
   <section style="max-width:900px;margin:2rem auto;text-align:center">
-    <p style="color:rgba(242,240,239,.92);font-size:1.02rem">Proven frameworks. Minimal fluff. Maximum results. If you want to fly - show up, do the work, wear the signal.</p>
+    <p style="color:#444;font-size:1.02rem">Proven frameworks. Minimal fluff. Maximum results. If you want to fly - show up, do the work, wear the signal.</p>
   </section>
 </main>
 
-<footer class="container footer">© 2025 elpatonegro</footer>
+<footer class="footer">
+  <div>© 2025 elpatonegro</div>
+</footer>
 </body>
 </html>
