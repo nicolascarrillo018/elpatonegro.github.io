@@ -3,35 +3,145 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>elpatonegro</title>
+<title>elpatonegro — Where Vision, Grit, and Strategy Meet</title>
 <link rel="icon" href="images/el%20pato%20negro.png" type="image/png">
 <style>
-:root{--bg:#f2f0ef;--text:#000;--accent:#f31317;--pad:5%;}
+:root{
+  --bg:#f2f0ef;
+  --text:#000;
+  --accent:#f31317;
+  --dark:#000;
+  --pad:5%;
+}
 *{margin:0;padding:0;box-sizing:border-box;}
-body{background:var(--bg);color:var(--text);font-family:"Times New Roman", serif;line-height:1.6;display:flex;flex-direction:column;min-height:100vh;}
-header, footer{width:100%;display:flex;justify-content:space-between;align-items:center;padding:1rem var(--pad);background:#fff;box-shadow:0 2px 10px rgba(0,0,0,0.1);}
-.logo{font-style:italic;font-weight:bold;font-size:1.5rem;}
-nav a{margin-left:1.5rem;font-weight:bold;transition:0.3s;}
-nav a:hover{color:var(--accent);}
-main{flex:1;display:flex;flex-direction:column;align-items:center;text-align:center;justify-content:center;padding:3rem var(--pad);}
-h1{font-size:2.5rem;margin-bottom:1rem;line-height:1.3;}
-p{max-width:700px;margin-bottom:2rem;font-size:1.2rem;}
-.button{padding:1rem 2rem;background:var(--accent);color:#fff;font-weight:bold;border-radius:5px;transition:0.3s;text-decoration:none;font-size:1.1rem;}
-.button:hover{background:#fff;color:var(--accent);border:2px solid var(--accent);}
-img.floating-duck{width:150px;margin:2rem 0;animation:float 6s ease-in-out infinite;}
-@keyframes float{0%{transform:translateY(0)}50%{transform:translateY(-20px)}100%{transform:translateY(0)}}
-footer{background:#111;color:#f2f0ef;flex-direction:column;text-align:center;padding:2rem var(--pad);}
-footer a{margin:0 .5rem;color:#f2f0ef;transition:0.3s;}
+body{
+  font-family:'Times New Roman', serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.6;
+  display:flex;
+  flex-direction:column;
+  min-height:100vh;
+}
+
+/* Header */
+header{
+  background:#fff;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px var(--pad);
+  box-shadow:0 2px 10px rgba(0,0,0,0.1);
+  position:fixed;
+  width:100%;
+  top:0;
+  z-index:10;
+}
+.logo{
+  display:flex;
+  align-items:center;
+  font-style:italic;
+  font-weight:bold;
+  font-size:1.5rem;
+}
+.logo img{
+  width:40px;
+  height:40px;
+  margin-right:10px;
+}
+nav a{
+  margin-left:25px;
+  font-weight:bold;
+  color:var(--text);
+  text-decoration:none;
+  transition:0.3s;
+}
+nav a:hover, nav a[aria-current="page"]{
+  color:var(--accent);
+}
+
+/* Main */
+main{
+  flex:1;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:6rem var(--pad) 4rem;
+  min-height:100vh;
+  background:linear-gradient(to bottom,#fff,var(--bg));
+}
+h1{
+  font-size:2.6rem;
+  margin-bottom:1rem;
+  letter-spacing:1px;
+}
+p{
+  font-size:1.2rem;
+  max-width:650px;
+  margin-bottom:2rem;
+}
+img.hero-duck{
+  width:150px;
+  animation:float 6s ease-in-out infinite;
+  margin-bottom:2rem;
+}
+@keyframes float{
+  0%{transform:translateY(0);}
+  50%{transform:translateY(-10px);}
+  100%{transform:translateY(0);}
+}
+a.button{
+  display:inline-block;
+  padding:14px 32px;
+  background:var(--accent);
+  color:#fff;
+  font-weight:bold;
+  text-decoration:none;
+  border-radius:5px;
+  transition:0.3s;
+}
+a.button:hover{
+  background:#fff;
+  color:var(--accent);
+  border:2px solid var(--accent);
+}
+
+/* Footer */
+footer{
+  background:var(--dark);
+  color:#f2f0ef;
+  text-align:center;
+  padding:40px var(--pad);
+}
+footer a{
+  color:#f2f0ef;
+  margin:0 10px;
+  transition:0.3s;
+  text-decoration:none;
+}
 footer a:hover{color:var(--accent);}
-@media(max-width:600px){h1{font-size:2rem;}p{font-size:1.1rem;}img.floating-duck{width:120px;}}
+
+/* Mobile */
+@media(max-width:700px){
+  header{flex-direction:column;align-items:flex-start;}
+  nav{margin-top:.5rem;}
+  h1{font-size:2rem;}
+  p{font-size:1rem;}
+  img.hero-duck{width:120px;}
+}
 </style>
 </head>
 <body>
 
 <header>
-  <div class="logo">elpatonegro</div>
+  <div class="logo">
+    <img src="images/el%20pato%20negro.png" alt="elpatonegro Logo">
+    elpatonegro
+  </div>
   <nav>
-    <a href="/" aria-current="page" style="color:var(--accent)">Home</a>
+    <a href="/" aria-current="page">Home</a>
     <a href="/about">About</a>
     <a href="/fly-with-us">Fly With Us</a>
     <a href="/contact">Contact</a>
@@ -39,10 +149,10 @@ footer a:hover{color:var(--accent);}
 </header>
 
 <main>
-  <h1>Where vision, grit, and strategy meet</h1>
-  <p>We exist for those who refuse to settle. Find your edge, hone your discipline, and elevate your impact.</p>
-  <a href="/about" class="button">About <i><b>elpatonegro</b></i>/a>
-  <img src="images/el%20pato%20negro.png" alt="Floating Duck" class="floating-duck">
+  <img src="images/el%20pato%20negro.png" alt="Black Duck" class="hero-duck">
+  <h1>Where Vision, Grit, and Strategy Meet.</h1>
+  <p>Welcome to <b><i>elpatonegro</i></b> — a movement built on discipline, integrity, and persistence. Designed for those ready to rise above the noise and build something real.</p>
+  <a href="/fly-with-us" class="button">Fly With Us</a>
 </main>
 
 <footer>
