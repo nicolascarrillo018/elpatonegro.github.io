@@ -3,120 +3,119 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>elpatonegro — Home</title>
-<link rel="icon" href="images/el%20pato%20negro.png" type="image/png">
+<title>About — elpatonegro</title>
+<link rel="icon" href="../images/el%20pato%20negro.png" type="image/png">
 <style>
-:root{
-  --bg:#f2f0ef; --paper:#ffffff; --text:#000; --accent:#f31317; --pad:5%; --maxw:1100px;
-}
+/* LIGHT THEME VARIABLES */
+:root{--bg:#f2f0ef; --paper:#ffffff; --text:#000000; --accent:#f31317; --pad:5%; --maxw:1100px}
 *{box-sizing:border-box}
 html,body{height:100%;margin:0;font-family:"Times New Roman",serif;color:var(--text);background:var(--bg);}
 a{color:inherit;text-decoration:none}
-.container{max-width:var(--maxw);margin:0 auto;padding:1.25rem var(--pad);}
+.container{max-width:var(--maxw);margin:0 auto;padding:1.25rem var(--pad)}
 
 /* header */
 .header{
-  /* This now defines the full-width background, shadow, and stickiness */
+  position:sticky;top:0;z-index:50;
+  /* Applying light theme header styles */
   background:var(--paper);
   box-shadow:0 6px 30px rgba(0,0,0,0.06);
-  position:sticky;top:0;z-index:100;
 }
-.header-inner { /* New inner wrapper for content layout and centering */
+.header-inner { /* Inner wrapper for content layout and centering */
   display:flex;
   align-items:center;
   justify-content:space-between;
   max-width:var(--maxw);
   margin:0 auto;
-  padding: .75rem var(--pad); /* Re-applied header specific padding */
+  padding: .75rem var(--pad);
 }
 .brand{display:flex;align-items:center;gap:.6rem;font-style:italic;font-weight:700}
-.brand img{width:40px;height:40px;object-fit:contain} /* Reverted logo image size/style */
+.brand img{width:36px;height:36px}
 .nav{display:flex;gap:1rem}
-.nav a{font-weight:700;padding:.35rem .45rem;border-radius:6px;transition:all .18s ease}
-.nav a:hover{color:var(--accent);transform:translateY(-2px)}
+.nav a{color:var(--text);font-weight:700;padding:.35rem .45rem;border-radius:6px;text-decoration:none;transition:all .18s}
+.nav a:hover,.nav a[aria-current="page"]{color:var(--accent);transform:translateY(-2px)}
 
 /* hero */
-.hero{min-height:calc(100vh - 140px);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:3rem var(--pad)}
-.h-eyebrow{font-size:.9rem;color:#666;margin-bottom:.6rem}
-.h-title{font-size:2.6rem;line-height:1.02;margin:0 0 .6rem}
-.h-lead{max-width:760px;margin:0 0 1.5rem;font-size:1.1rem;color:#1a1a1a}
-.cta-row{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center}
+.hero{padding:2.25rem 0 1.5rem;text-align:center}
+.hero h1{font-size:2rem;margin:0 0 .6rem;font-style:italic}
+.hero p{
+  max-width:820px;margin:0 auto 1.25rem;
+  color:#1a1a1a; /* Dark text for light theme hero lead */
+  font-size:1.05rem
+}
+
+/* content card - Updated for light theme */
+.card{
+  background:var(--paper);
+  border:1px solid rgba(0,0,0,0.08); /* Light border */
+  padding:1.6rem;border-radius:12px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.08); /* Light shadow */
+  max-width:920px;margin:1.25rem auto;text-align:left
+}
+.card h3{margin-top:0;color:var(--accent)}
+.card p{color:var(--text);line-height:1.5;font-size:1rem}
+
+/* button */
 .button{
-    background:var(--accent);color:#fff;padding:.9rem 1.4rem;border-radius:8px;font-weight:700;
-    display:inline-block;transition:all .25s;border:2px solid var(--accent);
+  display:inline-block;margin-top:1rem;background:var(--accent);
+  color:#fff;padding:.6rem 1rem;border-radius:8px;
+  font-weight:700;text-decoration:none;transition:all .25s;
+  border:2px solid var(--accent); /* Added border for hover consistency */
 }
-.button.secondary{background:transparent;color:var(--accent)}
-.button:hover{
-    transform:translateY(-4px) scale(1.02);
-    box-shadow:0 12px 35px rgba(243,19,23,0.25);
-}
-.button.secondary:hover{
-    transform:translateY(-4px) scale(1.02);
-    box-shadow:0 12px 35px rgba(0,0,0,0.1);
+.button:hover {
+  transform:translateY(-4px) scale(1.02);
+  box-shadow:0 12px 35px rgba(243,19,23,0.25);
 }
 
-/* duck hero - Centered by default due to text-align: center on .hero and block display */
-.hero-duck{width:160px;margin-top:1.6rem;animation:float 6s ease-in-out infinite}
-@keyframes float{0%{transform:translateY(0)}50%{transform:translateY(-10px)}100%{transform:translateY(0)}}
-
-/* footer */
+/* footer - Dark footer for contrast */
 .footer{background:#0b0b0b;color:var(--paper);padding:2rem var(--pad);text-align:center}
-.footer .links{display:flex;gap:1rem;justify-content:center;margin-top:.6rem}
-.footer a{color:var(--paper);font-weight:600;transition:color .18s}
-.footer a:hover{color:var(--accent)}
+
+/* duck */
+.duck{width:120px;display:block;margin:2rem auto;filter:none;} /* No filter needed on light background */
 
 /* responsive */
-@media (max-width:720px){
-  .h-title{font-size:1.75rem}
-  .hero{padding:2rem var(--pad)}
-  .nav{gap:.6rem}
-  .brand img{width:34px;height:34px;} /* Adjust height for mobile */
-  .button{padding:.75rem 1.25rem}
+@media(max-width:720px){
+  .hero h1{font-size:1.5rem}
+  .card{padding:1rem;border-radius:8px}
+  .brand img{width:32px;height:32px}
 }
 </style>
 </head>
 <body>
 
 <header class="header" role="banner">
-  <!-- NEW: Wrapper to hold content constrained by max-width and contain flex properties -->
   <div class="header-inner">
-    <!-- REVERTED: Logo back to icon + text -->
-    <div class="brand"><img src="images/el%20pato%20negro.png" alt="el pato negro logo"><span>elpatonegro</span></div>
-    <nav class="nav" role="navigation" aria-label="Main navigation">
-      <a href="/" aria-current="page">Home</a>
-      <a href="/about">About</a>
+    <div class="brand"><img src="../images/el%20pato%20negro.png" alt="el pato negro logo"><span>elpatonegro</span></div>
+    <nav class="nav" role="navigation">
+      <a href="/">Home</a>
+      <a href="/about" aria-current="page">About</a>
       <a href="/fly-with-us">Take Flight</a>
       <a href="/contact">Contact</a>
     </nav>
   </div>
 </header>
 
-<main class="hero container" role="main">
-  <!-- UPDATED: Hero eyebrow text -->
-  <div class="h-eyebrow">Where vision, grit & strategy meet.</div>
-  <!-- UPDATED: Hero title text -->
-  <h1 class="h-title">Discipline. Creativity. Persistence.</h1>
-  <!-- UPDATED: Lead text is now the longer philosophy description -->
-  <p class="h-lead">El Pato Negro exists for the few who refuse to settle. We sharpen focus, remove friction, and design the frameworks that let people and teams move faster, cleaner, and higher.</p>
+<main class="container" role="main">
+  <section class="hero">
+    <h1>About <i>elpatonegro</i></h1>
+    <!-- CHANGED: 'operators' to 'doers' -->
+    <p><b><i>elpatonegro</i></b> exists for **doers** — people and teams who will do the work. We combine rigor, clean frameworks, and accountability to create lasting change.</p>
+  </section>
 
-  <div class="cta-row">
-    <!-- UPDATED: Primary CTA button text -->
+  <section class="card">
+    <h3>Philosophy</h3>
+    <p>Discipline breeds freedom. Clarity drives impact. We remove clutter and tune what matters: attention, cadence, and decision hygiene. Our offerings are practical, deliverable, and purpose-built for outcomes.</p>
+
+    <h3 style="margin-top:1rem">What we offer</h3>
+    <p>One-on-one diagnostics, cohort intensives, frameworks you can implement in days, and limited community drops that carry signal. Everything is designed to accelerate who you are and what you produce.</p>
+
     <a class="button" href="/fly-with-us">Take Flight</a>
-    <!-- UPDATED: Secondary CTA button text -->
-    <a class="button secondary" href="/about">About <b><i>elpatonegro</i></b></a>
-  </div>
+  </section>
 
-  <!-- Hero Duck - Keeping the original simple duck image -->
-  <img class="hero-duck" src="images/el%20pato%20negro.png" alt="el pato negro">
+  <img class="duck" src="../images/el%20pato%20negro.png" alt="el pato negro">
 </main>
 
 <footer class="footer">
   <div>© 2025 elpatonegro</div>
-  <div class="links">
-    <a href="https://www.instagram.com/elpatonegro_/" target="_blank">Instagram</a>
-    <a href="https://x.com/_elpatonegro" target="_blank">X</a>
-  </div>
 </footer>
-
 </body>
 </html>
