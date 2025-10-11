@@ -1,146 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>elpatonegro — Where Vision, Grit, and Strategy Meet</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>elpatonegro — Home</title>
 <link rel="icon" href="images/el%20pato%20negro.png" type="image/png">
 <style>
 :root{
-  --bg:#f2f0ef;
-  --text:#000;
-  --accent:#f31317;
-  --dark:#000;
-  --pad:5%;
+  --bg:#f2f0ef; --paper:#ffffff; --text:#000; --accent:#f31317; --pad:5%; --maxw:1100px;
 }
-*{margin:0;padding:0;box-sizing:border-box;}
-body{
-  font-family:'Times New Roman', serif;
-  background:var(--bg);
-  color:var(--text);
-  line-height:1.6;
-  display:flex;
-  flex-direction:column;
-  min-height:100vh;
-}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:"Times New Roman",serif;color:var(--text);background:var(--bg);}
+a{color:inherit;text-decoration:none}
+.container{max-width:var(--maxw);margin:0 auto;padding:1.25rem var(--pad);}
 
-/* Header */
-header{
-  background:#fff;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:15px var(--pad);
-  box-shadow:0 2px 10px rgba(0,0,0,0.1);
-  position:fixed;
-  width:100%;
-  top:0;
-  z-index:10;
-}
-.logo{
-  display:flex;
-  align-items:center;
-  font-style:italic;
-  font-weight:bold;
-  font-size:1.5rem;
-}
-.logo img{
-  width:40px;
-  height:40px;
-  margin-right:10px;
-}
-nav a{
-  margin-left:25px;
-  font-weight:bold;
-  color:var(--text);
-  text-decoration:none;
-  transition:0.3s;
-}
-nav a:hover, nav a[aria-current="page"]{
-  color:var(--accent);
-}
+/* header */
+.header{display:flex;align-items:center;justify-content:space-between;background:var(--paper);padding:.75rem var(--pad);box-shadow:0 6px 30px rgba(0,0,0,0.06);position:sticky;top:0;z-index:50;}
+.brand{display:flex;align-items:center;gap:.6rem;font-style:italic;font-weight:700}
+.brand img{width:40px;height:40px;object-fit:contain}
+.nav{display:flex;gap:1rem}
+.nav a{font-weight:700;padding:.35rem .45rem;border-radius:6px;transition:all .18s ease}
+.nav a:hover{color:var(--accent);transform:translateY(-2px)}
 
-/* Main */
-main{
-  flex:1;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  padding:6rem var(--pad) 4rem;
-  min-height:100vh;
-  background:linear-gradient(to bottom,#fff,var(--bg));
-}
-h1{
-  font-size:2.6rem;
-  margin-bottom:1rem;
-  letter-spacing:1px;
-}
-p{
-  font-size:1.2rem;
-  max-width:650px;
-  margin-bottom:2rem;
-}
-img.hero-duck{
-  width:150px;
-  animation:float 6s ease-in-out infinite;
-  margin-bottom:2rem;
-}
-@keyframes float{
-  0%{transform:translateY(0);}
-  50%{transform:translateY(-10px);}
-  100%{transform:translateY(0);}
-}
-a.button{
-  display:inline-block;
-  padding:14px 32px;
-  background:var(--accent);
-  color:#fff;
-  font-weight:bold;
-  text-decoration:none;
-  border-radius:5px;
-  transition:0.3s;
-}
-a.button:hover{
-  background:#fff;
-  color:var(--accent);
-  border:2px solid var(--accent);
-}
+/* hero */
+.hero{min-height:calc(100vh - 140px);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:3rem var(--pad)}
+.h-eyebrow{font-size:.9rem;color:#666;margin-bottom:.6rem}
+.h-title{font-size:2.6rem;line-height:1.02;margin:0 0 .6rem}
+.h-lead{max-width:760px;margin:0 0 1.5rem;font-size:1.1rem;color:#1a1a1a}
+.cta-row{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center}
+.button{background:var(--accent);color:#fff;padding:.9rem 1.4rem;border-radius:8px;font-weight:700;display:inline-block;transition:all .18s}
+.button.secondary{background:transparent;border:2px solid var(--accent);color:var(--accent)}
+.button:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(243,19,23,0.12)}
 
-/* Footer */
-footer{
-  background:var(--dark);
-  color:#f2f0ef;
-  text-align:center;
-  padding:40px var(--pad);
-}
-footer a{
-  color:#f2f0ef;
-  margin:0 10px;
-  transition:0.3s;
-  text-decoration:none;
-}
-footer a:hover{color:var(--accent);}
+/* duck hero */
+.hero-duck{width:160px;margin-top:1.6rem;animation:float 6s ease-in-out infinite}
+@keyframes float{0%{transform:translateY(0)}50%{transform:translateY(-10px)}100%{transform:translateY(0)}}
 
-/* Mobile */
-@media(max-width:700px){
-  header{flex-direction:column;align-items:flex-start;}
-  nav{margin-top:.5rem;}
-  h1{font-size:2rem;}
-  p{font-size:1rem;}
-  img.hero-duck{width:120px;}
+/* footer */
+.footer{background:#0b0b0b;color:var(--paper);padding:2rem var(--pad);text-align:center}
+.footer .links{display:flex;gap:1rem;justify-content:center;margin-top:.6rem}
+.footer a{color:var(--paper);font-weight:600}
+
+/* responsive */
+@media (max-width:720px){
+  .h-title{font-size:1.75rem}
+  .hero{padding:2rem var(--pad)}
+  .nav{gap:.6rem}
+  .brand img{width:34px;height:34px}
 }
 </style>
 </head>
 <body>
 
-<header>
-  <div class="logo">
-    <img src="images/el%20pato%20negro.png" alt="elpatonegro Logo">
-    elpatonegro
-  </div>
-  <nav>
+<header class="header container" role="banner">
+  <div class="brand"><img src="images/el%20pato%20negro.png" alt="el pato negro logo"><span>elpatonegro</span></div>
+  <nav class="nav" role="navigation" aria-label="Main navigation">
     <a href="/" aria-current="page">Home</a>
     <a href="/about">About</a>
     <a href="/fly-with-us">Fly With Us</a>
@@ -148,16 +62,22 @@ footer a:hover{color:var(--accent);}
   </nav>
 </header>
 
-<main>
-  <img src="images/el%20pato%20negro.png" alt="Black Duck" class="hero-duck">
-  <h1>Where Vision, Grit, and Strategy Meet.</h1>
-  <p>Welcome to <b><i>elpatonegro</i></b> — a movement built on discipline, integrity, and persistence. Designed for those ready to rise above the noise and build something real.</p>
-  <a href="/fly-with-us" class="button">Fly With Us</a>
+<main class="hero container" role="main">
+  <div class="h-eyebrow">Where vision, grit & strategy meet</div>
+  <h1 class="h-title">Discipline. Clarity. Elevation.</h1>
+  <p class="h-lead">El Pato Negro exists for the few who refuse to settle. We sharpen focus, remove friction, and design the frameworks that let people and teams move faster, cleaner, and higher.</p>
+
+  <div class="cta-row">
+    <a class="button" href="/fly-with-us">Fly With Us</a>
+    <a class="button secondary" href="/about">Learn About EPN</a>
+  </div>
+
+  <img class="hero-duck" src="images/el%20pato%20negro.png" alt="el pato negro">
 </main>
 
-<footer>
-  <p>© 2025 elpatonegro</p>
-  <div>
+<footer class="footer">
+  <div>© 2025 elpatonegro</div>
+  <div class="links">
     <a href="https://www.instagram.com/elpatonegro_/" target="_blank">Instagram</a>
     <a href="https://x.com/_elpatonegro" target="_blank">X</a>
   </div>
