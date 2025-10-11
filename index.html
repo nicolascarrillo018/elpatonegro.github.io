@@ -7,7 +7,7 @@
 <link rel="icon" href="images/el%20pato%20negro.png" type="image/png">
 <style>
 :root{
-  --bg:#f2f0ef; --paper:#f2f0ef; --text:#000; --accent:#f31317; --pad:5%; --maxw:1100px;
+  --bg:#f2f0ef; --paper:#ffffff; --text:#000; --accent:#f31317; --pad:5%; --maxw:1100px;
 }
 *{box-sizing:border-box}
 html,body{height:100%;margin:0;font-family:"Times New Roman",serif;color:var(--text);background:var(--bg);}
@@ -16,21 +16,22 @@ a{color:inherit;text-decoration:none}
 
 /* header */
 .header{
-  /* This now defines the full-width background, shadow, and stickiness */
-  background:var(--paper);
-  box-shadow:0 6px 30px rgba(0,0,0,0.06);
-  position:sticky;top:0;z-index:100;
+  /* This now defines the full-width background, shadow, and stickiness */
+  background:var(--paper);
+  box-shadow:0 6px 30px rgba(0,0,0,0.06);
+  position:sticky;top:0;z-index:100;
 }
 .header-inner { /* New inner wrapper for content layout and centering */
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  max-width:var(--maxw);
-  margin:0 auto;
-  padding: .75rem var(--pad); /* Re-applied header specific padding */
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  max-width:var(--maxw);
+  margin:0 auto;
+  padding: .75rem var(--pad); /* Re-applied header specific padding */
 }
-.brand{display:flex;align-items:center;gap:.6rem;font-style:italic;font-weight:700}
-.brand img{width:40px;height:40px;object-fit:contain} /* Reverted logo image size/style */
+/* Removed font styling from brand since text is gone */
+.brand{display:flex;align-items:center;gap:.6rem;} 
+.brand img{width:40px;height:40px;object-fit:contain}
 .nav{display:flex;gap:1rem}
 .nav a{font-weight:700;padding:.35rem .45rem;border-radius:6px;transition:all .18s ease}
 .nav a:hover{color:var(--accent);transform:translateY(-2px)}
@@ -42,17 +43,17 @@ a{color:inherit;text-decoration:none}
 .h-lead{max-width:760px;margin:0 0 1.5rem;font-size:1.1rem;color:#1a1a1a}
 .cta-row{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center}
 .button{
-    background:var(--accent);color:#fff;padding:.9rem 1.4rem;border-radius:8px;font-weight:700;
-    display:inline-block;transition:all .25s;border:2px solid var(--accent);
+    background:var(--accent);color:#fff;padding:.9rem 1.4rem;border-radius:8px;font-weight:700;
+    display:inline-block;transition:all .25s;border:2px solid var(--accent);
 }
 .button.secondary{background:transparent;color:var(--accent)}
 .button:hover{
-    transform:translateY(-4px) scale(1.02);
-    box-shadow:0 12px 35px rgba(243,19,23,0.25);
+    transform:translateY(-4px) scale(1.02);
+    box-shadow:0 12px 35px rgba(243,19,23,0.25);
 }
 .button.secondary:hover{
-    transform:translateY(-4px) scale(1.02);
-    box-shadow:0 12px 35px rgba(0,0,0,0.1);
+    transform:translateY(-4px) scale(1.02);
+    box-shadow:0 12px 35px rgba(0,0,0,0.1);
 }
 
 /* duck hero - Centered by default due to text-align: center on .hero and block display */
@@ -67,55 +68,55 @@ a{color:inherit;text-decoration:none}
 
 /* responsive */
 @media (max-width:720px){
-  .h-title{font-size:1.75rem}
-  .hero{padding:2rem var(--pad)}
-  .nav{gap:.6rem}
-  .brand img{width:34px;height:34px;} /* Adjust height for mobile */
-  .button{padding:.75rem 1.25rem}
+  .h-title{font-size:1.75rem}
+  .hero{padding:2rem var(--pad)}
+  .nav{gap:.6rem}
+  .brand img{width:34px;height:34px;} /* Adjust height for mobile */
+  .button{padding:.75rem 1.25rem}
 }
 </style>
 </head>
 <body>
 
 <header class="header" role="banner">
-  <!-- NEW: Wrapper to hold content constrained by max-width and contain flex properties -->
-  <div class="header-inner">
-    <!-- REVERTED: Logo back to icon + text -->
-    <div class="brand"><img src="images/el%20pato%20negro.png" alt="el pato negro logo"><span>elpatonegro</span></div>
-    <nav class="nav" role="navigation" aria-label="Main navigation">
-      <a href="/" aria-current="page">Home</a>
-      <a href="/about">About</a>
-      <a href="/fly-with-us">Take Flight</a>
-      <a href="/contact">Contact</a>
-    </nav>
-  </div>
+  <!-- Wrapper to hold content constrained by max-width and contain flex properties -->
+  <div class="header-inner">
+    <!-- MODIFIED: Removed <span>elpatonegro</span> -->
+    <div class="brand"><img src="images/el%20pato%20negro.png" alt="el pato negro logo"></div>
+    <nav class="nav" role="navigation" aria-label="Main navigation">
+      <a href="/" aria-current="page">Home</a>
+      <a href="/about">About</a>
+      <a href="/fly-with-us">Take Flight</a>
+      <a href="/contact">Contact</a>
+    </nav>
+  </div>
 </header>
 
 <main class="hero container" role="main">
-  <!-- UPDATED: Hero eyebrow text -->
-  <div class="h-eyebrow">Where vision, grit & strategy meet.</div>
-  <!-- UPDATED: Hero title text -->
-  <h1 class="h-title">Discipline. Creativity. Persistence.</h1>
-  <!-- UPDATED: Lead text is now shorter -->
-  <p class="h-lead"><i><b>elpatonegro</b></i> exists for the few who refuse to settle.</p>
+  <!-- UPDATED: Hero eyebrow text -->
+  <div class="h-eyebrow">Where vision, grit & strategy meet.</div>
+  <!-- UPDATED: Hero title text -->
+  <h1 class="h-title">Discipline. Creativity. Persistence.</h1>
+  <!-- UPDATED: Lead text is now shorter -->
+  <p class="h-lead"><i><b>elpatonegro</b></i> exists for the few who refuse to settle.</p>
 
-  <div class="cta-row">
-    <!-- UPDATED: Primary CTA button text -->
-    <a class="button" href="/fly-with-us">Take Flight</a>
-    <!-- UPDATED: Secondary CTA button text -->
-    <a class="button secondary" href="/about">About <b><i>elpatonegro</i></b></a>
-  </div>
+  <div class="cta-row">
+    <!-- UPDATED: Primary CTA button text -->
+    <a class="button" href="/fly-with-us">Take Flight</a>
+    <!-- UPDATED: Secondary CTA button text -->
+    <a class="button secondary" href="/about">About <b><i>elpatonegro</i></b></a>
+  </div>
 
-  <!-- Hero Duck - Keeping the original simple duck image -->
-  <img class="hero-duck" src="images/el%20pato%20negro.png" alt="el pato negro">
+  <!-- Hero Duck - Keeping the original simple duck image -->
+  <img class="hero-duck" src="images/el%20pato%20negro.png" alt="el pato negro">
 </main>
 
 <footer class="footer">
-  <div>© 2025 elpatonegro</div>
-  <div class="links">
-    <a href="https://www.instagram.com/elpatonegro_/" target="_blank">Instagram</a>
-    <a href="https://x.com/_elpatonegro" target="_blank">X</a>
-  </div>
+  <div>© 2025 elpatonegro</div>
+  <div class="links">
+    <a href="https://www.instagram.com/elpatonegro_/" target="_blank">Instagram</a>
+    <a href="https://x.com/_elpatonegro" target="_blank">X</a>
+  </div>
 </footer>
 
 </body>
