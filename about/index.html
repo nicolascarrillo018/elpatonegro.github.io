@@ -3,48 +3,47 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>elpatonegro — Home</title>
+<title>About — elpatonegro</title>
 <link rel="icon" href="images/el%20pato%20negro.png" type="image/png">
 <style>
-:root { --bg:#000; --text:#f2f0ef; --accent:#f31317; --pad:5%; --radius:8px; }
+:root{--bg:#000;--text:#f2f0ef;--accent:#f31317;--pad:5%;}
 *{margin:0;padding:0;box-sizing:border-box;}
 body{background:var(--bg);color:var(--text);font-family:"Times New Roman", serif;line-height:1.6;display:flex;flex-direction:column;min-height:100vh;}
-a{text-decoration:none;color:inherit;}
 header, footer{width:100%;display:flex;justify-content:space-between;align-items:center;padding:1rem var(--pad);background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);}
 .logo{font-style:italic;font-weight:bold;font-size:1.5rem;}
 nav a{margin-left:1.5rem;font-weight:bold;transition:0.3s;}
 nav a:hover{color:var(--accent);}
 main{flex:1;display:flex;flex-direction:column;align-items:center;text-align:center;padding:3rem var(--pad);}
-h1{font-size:2.5rem;margin-bottom:1rem;}
-h2{font-size:1.75rem;margin-bottom:1rem;}
-p{max-width:700px;margin-bottom:1.5rem;}
-.button{padding:.75rem 1.5rem;background:var(--accent);color:#fff;font-weight:bold;border-radius:5px;transition:0.3s;}
+h1{font-size:2rem;margin-bottom:1rem;font-style:italic;}
+p{max-width:700px;margin-bottom:1.5rem;font-size:1.1rem;}
+.button{padding:.75rem 1.5rem;background:var(--accent);color:#fff;font-weight:bold;border-radius:5px;transition:0.3s;text-decoration:none;}
 .button:hover{background:#fff;color:var(--accent);border:2px solid var(--accent);}
-img.hero-duck{width:140px;animation:floaty 6s ease-in-out infinite;margin-top:2rem;}
-@keyframes floaty{0%{transform:translateY(0)}50%{transform:translateY(-12px)}100%{transform:translateY(0)}}
+img.duck{width:120px;margin:2rem 0;animation:float 6s ease-in-out infinite;}
+@keyframes float{0%{transform:translateY(0)}50%{transform:translateY(-15px)}100%{transform:translateY(0)}}
 footer{background:#111;color:var(--text);flex-direction:column;text-align:center;padding:2rem var(--pad);}
 footer a{margin:0 .5rem;color:var(--text);transition:0.3s;}
 footer a:hover{color:var(--accent);}
-@media(max-width:600px){h1{font-size:2rem;}h2{font-size:1.5rem;}img.hero-duck{width:100px;}}
+@media(max-width:600px){h1{font-size:1.5rem;}img.duck{width:100px;}}
 </style>
 </head>
 <body>
+
 <header>
   <div class="logo">elpatonegro</div>
   <nav>
     <a href="/">Home</a>
-    <a href="/about">About</a>
+    <a href="/about" aria-current="page" style="color:var(--accent)">About</a>
     <a href="/fly-with-us">Fly With Us</a>
     <a href="/contact">Contact</a>
   </nav>
 </header>
 
 <main>
-  <h1>Where vision, grit, and strategy meet.</h1>
-  <p>El Pato Negro exists for those ready to rise above the ordinary.</p>
-  <a href="/about" class="button">About El Pato Negro</a>
-  <a href="/fly-with-us" class="button" style="margin-top:1rem;">Fly With Us</a>
-  <img src="images/el%20pato%20negro.png" alt="Duck Logo" class="hero-duck">
+  <h1>About <i>elpatonegro</i></h1>
+  <p><b><i>elpatonegro</i></b> exists for those who refuse to settle. We merge vision, grit, and strategy into a framework that sharpens discipline, strengthens integrity, and builds persistence. Our philosophy is simple: minimal fluff, maximum results.</p>
+  <p>We help individuals and teams discover their edge, unlock consistent performance, and rise above the noise. Whether you’re walking, swimming, or flying, we provide actionable insights and programs that accelerate your path.</p>
+  <a href="/fly-with-us" class="button">Fly With Us</a>
+  <img src="images/el%20pato%20negro.png" alt="Duck" class="duck">
 </main>
 
 <footer>
@@ -54,5 +53,6 @@ footer a:hover{color:var(--accent);}
     <a href="https://x.com/_elpatonegro" target="_blank">X</a>
   </div>
 </footer>
+
 </body>
 </html>
