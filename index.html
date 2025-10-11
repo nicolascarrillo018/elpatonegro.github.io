@@ -15,8 +15,22 @@ a{color:inherit;text-decoration:none}
 .container{max-width:var(--maxw);margin:0 auto;padding:1.25rem var(--pad);}
 
 /* header */
-.header{display:flex;align-items:center;justify-content:space-between;background:var(--paper);padding:.75rem var(--pad);box-shadow:0 6px 30px rgba(0,0,0,0.06);position:sticky;top:0;z-index:100;}
-.brand img{height:40px;object-fit:contain;width:auto;} /* Set height for brand image */
+.header{
+  /* This now defines the full-width background, shadow, and stickiness */
+  background:var(--paper);
+  box-shadow:0 6px 30px rgba(0,0,0,0.06);
+  position:sticky;top:0;z-index:100;
+}
+.header-inner { /* New inner wrapper for content layout and centering */
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  max-width:var(--maxw);
+  margin:0 auto;
+  padding: .75rem var(--pad); /* Re-applied header specific padding */
+}
+.brand{display:flex;align-items:center;gap:.6rem;font-style:italic;font-weight:700}
+.brand img{width:40px;height:40px;object-fit:contain} /* Reverted logo image size/style */
 .nav{display:flex;gap:1rem}
 .nav a{font-weight:700;padding:.35rem .45rem;border-radius:6px;transition:all .18s ease}
 .nav a:hover{color:var(--accent);transform:translateY(-2px)}
@@ -56,23 +70,25 @@ a{color:inherit;text-decoration:none}
   .h-title{font-size:1.75rem}
   .hero{padding:2rem var(--pad)}
   .nav{gap:.6rem}
-  .brand img{height:34px;} /* Adjust height for mobile */
+  .brand img{width:34px;height:34px;} /* Adjust height for mobile */
   .button{padding:.75rem 1.25rem}
 }
 </style>
 </head>
 <body>
 
-<header class="header container" role="banner">
-  <!-- Keeping the current combined logo image from the Canvas -->
-  <div class="brand"><img src="images/el%20pato%20negro%20(4).png" alt="el pato negro logo"></div>
-  <nav class="nav" role="navigation" aria-label="Main navigation">
-    <a href="/" aria-current="page">Home</a>
-    <a href="/about">About</a>
-    <!-- UPDATED: Navigation link text -->
-    <a href="/fly-with-us">Take Flight</a>
-    <a href="/contact">Contact</a>
-  </nav>
+<header class="header" role="banner">
+  <!-- NEW: Wrapper to hold content constrained by max-width and contain flex properties -->
+  <div class="header-inner">
+    <!-- REVERTED: Logo back to icon + text -->
+    <div class="brand"><img src="images/el%20pato%20negro.png" alt="el pato negro logo"><span>elpatonegro</span></div>
+    <nav class="nav" role="navigation" aria-label="Main navigation">
+      <a href="/" aria-current="page">Home</a>
+      <a href="/about">About</a>
+      <a href="/fly-with-us">Take Flight</a>
+      <a href="/contact">Contact</a>
+    </nav>
+  </div>
 </header>
 
 <main class="hero container" role="main">
